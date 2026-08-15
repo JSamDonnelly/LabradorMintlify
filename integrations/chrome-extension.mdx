@@ -4,10 +4,15 @@ sidebarTitle: "Chrome Extension"
 description: "Capture live page HTML with the Labrador Chrome extension and generate AI-powered accessibility remediation guidance for your issues using Claude Opus 5."
 ---
 
-The Labrador Chrome extension bridges the gap between your audit in Labrador and the live page you are testing. When you click a specific element on the page, the extension captures that element's HTML and sends it back to Labrador. Labrador then combines the captured HTML with your issue description and the WCAG criterion being tested to generate developer-ready remediation guidance, powered by Claude Opus 5. The result appears directly inside the issue under **Remediation Help**, ready for you to review, refine, and include in your exported report.
+The Labrador Chrome extension bridges the gap between your audit in Labrador and the live page you are testing. It supports two core workflows:
+
+- **axe automated scanning** — run an axe scan against the page you are testing and let Labrador map each finding to the correct WCAG criterion as an issue.
+- **AI remediation guidance** — click a specific element on the page to capture its HTML and generate developer-ready fix suggestions from Claude Opus 5.
+
+Both workflows depend on the URL set on the Page, Component, or User Journey you are testing. Set a valid URL on every item in your project wherever you can — the extension uses it to open the exact page for scans and captures, and other features like AI remediation depend on it too.
 
 <Note>
-  The AI remediation feature is currently in **beta**. Before using the extension on a page or component, make sure a valid URL is set on that Page/Component in your Labrador project — the extension uses the URL to navigate to the exact page being tested.
+  The AI remediation feature is currently in **beta**. Before using the extension on a page, component, or user journey, make sure a valid URL is set on that item in your Labrador project.
 </Note>
 
 ## Installing the Extension
@@ -28,6 +33,32 @@ The extension is available from the Chrome Web Store and takes less than a minut
     Once installed, the Labrador icon will appear in your Chrome toolbar. If it is hidden, click the puzzle-piece Extensions icon and pin Labrador for easy access.
   </Step>
 </Steps>
+
+## Running an axe Scan
+
+The extension can run an [axe-core](https://github.com/dequelabs/axe-core) automated scan against the page you are testing and pull the findings directly into your Labrador project. Each result is mapped to the corresponding WCAG criterion on the item you are testing, so you never have to file findings by hand.
+
+<Steps>
+  <Step title="Open the Criteria Overview for the item you are testing">
+    In your Labrador project, open the Page, Component, or User Journey you want to scan and go to its **Criteria Overview**.
+  </Step>
+  <Step title="Trigger an axe scan">
+    Click the **Run axe Scan** action on the Criteria Overview. Labrador will open the URL set on the item and the extension will run axe against the loaded page.
+  </Step>
+  <Step title="Review findings before importing">
+    When the scan completes, the extension shows a list of findings for you to review before anything is written to your project. Each finding shows the rule that failed, the affected element, and the WCAG criterion it maps to.
+  </Step>
+  <Step title="Choose whether to include Best Practice findings">
+    axe returns both WCAG violations and Best Practice recommendations. Best Practice findings are shown alongside violations but are left unchecked by default — tick the ones you want to include, or leave them unchecked to import only the WCAG-mapped failures.
+  </Step>
+  <Step title="Add the selected findings to your test">
+    Confirm your selection to import the findings. Each one is automatically added as an issue under the correct WCAG criterion on the item you are testing, with the axe rule and affected element pre-filled.
+  </Step>
+</Steps>
+
+<Tip>
+  Automated scanning catches roughly 30 to 50 percent of accessibility issues on a typical page. Use the axe scan as a fast first pass, then work through the remaining criteria manually and use AI Remediation Recommendations to help draft fixes for anything the scan surfaces.
+</Tip>
 
 ## Generating a Remediation Recommendation
 
@@ -65,12 +96,15 @@ The recommendation Claude Opus 5 produces is designed to give developers the con
   <Card title="Root Cause Identification" icon="magnifying-glass">
     The AI analyses the captured HTML and identifies the specific part of the code responsible for the accessibility failure, such as a missing label, incorrect ARIA role, or skipped heading level.
   </Card>
+
   <Card title="Code-Level Fix Suggestions" icon="code">
     The recommendation includes concrete, actionable changes — for example, adding `aria-label="Search"` to an unlabelled button, or correcting a heading hierarchy by changing an `<h4>` to an `<h2>`.
   </Card>
+
   <Card title="WCAG Context" icon="book-open">
     The AI explains why the suggested change addresses the specific WCAG criterion that failed, giving developers the reasoning they need to understand the requirement and apply it consistently elsewhere in the codebase.
   </Card>
+
   <Card title="Scoped to Your Element" icon="crosshairs">
     Because the recommendation is generated from the actual HTML you captured rather than a generic description, the guidance is specific to the component you are testing rather than a boilerplate explanation of the rule.
   </Card>
@@ -98,12 +132,15 @@ Before using the Chrome extension and AI remediation feature, confirm that all o
   <Card title="Google Chrome" icon="chrome">
     The Labrador extension is only available for Google Chrome. It is not currently available for other Chromium-based browsers or Firefox.
   </Card>
+
   <Card title="Extension Installed" icon="puzzle-piece">
     The Labrador AI Accessibility Assistant extension must be installed and active in Chrome before you click Generate Recommendation.
   </Card>
-  <Card title="Valid URL on the Page/Component" icon="link">
-    The Page or Component record in your Labrador project must have a valid URL set. Without it, the extension cannot navigate to the correct page.
+
+  <Card title="Valid URL on the Page/Component/User Journey" icon="link">
+    The Page, Component, or User Journey record in your Labrador project must have a valid URL set. Without it, the extension cannot navigate to the correct page for axe scans or HTML capture. Setting a URL on every item is the single most important step for getting full value from the extension.
   </Card>
+
   <Card title="Filled-In Issue Description" icon="pen-to-square">
     You must write an issue description before generating a recommendation. The AI uses your description as context for the guidance it produces.
   </Card>

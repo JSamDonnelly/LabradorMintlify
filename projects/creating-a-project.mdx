@@ -4,7 +4,7 @@ sidebarTitle: "Creating a Project"
 description: "Set up a new Labrador accessibility audit project, choose a WCAG testing methodology, and add custom fields to match your workflow."
 ---
 
-A **project** in Labrador is the container for a complete accessibility audit. It holds every page and component you test, all WCAG criterion results, every logged issue, and any exported reports you generate. Before you start testing, you create a project and choose a testing methodology — that choice shapes the export formats available to you throughout the engagement.
+A **project** in Labrador is the container for a complete accessibility audit. It holds every page and component and user journey you test, all WCAG criterion results, every logged issue, and any exported reports you generate. Before you start testing, you create a project and choose a testing methodology — that choice shapes the export formats available to you throughout the engagement.
 
 ## Create a Project
 
@@ -13,13 +13,14 @@ A **project** in Labrador is the container for a complete accessibility audit. I
     Sign in at [testwithlabrador.com](https://www.testwithlabrador.com) and navigate to the **Projects** dashboard. All your existing projects are listed here, along with your remaining project capacity for the current month.
   </Step>
   <Step title="Click + Create Project">
-    Select the **+ Create Project** button in the top-right corner of the dashboard to open the project creation form.
+    Select the **\+ Create Project** button in the top-right corner of the dashboard to open the project creation form.
   </Step>
   <Step title="Enter a title and description">
     Type a clear **Project Title** — for example, the client name and site being tested. Add a brief description to help you and your teammates identify the project at a glance.
   </Step>
   <Step title="Select a Testing Methodology">
     Choose one of the two available methodologies from the dropdown:
+
     - **WCAG 2.2 AA Testing** — for standard accessibility audits
     - **VPAT® 2.5 – WCAG 2.2** — for formal conformance reporting with VPAT DOCX output
   </Step>
@@ -42,15 +43,18 @@ Both methodologies test against the same WCAG 2.2 criteria at Levels A and AA. T
 
     **Available exports:** HTML report, CSV, Jira CSV
   </Card>
+
   <Card title="VPAT® 2.5 – WCAG 2.2" icon="file-contract">
-    Use this methodology when you need to produce a formal Voluntary Product Accessibility Template — for example, for government procurement, enterprise vendor assessments, or clients who require VPAT documentation.
+    A stricter workflow for teams that want to record results in VPAT terminology (Supports, Partially Supports, Does Not Support, and so on) across multiple pages and push those results into a VPAT WCAG Edition template automatically.
+
+    Most testers find it easier to run their normal rounds of testing first and author the VPAT document by hand at the end. Only pick this methodology if your process is already built around VPAT-native reporting.
 
     **Available exports:** HTML report, CSV, Jira CSV, and VPAT DOCX
   </Card>
 </CardGroup>
 
 <Info>
-  If you are unsure which methodology to choose, ask your client whether they need a VPAT document delivered. If they do, select VPAT® 2.5 – WCAG 2.2. For all other engagements, WCAG 2.2 AA Testing is the right starting point.
+  If you are unsure, pick **WCAG 2.2 AA Testing**. It fits almost every engagement, including most cases where a VPAT is the eventual deliverable — you can complete your testing here and then write the VPAT yourself against the results. Reach for **VPAT® 2.5 – WCAG 2.2** only when you specifically want to record findings in VPAT conformance terms as you test and generate the VPAT DOCX directly from the tool.
 </Info>
 
 ## Adding Custom Fields
@@ -62,7 +66,7 @@ Custom fields let you capture additional metadata on every issue you log — for
     In the project view, scroll to the **Custom Fields** section and expand it.
   </Step>
   <Step title="Add a new field">
-    Click **+ Add Field**. Enter a **Field Name** that clearly describes the data you want to capture, then choose a **Type** — options include Single Line Text, Number, and Dropdown. If the field must be completed before an issue can be submitted, check the **Required** box.
+    Click **\+ Add Field**. Enter a **Field Name** that clearly describes the data you want to capture, then choose a **Type** — options include Single Line Text, Number, and Dropdown. If the field must be completed before an issue can be submitted, check the **Required** box.
   </Step>
   <Step title="Save the field">
     Click **Add Field**. The field will appear on every new issue form in this project immediately.
@@ -77,12 +81,12 @@ Custom fields let you capture additional metadata on every issue you log — for
 
 The number of projects you can create per month depends on your Labrador subscription plan. Review your available capacity before starting a new engagement.
 
-| Plan       | Project capacity                  |
-|------------|-----------------------------------|
-| Free       | 1 total project slot              |
-| Core       | 3 new projects per month          |
-| Plus       | 6 new projects per month          |
-| Enterprise | Unlimited projects                |
+| Plan | Project capacity |
+| --- | --- |
+| Free | 1 total project slot |
+| Core | 3 new projects per month |
+| Plus | 6 new projects per month |
+| Enterprise | Unlimited projects |
 
 <Note>
   On the Free plan, you have a single project slot. Deleting a project frees that slot for a new one. The included demo project does not count against your limit. See [Plans and Pricing](/plans-and-pricing) for a full feature comparison across plans.

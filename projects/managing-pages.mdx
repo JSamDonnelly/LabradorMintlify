@@ -4,25 +4,25 @@ sidebarTitle: "Managing Pages"
 description: "Add individual pages and UI components to your Labrador project, attach screenshots, and organise your audit scope before testing begins."
 ---
 
-Every Labrador project is made up of **pages** and **components** — the individual items you test against WCAG criteria. Each item is audited independently, so you can track progress and log issues at a granular level. Pages represent full web pages such as a homepage, a checkout flow, or an article template. Components represent reusable UI elements — a navigation header, a carousel, a modal dialog, or a video player — that appear across multiple pages of the site.
+Every Labrador project is made up of **pages**, **components**, and **user journeys** — the individual items you test against WCAG criteria. Each item is audited independently, so you can track progress and log issues at a granular level. Pages represent full web pages such as a homepage, a checkout flow, or an article template. Components represent reusable UI elements — a navigation header, a carousel, a modal dialog, or a video player — that appear across multiple pages of the site. User journeys represent multi-step task flows, such as signing up for an account or completing a purchase, that span more than one page.
 
-## Add a Page or Component
+## Add a Page, Component, or User Journey
 
 <Steps>
   <Step title="Open your project">
-    From the Projects dashboard, click the project you want to add items to. The project view shows all pages and components already in your audit scope.
+    From the Projects dashboard, click the project you want to add items to. The project view shows all pages, components, and user journeys already in your audit scope.
   </Step>
-  <Step title="Click + Add Page / Component">
-    Select the **+ Add Page / Component** button to open the item creation form.
+  <Step title="Click + Add">
+    Select the **\+ Add** button to open the dropdown, then choose **Page**, **Component**, or **User Journey** depending on what you want to test.
   </Step>
   <Step title="Enter a name">
-    Type a descriptive **Name** for the item — for example, `Homepage`, `Product Listing Page`, or `Navigation Header`. Use a name that makes it immediately clear what is being tested.
+    Type a descriptive **Name** for the item — for example, `Homepage`, `Product Listing Page`, `Navigation Header`, or `New User Signup`. Use a name that makes it immediately clear what is being tested.
   </Step>
   <Step title="Provide a URL">
-    Enter the full **URL** of the page or component. The URL is required if you plan to use AI-assisted remediation via the Labrador Chrome extension — Labrador uses it to open the exact page when generating recommendations.
+    Enter the full **URL** of the page, component, or the starting page of the user journey. The URL is required if you plan to use AI-assisted remediation via the Labrador Chrome extension — Labrador uses it to open the exact page when generating recommendations.
   </Step>
   <Step title="Upload a screenshot (optional)">
-    Optionally upload a **Screenshot** of the page or component to help you and your teammates visually identify it during testing. This is especially useful when you have multiple pages with similar names.
+    Optionally upload a **Screenshot** of the page, component, or user journey to help you and your teammates visually identify it during testing. This is especially useful when you have multiple items with similar names.
   </Step>
   <Step title="Click Create">
     Click **Create** to add the item to your project. It will appear in the project view and is ready to audit immediately.
@@ -30,12 +30,12 @@ Every Labrador project is made up of **pages** and **components** — the indivi
 </Steps>
 
 <Tip>
-  Always enter a valid URL for each page and component. The Labrador Chrome extension uses this URL to navigate directly to the page when you trigger AI-assisted remediation from an issue. Without a URL, the AI recommendation feature will not work for that item.
+  Always enter a valid URL for each page, component, and user journey. The Labrador Chrome extension uses this URL to navigate directly to the page when you trigger AI-assisted remediation from an issue. Without a URL, the AI recommendation feature will not work for that item.
 </Tip>
 
-## Page vs Component Testing
+## Page, Component, and User Journey Testing
 
-You can structure your audit scope in three ways. The approach you choose affects how thoroughly you cover the site and how efficiently you avoid repeating work.
+You can structure your audit scope in several ways. The approach you choose affects how thoroughly you cover the site and how efficiently you avoid repeating work.
 
 <Tabs>
   <Tab title="Page Testing">
@@ -48,12 +48,19 @@ You can structure your audit scope in three ways. The approach you choose affect
 
     **When to use it:** When the same element appears on many pages and retesting it repeatedly would add effort without adding insight.
   </Tab>
+  <Tab title="User Journey Testing">
+    Test a complete multi-step task flow end to end — for example, account signup, checkout, or password reset. Because a user journey spans multiple pages and interactions, it surfaces accessibility issues that only appear in transitions, focus handling between steps, error recovery, and cumulative cognitive load.
+
+    **When to use it:** When a critical task requires the user to move through several pages or states, and you need confidence that the whole flow is usable end to end, not just each screen in isolation.
+  </Tab>
   <Tab title="Blended Approach (Recommended)">
-    Combine page and component testing for the most efficient scope. List the pages that contain unique content or functionality, and add shared UI elements as separate components. Test each component once, then test only the page-specific content on each page item.
+    Combine page, component, and user journey testing for the most efficient scope. List the pages that contain unique content or functionality, add shared UI elements as separate components, and add critical multi-step flows as user journeys. Test each component once, then test only the page-specific content on each page item, and validate the end-to-end experience through your user journeys.
 
     **Example scope:**
+
     - Pages: Homepage, Product Listing, Product Detail, Checkout, Contact Form, Article
     - Components: Site Header, Primary Navigation, Cookie Banner, Video Player, Footer
+    - User Journeys: New User Signup, Guest Checkout, Password Reset
 
     This approach gives you thorough coverage without logging the same issues in multiple places.
   </Tab>
@@ -61,10 +68,10 @@ You can structure your audit scope in three ways. The approach you choose affect
 
 ## Organising Your Audit Scope
 
-Choosing the right sample of pages to include is as important as how you test them. You do not need to test every page on a large site — the goal is a representative sample that covers all distinct page types, templates, and interactive patterns.
+Choosing the right sample of pages, components, and user journeys to include is as important as how you test them. You do not need to test every page on a large site — the goal is a representative sample that covers all distinct page types, templates, interactive patterns, and critical task flows.
 
-<Accordion title="How many pages should I include?">
-  For most sites, **10 to 20 pages and components** is a practical and defensible scope. Focus on coverage of:
+<Accordion title="How many items should I include?">
+  For most sites, **10 to 20 pages, components, and user journeys combined** is a practical and defensible scope. Focus on coverage of:
 
   - Each unique page template (home, listing, detail, form, error, authentication)
   - Key user journeys (search, checkout, registration, support)
@@ -81,5 +88,5 @@ Choosing the right sample of pages to include is as important as how you test th
 </Accordion>
 
 <Note>
-  Your plan determines how many projects you can create per month, but there is no limit to the number of pages and components you can add within a single project. Add as many items as your audit scope requires.
+  Your plan determines how many projects you can create per month, but there is no limit to the number of pages, components, and user journeys you can add within a single project. Add as many items as your audit scope requires.
 </Note>
