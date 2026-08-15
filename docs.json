@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Labrador",
-  "theme": "almond",
+  "theme": "maple",
   "colors": {
     "primary": "#694e32",
     "light": "#e3c18a",
@@ -84,5 +84,8 @@
         ]
       }
     ]
+  },
+  "seo": {
+    "indexing": "navigable"
   }
 }
