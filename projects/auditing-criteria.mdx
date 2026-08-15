@@ -1,0 +1,100 @@
+---
+title: "Evaluate WCAG Criteria in a Labrador Audit"
+sidebarTitle: "Auditing Criteria"
+description: "Work through WCAG 2.1 and 2.2 success criteria in Labrador, use built-in testing tips, mark results, and track audit progress by conformance level."
+---
+
+When you open any page or component in your Labrador project, you arrive at the **Criteria Overview** — a complete list of applicable WCAG 2.1 and 2.2 success criteria, organised by criterion number. Each criterion shows a status badge so you can see at a glance what you have already evaluated and what still needs attention. A progress bar at the top of the view reflects your overall completion across all criteria, with separate indicators for Level A and Level AA.
+
+## Evaluating a Criterion
+
+<Steps>
+  <Step title="Open the Criteria Overview">
+    From your project view, click the name of a page or component. The Criteria Overview opens, listing all applicable WCAG success criteria for that item.
+  </Step>
+  <Step title="Filter the list (optional)">
+    Use the filter toolbar to narrow the list. You can filter by conformance level (Level A or Level AA), by current status (Pass, Fail, N/A, Untested, Bookmarked), or by issue details such as severity or remediation status.
+  </Step>
+  <Step title="Select a criterion">
+    Click a criterion — for example, **1.1.1 Non-text Content** — to open the testing panel. The panel slides in alongside the criteria list or opens as a pop-up, depending on your current view mode.
+  </Step>
+  <Step title="Review the Testing Tip">
+    Read the **Testing Tip** at the top of the testing panel. This plain-English guidance explains what to look for and how to test the criterion accurately without needing to refer to the WCAG specification directly.
+  </Step>
+  <Step title="Mark the test status">
+    Based on your evaluation, mark the criterion with one of four statuses:
+    - **Pass** — the page or component meets this requirement
+    - **Fail** — the page or component does not meet this requirement
+    - **N/A** — this criterion does not apply to this item
+    - **Untested** — evaluation has not yet started (the default state)
+  </Step>
+  <Step title="Log issues for failures">
+    If you mark a criterion as **Fail**, scroll to the **Add New Issue** section within the testing panel to document the specific problem. See [Logging Issues](/projects/logging-issues) for a full walkthrough of the issue form.
+  </Step>
+</Steps>
+
+## Filtering and Navigation
+
+The filter toolbar at the top of the Criteria Overview helps you focus on specific subsets of criteria and avoid scrolling through the full list during a long audit session.
+
+<CardGroup cols={2}>
+  <Card title="Keyword Search" icon="magnifying-glass">
+    Type a criterion name — for example, `Non-text Content` — or criterion number — for example, `1.1.1` — into the **Search criteria** box. The list updates automatically as you type.
+  </Card>
+  <Card title="Filter by Status" icon="filter">
+    Show only criteria with a specific status: **Pass**, **Fail**, **N/A**, **Untested**, or **Bookmarked**. Use the Fail filter to quickly review all outstanding issues, or the Untested filter to find remaining work.
+  </Card>
+  <Card title="Filter by Conformance Level" icon="layer-group">
+    Use the **All Levels** dropdown to restrict the list to **Level A** (core accessibility requirements) or **Level AA** (the standard conformance target for most organisations). By default, all levels are shown.
+  </Card>
+  <Card title="Filter by Issue Details" icon="triangle-exclamation">
+    Filter criteria by the properties of their associated issues. Filter by **Severity** (Advisory through Critical) to prioritise the most serious findings, or by **Remediation** status (Reported, In Progress, Fixed for Retesting, Closed) to track fix progress.
+  </Card>
+</CardGroup>
+
+### Testing View Modes
+
+Use the toggle beside the filter toolbar to switch between two layouts:
+
+- **Side by side** (default) — the criteria list stays visible on one side while the testing panel opens alongside it. This is the best mode for working through criteria in sequence.
+- **Pop-up** — the testing panel opens as a modal dialog over the criteria list. Use this mode on smaller screens or when you prefer a more focused view of a single criterion at a time.
+
+## Progress Tracking
+
+Labrador provides three layers of visual progress feedback within the Criteria Overview, so you can gauge how far through an audit you are without counting rows manually.
+
+| Indicator | What it shows |
+|-----------|---------------|
+| **Overall Progress Bar** | The total percentage of criteria that have been marked with any status other than Untested, displayed in the Criteria Overview header. |
+| **Progress by Level** | Separate sub-bars showing completion rates for Level A criteria and Level AA criteria independently. |
+| **Status Tally** | A live count at the top of the list showing the total number of criteria currently marked Pass, Fail, N/A, and Untested. |
+
+## Sub-Criteria Auditing
+
+Some WCAG success criteria cover a wide range of content types. For complex criteria, Labrador breaks the testing work into expandable sub-groups so you can evaluate each content type separately and mark each one individually.
+
+For example, **1.3.1 Info and Relationships** expands into sub-groups covering **Headings**, **Lists**, **Tables**, **Form Labels**, and other structural elements. You can mark each sub-group as Pass, Fail, or N/A independently. This makes it easier to record partial failures — for example, if tables are correctly marked up but lists are not — without treating the entire criterion as a binary result.
+
+## Reference Tools
+
+Every criterion testing panel includes built-in reference material so you can make accurate, well-informed testing decisions without leaving Labrador.
+
+<Accordion title="Why This Matters">
+  Provides context on the real-world accessibility barrier the criterion addresses. Understanding *why* a criterion exists helps you apply it accurately, especially for criteria that may seem abstract when reading the WCAG specification in isolation.
+</Accordion>
+
+<Accordion title="Testing Tips & Key Points">
+  Offers actionable, step-by-step guidance for evaluating the criterion, along with summarised key points to keep in mind. These tips are written in plain English and cover common testing scenarios, assistive technology behaviour, and edge cases to watch for.
+</Accordion>
+
+<Accordion title="View on W3C">
+  Click the **View on W3C** button to open the official WCAG documentation for the criterion in a new browser tab. Use this when you need the full normative definition, understanding documents, or sufficient techniques listed in the specification.
+</Accordion>
+
+## Bookmarking
+
+If you are mid-way through a criterion and want to return to it later — for example, because you need to test it with a specific assistive technology you do not have set up yet — you can bookmark it. Click the **Bookmark** icon on any criterion to flag it. You can then use the **Bookmarked** filter in the filter toolbar to pull up all your bookmarked criteria and continue where you left off.
+
+<Tip>
+  Use bookmarks to mark criteria that need a second opinion from a colleague or that require a specific testing tool you plan to use later in the audit. Bookmarks persist for the current page or component and are visible to all team members with access to the project.
+</Tip>

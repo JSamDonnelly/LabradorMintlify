@@ -1,0 +1,114 @@
+---
+title: "AI Remediation with the Labrador Chrome Extension"
+sidebarTitle: "Chrome Extension"
+description: "Install the Labrador Chrome extension to capture live page HTML and generate AI-powered remediation guidance for accessibility issues using Claude Opus."
+---
+
+The Labrador Chrome extension bridges the gap between your audit in Labrador and the live page you are testing. When you click a specific element on the page, the extension captures that element's HTML and sends it back to Labrador. Labrador then combines the captured HTML with your issue description and the WCAG criterion being tested to generate developer-ready remediation guidance, powered by Claude Opus. The result appears directly inside the issue under **Remediation Help**, ready for you to review, refine, and include in your exported report.
+
+<Note>
+  The AI remediation feature is currently in **beta**. Before using the extension on a page or component, make sure a valid URL is set on that Page/Component in your Labrador project — the extension uses the URL to navigate to the exact page being tested.
+</Note>
+
+## Installing the Extension
+
+The extension is available from the Chrome Web Store and takes less than a minute to install.
+
+<Steps>
+  <Step title="Find the extension in the Chrome Web Store">
+    Visit the [Chrome Web Store](https://chromewebstore.google.com/detail/labrador-ai-accessibility/lndpalafhngglhpdjejhelccebmngoho) and search for **Labrador AI Accessibility Assistant**, or follow the direct link shown in your Labrador project when you click **Generate Recommendation** for the first time.
+  </Step>
+  <Step title="Click Add to Chrome">
+    On the extension listing page, click the **Add to Chrome** button.
+  </Step>
+  <Step title="Confirm the installation">
+    A browser dialog will ask you to confirm. Click **Add extension** to proceed. Chrome will download and install the extension automatically.
+  </Step>
+  <Step title="Confirm the Labrador icon appears in your toolbar">
+    Once installed, the Labrador icon will appear in your Chrome toolbar. If it is hidden, click the puzzle-piece Extensions icon and pin Labrador for easy access.
+  </Step>
+</Steps>
+
+## Generating a Remediation Recommendation
+
+Follow these steps each time you want to generate AI-assisted guidance for a specific issue.
+
+<Steps>
+  <Step title="Create an issue with a clear description">
+    In your Labrador project, open the failing criterion on the relevant page or component. Under **Add New Issue**, write a detailed description of the accessibility problem — be specific about what is wrong and who is affected. The quality of your description directly influences the quality of the AI output.
+  </Step>
+  <Step title="Click Generate Recommendation">
+    Below the **Remediation Help** field, click **Generate Recommendation**. Labrador will prepare to capture HTML from the live page.
+  </Step>
+  <Step title="Navigate to the target page">
+    A prompt will direct you to navigate to the page being tested. The extension uses the URL you set on the Page/Component in Labrador to guide you to the correct location.
+  </Step>
+  <Step title="Click the element causing the issue">
+    On the live page, click the specific element that is causing the accessibility problem. If needed, you can first click to select the surrounding context (such as a section or form) and then click the problem element itself.
+  </Step>
+  <Step title="The extension captures the element's HTML">
+    The Labrador extension captures the selected element's HTML and sends it back to Labrador automatically. You will be returned to the Labrador interface.
+  </Step>
+  <Step title="Labrador generates the recommendation">
+    Labrador processes your issue description, the captured HTML, and the WCAG criterion to generate a suggested fix. The recommendation appears under **Remediation Help** in the issue form within a few seconds.
+  </Step>
+  <Step title="Review and edit before using in your report">
+    Read the AI-generated guidance carefully. Edit, expand, or correct it as needed before saving the issue or including the recommendation in an exported report.
+  </Step>
+</Steps>
+
+## What the AI Generates
+
+The recommendation Claude Opus produces is designed to give developers the context they need to fix the issue without requiring additional back-and-forth.
+
+<CardGroup cols={2}>
+  <Card title="Root Cause Identification" icon="magnifying-glass">
+    The AI analyses the captured HTML and identifies the specific part of the code responsible for the accessibility failure, such as a missing label, incorrect ARIA role, or skipped heading level.
+  </Card>
+  <Card title="Code-Level Fix Suggestions" icon="code">
+    The recommendation includes concrete, actionable changes — for example, adding `aria-label="Search"` to an unlabelled button, or correcting a heading hierarchy by changing an `<h4>` to an `<h2>`.
+  </Card>
+  <Card title="WCAG Context" icon="book-open">
+    The AI explains why the suggested change addresses the specific WCAG criterion that failed, giving developers the reasoning they need to understand the requirement and apply it consistently elsewhere in the codebase.
+  </Card>
+  <Card title="Scoped to Your Element" icon="crosshairs">
+    Because the recommendation is generated from the actual HTML you captured rather than a generic description, the guidance is specific to the component you are testing rather than a boilerplate explanation of the rule.
+  </Card>
+</CardGroup>
+
+<Tip>
+  A clear, specific issue description consistently produces better AI recommendations. Before clicking **Generate Recommendation**, describe what the problem is, where it occurs on the page, and which group of users is affected — for example: "The search button has no accessible name. Screen reader users cannot determine its purpose when navigating by button." The more context you provide, the more targeted the output will be.
+</Tip>
+
+## Reviewing AI Output
+
+Always review AI-generated recommendations before sharing them with developers or including them in exported reports.
+
+Claude Opus is capable of producing high-quality, technically accurate remediation guidance in most cases, but it can occasionally misidentify the root cause, suggest a fix that does not account for your specific codebase structure, or produce guidance that needs adaptation to fit your project's conventions. You are responsible for the accuracy of the remediation guidance that appears in your reports.
+
+<Warning>
+  AI-generated content is a starting point, not a final answer. Treat each recommendation as a first draft: verify that the suggested code change actually resolves the issue, check that it does not introduce new problems, and adjust the wording to match your organization's reporting style before sending it to a development team.
+</Warning>
+
+## Requirements
+
+Before using the Chrome extension and AI remediation feature, confirm that all of the following conditions are met:
+
+<CardGroup cols={2}>
+  <Card title="Google Chrome" icon="chrome">
+    The Labrador extension is only available for Google Chrome. It is not currently available for other Chromium-based browsers or Firefox.
+  </Card>
+  <Card title="Extension Installed" icon="puzzle-piece">
+    The Labrador AI Accessibility Assistant extension must be installed and active in Chrome before you click Generate Recommendation.
+  </Card>
+  <Card title="Valid URL on the Page/Component" icon="link">
+    The Page or Component record in your Labrador project must have a valid URL set. Without it, the extension cannot navigate to the correct page.
+  </Card>
+  <Card title="Filled-In Issue Description" icon="pen-to-square">
+    You must write an issue description before generating a recommendation. The AI uses your description as context for the guidance it produces.
+  </Card>
+</CardGroup>
+
+<Info>
+  The page you are testing must be open and loaded in your browser. The extension captures HTML from your active browser session, so it can access any page you have already loaded — including pages behind authentication — as long as you are currently signed in. It cannot access pages that you have not loaded or that require authentication you have not completed in that browser session.
+</Info>

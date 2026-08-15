@@ -1,0 +1,59 @@
+---
+title: "Export Accessibility Audit Reports from Labrador"
+sidebarTitle: "Overview"
+description: "Generate HTML, VPAT DOCX, CSV, and Jira-ready reports from your Labrador audit. Every format is available to all plan types except VPAT DOCX."
+---
+
+Labrador can export your audit results in four formats. The right format depends on your audience — use interactive HTML for client presentations, a VPAT DOCX for formal procurement, and CSV or Jira CSV for developer handoffs and issue tracking. All export formats are generated instantly and downloaded directly from the project toolbar, with no additional processing step required.
+
+## Available Export Formats
+
+| Format | Best For | Plans |
+|--------|----------|-------|
+| Interactive HTML | Client presentations, stakeholder reports | All plans |
+| VPAT / DOCX | Formal procurement, accessibility conformance reporting | All plans (VPAT projects only) |
+| Standard CSV | Developer handoffs, raw data in Excel/Sheets | All plans |
+| Jira-ready CSV | One-time import into Jira | All plans |
+| Live Jira sync | Ongoing two-way sync with Jira Cloud | Core, Plus, Enterprise |
+
+## How to Export
+
+<Steps>
+  <Step title="Open your project">
+    Navigate to the Projects dashboard and click the project you want to export results from.
+  </Step>
+  <Step title="Click the Export dropdown">
+    In the project toolbar at the top of the project view, click the **Export** dropdown button.
+  </Step>
+  <Step title="Select your format">
+    Choose your desired format from the dropdown menu:
+    - **HTML** — a self-contained, interactive web report
+    - **CSV Export** — a flat spreadsheet of all logged issues
+    - **Jira CSV Export** — issue data formatted for Jira's CSV import tool
+    - **PDF/Word (VPAT)** — a fully editable VPAT 2.5 DOCX file (only shown for VPAT projects)
+  </Step>
+  <Step title="Download the file">
+    The export is generated and downloaded to your device immediately. No waiting, no email link — the file is ready as soon as you click.
+  </Step>
+</Steps>
+
+## Export Format Comparison
+
+<CardGroup cols={2}>
+  <Card title="Interactive HTML Report" icon="file-code" href="/exports/html-reports">
+    A polished, self-contained HTML file your clients can open in any browser. Includes an executive summary, embedded screenshots and videos, clickable WCAG links, and interactive navigation between pages and components.
+  </Card>
+  <Card title="VPAT / DOCX" icon="file-word" href="/exports/vpat-docx">
+    A fully editable VPAT® 2.5 WCAG 2.2 conformance report exported as a DOCX file. Required for formal procurement submissions and government or enterprise vendor assessments.
+  </Card>
+  <Card title="CSV & Jira CSV" icon="table" href="/exports/csv-and-jira">
+    Export all logged issues as a standard CSV for Excel or Google Sheets, or as a Jira-formatted CSV ready for direct import into a Jira project — no integration setup required.
+  </Card>
+  <Card title="Live Jira Integration" icon="arrow-right-arrow-left" href="/integrations/jira">
+    Connect your Labrador project directly to Jira Cloud for automatic issue creation and two-way status and priority sync throughout your remediation cycle.
+  </Card>
+</CardGroup>
+
+<Note>
+  VPAT / DOCX export is only available for projects created with the **VPAT® 2.5 – WCAG 2.2** methodology. Standard WCAG 2.2 AA projects support HTML and CSV exports only. The project methodology is set at creation and cannot be changed afterwards.
+</Note>

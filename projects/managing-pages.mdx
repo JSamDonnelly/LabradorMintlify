@@ -1,0 +1,85 @@
+---
+title: "Add and Manage Pages and Components in a Project"
+sidebarTitle: "Managing Pages"
+description: "Add individual pages and UI components to your Labrador project, attach screenshots, and organise your audit scope before testing begins."
+---
+
+Every Labrador project is made up of **pages** and **components** — the individual items you test against WCAG criteria. Each item is audited independently, so you can track progress and log issues at a granular level. Pages represent full web pages such as a homepage, a checkout flow, or an article template. Components represent reusable UI elements — a navigation header, a carousel, a modal dialog, or a video player — that appear across multiple pages of the site.
+
+## Add a Page or Component
+
+<Steps>
+  <Step title="Open your project">
+    From the Projects dashboard, click the project you want to add items to. The project view shows all pages and components already in your audit scope.
+  </Step>
+  <Step title="Click + Add Page / Component">
+    Select the **+ Add Page / Component** button to open the item creation form.
+  </Step>
+  <Step title="Enter a name">
+    Type a descriptive **Name** for the item — for example, `Homepage`, `Product Listing Page`, or `Navigation Header`. Use a name that makes it immediately clear what is being tested.
+  </Step>
+  <Step title="Provide a URL">
+    Enter the full **URL** of the page or component. The URL is required if you plan to use AI-assisted remediation via the Labrador Chrome extension — Labrador uses it to open the exact page when generating recommendations.
+  </Step>
+  <Step title="Upload a screenshot (optional)">
+    Optionally upload a **Screenshot** of the page or component to help you and your teammates visually identify it during testing. This is especially useful when you have multiple pages with similar names.
+  </Step>
+  <Step title="Click Create">
+    Click **Create** to add the item to your project. It will appear in the project view and is ready to audit immediately.
+  </Step>
+</Steps>
+
+<Tip>
+  Always enter a valid URL for each page and component. The Labrador Chrome extension uses this URL to navigate directly to the page when you trigger AI-assisted remediation from an issue. Without a URL, the AI recommendation feature will not work for that item.
+</Tip>
+
+## Page vs Component Testing
+
+You can structure your audit scope in three ways. The approach you choose affects how thoroughly you cover the site and how efficiently you avoid repeating work.
+
+<Tabs>
+  <Tab title="Page Testing">
+    Test every WCAG criterion against a complete web page. This approach is best suited to pages with unique content and structure — for example, a contact form, a product detail page, a blog article, or a checkout screen.
+
+    **When to use it:** When the page has content or functionality that does not appear elsewhere on the site, and you need a full per-page conformance record.
+  </Tab>
+  <Tab title="Component Testing">
+    Test a reusable UI element once, independently of any specific page. Add your site header, primary navigation, cookie consent banner, or video player as a component and test it in isolation. Because the component is audited once, you log issues against it once — and those findings apply wherever the component appears.
+
+    **When to use it:** When the same element appears on many pages and retesting it repeatedly would add effort without adding insight.
+  </Tab>
+  <Tab title="Blended Approach (Recommended)">
+    Combine page and component testing for the most efficient scope. List the pages that contain unique content or functionality, and add shared UI elements as separate components. Test each component once, then test only the page-specific content on each page item.
+
+    **Example scope:**
+    - Pages: Homepage, Product Listing, Product Detail, Checkout, Contact Form, Article
+    - Components: Site Header, Primary Navigation, Cookie Banner, Video Player, Footer
+
+    This approach gives you thorough coverage without logging the same issues in multiple places.
+  </Tab>
+</Tabs>
+
+## Organising Your Audit Scope
+
+Choosing the right sample of pages to include is as important as how you test them. You do not need to test every page on a large site — the goal is a representative sample that covers all distinct page types, templates, and interactive patterns.
+
+<Accordion title="How many pages should I include?">
+  For most sites, **10 to 20 pages and components** is a practical and defensible scope. Focus on coverage of:
+
+  - Each unique page template (home, listing, detail, form, error, authentication)
+  - Key user journeys (search, checkout, registration, support)
+  - Pages with complex interactivity (modals, carousels, accordions, date pickers)
+  - Reusable components that appear site-wide
+
+  If many pages share the same template, testing one representative example from that template is usually sufficient. Document your sampling rationale in the project description so stakeholders understand what was and was not tested.
+</Accordion>
+
+<Accordion title="Should I test every page template or just the unique ones?">
+  Test one representative page per distinct template. If your site has 200 blog articles that all use the same layout, test one article page — not all 200. Record your rationale in the project description.
+
+  However, if a template varies significantly based on content type (for example, an article with embedded video versus an article with only text), consider adding both variants as separate items so you can capture the full range of interactive patterns.
+</Accordion>
+
+<Note>
+  Your plan determines how many projects you can create per month, but there is no limit to the number of pages and components you can add within a single project. Add as many items as your audit scope requires.
+</Note>

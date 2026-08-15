@@ -1,0 +1,81 @@
+---
+title: "Enable Two-Factor Authentication in Labrador"
+sidebarTitle: "Two-Factor Auth"
+description: "Add an extra layer of security to your Labrador account with authenticator-app two-factor authentication and single-use recovery codes."
+---
+
+Two-factor authentication (2FA) protects your Labrador account by requiring a six-digit code from an authenticator app in addition to your password each time you sign in. Even if someone obtains your password, they cannot access your account without also having your authenticator device. 2FA is available on email and password accounts — if you sign in with Google, your Google account's own two-step verification applies instead.
+
+## Enabling 2FA
+
+<Steps>
+  <Step title="Go to Account Settings">
+    Select the account icon in the top-right corner of any Labrador page and choose **Manage Account**.
+  </Step>
+  <Step title="Start the setup">
+    Under **Two-factor authentication**, click **Set up**.
+  </Step>
+  <Step title="Open your authenticator app">
+    Open an authenticator app on your phone or device. Common options include Google Authenticator, Authy, and 1Password. If you don't have one installed, download one before continuing.
+  </Step>
+  <Step title="Add Labrador to your app">
+    Scan the QR code displayed on screen with your authenticator app. If you prefer not to scan, select the "enter a setup key" or "manual entry" option in your app and type in the key that Labrador shows beneath the QR code.
+  </Step>
+  <Step title="Confirm the code">
+    Your authenticator app will display a six-digit code. Enter that code into the confirmation field in Labrador to verify that the connection is working correctly.
+  </Step>
+  <Step title="Save your recovery codes">
+    Labrador will display a set of single-use recovery codes. Copy them to a safe location immediately — these codes are shown only once. They are your way back in if you ever lose access to your authenticator app.
+  </Step>
+</Steps>
+
+## Recovery Codes
+
+When you enable 2FA, Labrador generates a set of single-use recovery codes. Each code can be used only once in place of your authenticator code. After a code has been used, it is no longer valid.
+
+Store your recovery codes somewhere secure, such as:
+
+- A password manager (1Password, Bitwarden, etc.)
+- A printed copy kept in a physically secure location
+
+If you lose access to your authenticator app and have no unused recovery codes remaining, you will be locked out of your account. There is currently no self-service recovery path for this situation, so keeping your codes safe is essential.
+
+<Warning>
+  Recovery codes are displayed only once, at the moment you enable 2FA. Save them before leaving the setup screen — Labrador cannot show them to you again.
+</Warning>
+
+## Signing In with 2FA
+
+Once 2FA is enabled, the sign-in process gains an extra step:
+
+<Steps>
+  <Step title="Enter your email and password">
+    Sign in as normal with your email address and password.
+  </Step>
+  <Step title="Enter your six-digit code">
+    Labrador will prompt you for a verification code. Open your authenticator app and enter the current six-digit code it displays.
+  </Step>
+  <Step title="Use a recovery code if needed">
+    If your authenticator app is unavailable, enter one of your saved single-use recovery codes in place of the six-digit code.
+  </Step>
+</Steps>
+
+## Disabling 2FA
+
+If you need to turn off two-factor authentication, Labrador requires you to confirm with both your password and a current authenticator code — this prevents someone with access to your unlocked device from disabling 2FA without your knowledge.
+
+<Steps>
+  <Step title="Go to Account Settings">
+    Select the account icon and choose **Manage Account**.
+  </Step>
+  <Step title="Open the 2FA section">
+    Under **Two-factor authentication**, click **Disable**.
+  </Step>
+  <Step title="Confirm your identity">
+    Enter your current password and a valid six-digit code from your authenticator app to confirm. 2FA is disabled immediately.
+  </Step>
+</Steps>
+
+<Tip>
+  Use an authenticator app that backs up and syncs across devices, such as 1Password or Authy. This way, if you get a new phone or lose your device, your authenticator accounts transfer automatically and you won't need to rely on recovery codes.
+</Tip>

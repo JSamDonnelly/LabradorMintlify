@@ -1,0 +1,95 @@
+---
+title: "Export Audit Issues as CSV or Jira-Ready Format"
+sidebarTitle: "CSV & Jira"
+description: "Download your Labrador audit issues as a standard CSV for Excel or Google Sheets, or as a Jira-ready CSV formatted for direct import into your Jira project."
+---
+
+Labrador's CSV exports give you a way to get your audit data into spreadsheets or developer ticketing tools without configuring a live integration. Both formats are available on every plan, including Free, and both are generated instantly from the **Export** dropdown in your project toolbar. Use the standard CSV when you need flexible raw data, and use the Jira CSV when you want to import issues directly into a Jira project board.
+
+## Standard CSV Export
+
+The standard CSV export produces a flat file containing every issue logged across all pages and components in your project. It is designed to be opened in Microsoft Excel, Google Sheets, or any other CSV-compatible tool, and it gives you full flexibility to sort, filter, and reshape the data however your workflow requires.
+
+**Columns included in the standard CSV:**
+
+| Column | Description |
+|--------|-------------|
+| Page / Component | The name of the page or component where the issue was found |
+| WCAG Criterion | The criterion number and name (e.g. 1.1.1 Non-text Content) |
+| Issue Description | The full text of the issue as documented in Labrador |
+| Severity | Advisory, Minor, Moderate, Serious, or Critical |
+| Remediation Status | Reported, In Progress, Fixed for Retesting, or Closed |
+| Remediation Guidance | The fix recommendation written during the audit |
+
+**To export a standard CSV:**
+
+<Steps>
+  <Step title="Open your project">
+    Navigate to the project you want to export from.
+  </Step>
+  <Step title="Click Export">
+    Click the **Export** dropdown in the project toolbar.
+  </Step>
+  <Step title="Select CSV Export">
+    Choose **CSV Export** from the dropdown menu. The file downloads immediately.
+  </Step>
+</Steps>
+
+## Jira-Ready CSV Export
+
+The Jira CSV export contains the same issue data as the standard CSV, but the columns are restructured and labelled to match the fields that Jira's CSV import tool expects. Severity levels are automatically mapped to Jira priority values, so you do not need to manually reformat the file before importing it.
+
+**How Labrador severity maps to Jira priority:**
+
+| Labrador Severity | Jira Priority |
+|-------------------|---------------|
+| Critical | Highest |
+| Serious | High |
+| Moderate | Medium |
+| Minor | Low |
+| Advisory | Lowest |
+
+**To export and import a Jira CSV:**
+
+<Steps>
+  <Step title="Export from Labrador">
+    In your project, click **Export** → **Jira CSV Export**. The file downloads immediately.
+  </Step>
+  <Step title="Open your Jira project">
+    Navigate to the Jira project where you want to create the issues.
+  </Step>
+  <Step title="Open the import tool">
+    Click **… (More)** in the project sidebar, then select **Import issues**.
+  </Step>
+  <Step title="Choose CSV as the import source">
+    Select **CSV** from the list of import formats.
+  </Step>
+  <Step title="Upload the file">
+    Upload the Jira CSV file you downloaded from Labrador and follow the Jira import wizard to complete the import.
+  </Step>
+</Steps>
+
+<Info>
+  Jira's CSV import wizard lets you review the column-to-field mapping before finalising the import. The Labrador Jira CSV is pre-formatted to match standard Jira field names, so most columns should map automatically — but always review the mapping screen before confirming.
+</Info>
+
+## CSV vs Live Jira Integration
+
+Both CSV exports and the live Jira integration get your issues into Jira, but they serve different workflows. Use this guide to choose the right approach for your situation.
+
+<CardGroup cols={2}>
+  <Card title="Jira-Ready CSV" icon="file-arrow-up">
+    **Best for:** One-time handoffs, projects where you do not need ongoing sync, or when you are on the Free plan.
+
+    Export the CSV at the end of your audit and import it into Jira as a batch. Once imported, the issues live in Jira independently — there is no connection back to Labrador, so status changes in Jira do not update Labrador and vice versa.
+  </Card>
+  <Card title="Live Jira Integration" icon="arrow-right-arrow-left">
+    **Best for:** Active remediation cycles where you want automatic issue creation and two-way status and priority sync throughout the process.
+
+    New issues you log in Labrador are pushed to your Jira board automatically. Status and priority changes flow in both directions — close a ticket in Jira and it updates in Labrador too. Available on Core, Plus, and Enterprise plans. See [Jira Integration](/integrations/jira) to set it up.
+  </Card>
+</CardGroup>
+
+<Note>
+  Both the standard CSV and the Jira-ready CSV are available on all plans, including Free. The live Jira sync integration — with automatic issue creation and two-way status updates — requires a Core, Plus, or Enterprise subscription.
+</Note>

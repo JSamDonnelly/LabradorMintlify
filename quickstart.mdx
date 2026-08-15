@@ -1,47 +1,93 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Get Started with Labrador Accessibility Testing"
+sidebarTitle: "Quickstart"
+description: "Create your first accessibility audit project in Labrador, add a page to test, evaluate WCAG criteria, and export a report — in five steps."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
-
-## Prerequisites
-
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+This guide walks you through everything you need to run your first accessibility audit in Labrador. By the end, you'll have a live account, a project with at least one page, some criteria evaluated, and a report you can share — all without touching a spreadsheet. The whole process takes around ten minutes on a real site, or just a few minutes if you're exploring with a demo page.
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
 
-    ```bash
-    npm install your-package
-    ```
-  </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
+  <Step title="Create your account">
+    Go to [testwithlabrador.com/signup](https://www.testwithlabrador.com/signup) and create a free account. No credit card is required — the Free plan gives you one project slot and the full WCAG testing toolkit right away. If you prefer, click **Continue with Google** to sign in using your Google account instead.
 
-    ```bash
-    your-cli init
-    ```
+    Once you're signed in, you land on the **Projects** dashboard. This is your home base for all audits.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
 
-    ```bash
-    your-cli start
-    ```
+  <Step title="Create a project">
+    On the Projects dashboard, click **+ Create Project** and fill in the details:
+
+    1. Enter a **Project Title** — for example, the client name or site being tested.
+    2. Add an optional **Description** to give the project context.
+    3. Choose a **Testing Methodology** from the dropdown:
+       - **WCAG 2.2 AA Testing** — the standard choice for most audits
+       - **VPAT® 2.5 – WCAG 2.2** — required if you need a `.docx` VPAT output
+    4. Click **Create Project**.
+
+    <Warning>
+      Choose your Testing Methodology carefully — this setting **cannot be changed** after the project is created. If you need to produce a `.docx` VPAT document, select the VPAT methodology before you click Create.
+    </Warning>
   </Step>
+
+  <Step title="Add a page or component">
+    Inside your new project, click **+ Add Page / Component** to add the first item you want to test:
+
+    1. Enter a **Name** that identifies the item — for example, *Homepage* or *Checkout Form*.
+    2. Paste in the **URL** of the page or component (required for AI-assisted remediation to work correctly).
+    3. Optionally upload a **Screenshot** to help you or teammates identify the item at a glance.
+    4. Click **Create**.
+
+    Repeat this step for every page or UI component you plan to test. You can add more at any point during the audit.
+  </Step>
+
+  <Step title="Audit the criteria">
+    Click on the page you just created to open its **Criteria Overview**. This lists every applicable WCAG success criterion alongside its current test status.
+
+    To evaluate a criterion:
+
+    1. Use the filters at the top to narrow the list — filter by **Level** (A or AA), **Status** (Untested, Pass, Fail, N/A), or **Severity** if you've already logged issues.
+    2. Click a criterion — for example, *1.1.1 Non-text Content* — to open the testing panel.
+    3. Read the **Testing Tip** for actionable guidance on how to evaluate that criterion.
+    4. Mark the test status:
+       - **Pass** — the page meets the requirement
+       - **Fail** — the page does not meet the requirement
+       - **N/A** — the criterion doesn't apply to this page
+       - **Untested** — you haven't evaluated it yet
+    5. If you mark a criterion **Fail**, scroll to **Add New Issue** and document the problem: write a description, select a **Severity** level, add remediation guidance, attach screenshots or video, and click **Submit Issue**.
+
+    Work through the criteria list at whatever pace suits you — all your work saves automatically.
+  </Step>
+
+  <Step title="Export your report">
+    When you're ready to share findings, click the **Export** dropdown at the top of your project and choose a format:
+
+    - **HTML** — an interactive, client-ready report with embedded media, clickable WCAG links, and a developer-focused "Show Failures Only" view
+    - **CSV** — a detailed flat export for use in spreadsheets or custom workflows
+    - **Jira CSV** — a file formatted for direct import into Jira (available on all plans)
+    - **PDF / Word (VPAT)** — a VPAT® 2.5 Word document, available only for projects created with the VPAT methodology
+
+    Your report is generated instantly from the audit data you've collected.
+  </Step>
+
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+<Note>
+  The **AI-assisted remediation** feature — which drafts developer-ready fix guidance based on the element's live HTML — requires the **Labrador Chrome extension** to be installed. Download it free from the [Chrome Web Store](https://chromewebstore.google.com/detail/labrador-ai-accessibility/lndpalafhngglhpdjejhelccebmngoho) and make sure the page you're auditing has a valid URL entered before you try to generate a recommendation.
+</Note>
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Logging Issues" icon="triangle-exclamation" href="/projects/logging-issues">
+    Learn how to document failures with severity levels, remediation status, and media attachments.
+  </Card>
+  <Card title="Audit Versions" icon="code-branch" href="/projects/audit-versions">
+    Create retest versions to verify fixes or start fresh major audits without losing history.
+  </Card>
+  <Card title="Jira Integration" icon="jira" href="/integrations/jira">
+    Push issues directly to your Jira Cloud board and keep status in sync automatically.
+  </Card>
+  <Card title="Export Reports" icon="file-export" href="/exports/overview">
+    Explore all export formats — HTML, VPAT/DOCX, CSV, and Jira-ready CSV — in detail.
+  </Card>
+</CardGroup>

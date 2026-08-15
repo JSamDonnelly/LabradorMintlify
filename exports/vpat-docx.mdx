@@ -1,0 +1,82 @@
+---
+title: "Generate a VPAT DOCX Conformance Report from Labrador"
+sidebarTitle: "VPAT / DOCX"
+description: "Export a fully editable VPAT 2.5 WCAG conformance report as a DOCX file from your Labrador project, ready for procurement and compliance submissions."
+---
+
+A Voluntary Product Accessibility Template (VPAT®) is the industry-standard document used to communicate how a product conforms to accessibility standards. The completed document — called an Accessibility Conformance Report (ACR) — is required in many government procurement processes, enterprise vendor assessments, and client contracts where formal evidence of WCAG conformance is needed. Labrador can generate a VPAT® 2.5 – WCAG 2.2 conformance report directly from your audit data and export it as a fully editable DOCX file.
+
+<Note>
+  VPAT / DOCX export is only available on projects created with the **VPAT® 2.5 – WCAG 2.2** methodology. You cannot add VPAT export to a standard WCAG 2.2 AA Testing project, and the methodology cannot be changed after a project is created. If you need a VPAT output, select the VPAT methodology when creating your project.
+</Note>
+
+## What the VPAT DOCX Contains
+
+The exported DOCX follows the official VPAT® 2.5 template structure published by the Information Technology Industry Council (ITI) and includes all of the following:
+
+<CardGroup cols={2}>
+  <Card title="WCAG Conformance Tables" icon="table">
+    Full conformance tables covering WCAG 2.1 and 2.2 success criteria at Level A and Level AA, populated with the conformance levels you assigned during the audit.
+  </Card>
+  <Card title="Conformance Level Values" icon="circle-check">
+    Each criterion is marked with the appropriate conformance level: **Supports**, **Partially Supports**, **Does Not Support**, **Not Applicable**, or **Not Evaluated**.
+  </Card>
+  <Card title="Remarks and Explanations" icon="comment">
+    Any remarks you added during the audit — describing the nature of a failure, the scope of partial support, or the reason a criterion is not applicable — are included alongside each criterion.
+  </Card>
+  <Card title="Standard VPAT Sections" icon="file-lines">
+    All required VPAT® 2.5 sections are present: product information, evaluation methodology, applicable standards/guidelines, and the full set of conformance tables.
+  </Card>
+</CardGroup>
+
+The DOCX is fully editable. Open it in Microsoft Word or Google Docs to refine your remarks, add product information, or make any final adjustments before submitting it to a client or procurement portal.
+
+## Generating the VPAT DOCX
+
+<Steps>
+  <Step title="Create a project with the VPAT methodology">
+    When creating a new project, select **VPAT® 2.5 – WCAG 2.2** from the Testing Methodology dropdown. This setting cannot be changed after the project is created, so make sure you choose the correct methodology at this step.
+  </Step>
+  <Step title="Complete your audit">
+    Work through all applicable WCAG criteria for each page and component in your project. Mark every criterion as Supports, Partially Supports, Does Not Support, Not Applicable, or Not Evaluated, and add remarks explaining your findings — especially for any criterion that is not fully conformant.
+  </Step>
+  <Step title="Open your project and click Export">
+    In the project toolbar, click the **Export** dropdown.
+  </Step>
+  <Step title="Select PDF/Word (VPAT)">
+    Choose **PDF/Word (VPAT)** from the dropdown menu. This option only appears for projects created with the VPAT® 2.5 – WCAG 2.2 methodology.
+  </Step>
+  <Step title="Download the DOCX file">
+    The DOCX file is generated immediately and downloaded to your device.
+  </Step>
+  <Step title="Review and finalise the document">
+    Open the file in Microsoft Word or Google Docs. Review every criterion, tighten your remarks where needed, fill in any product information fields, and make any final edits before submitting the document to your client or a procurement portal.
+  </Step>
+</Steps>
+
+## Best Practices for VPAT Completion
+
+The quality of a VPAT depends on the specificity and accuracy of your remarks. Follow these practices to produce a credible, defensible conformance report.
+
+<Tabs>
+  <Tab title="Partially Supports">
+    Write a clear, specific remark that explains what aspect of the criterion is not met and on which pages or components the failure occurs. Vague remarks like "some issues present" are not sufficient. Instead, write something like: "The login form does not provide error identification on 3 of 5 form fields — see the Login Page findings for details."
+  </Tab>
+  <Tab title="Does Not Support">
+    Describe the nature of the failure plainly. State what the product does not do that the criterion requires, and reference the specific pages or components where the failure was observed. Avoid minimising language — procurement reviewers expect candour.
+  </Tab>
+  <Tab title="Not Applicable">
+    Briefly explain why the criterion does not apply to the product. For example: "No audio-only or video-only content is present in the product" for criterion 1.2.1, or "The product does not include any time limits" for criterion 2.2.1. A one-sentence explanation is sufficient.
+  </Tab>
+  <Tab title="Not Evaluated">
+    Use this only for criteria you genuinely did not test — for example, Level AAA criteria outside your engagement scope. If you evaluated a criterion, mark it with one of the other four values. Leaving criteria as Not Evaluated when they were tested reduces the credibility of the report.
+  </Tab>
+</Tabs>
+
+<Warning>
+  Always review the generated DOCX before submission. Labrador populates the document from your audit data, but you are responsible for the accuracy and completeness of the final conformance report. Submitting an inaccurate VPAT to a client or procurement body can have serious consequences.
+</Warning>
+
+<Tip>
+  Labrador's VPAT output follows the same structure as the official VPAT® 2.5 template published by the Information Technology Industry Council (ITI). Many government and enterprise procurement portals accept this format directly without requiring reformatting.
+</Tip>

@@ -1,72 +1,87 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Labrador",
+  "theme": "almond",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#694e32",
+    "light": "#e3c18a",
+    "dark": "#090807"
   },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
+  "favicon": "https://media.brand.dev/be90c83a-cc50-4b4e-9301-52e84a71c0a5.png",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "https://media.brand.dev/314ef119-b0e9-46b8-ab06-234b38b705bc.png",
+    "dark": "https://media.brand.dev/314ef119-b0e9-46b8-ab06-234b38b705bc.png"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Get Started Free",
+      "href": "https://www.testwithlabrador.com/signup"
     }
   },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "plans-and-pricing"
+            ]
+          },
+          {
+            "group": "Projects & Auditing",
+            "pages": [
+              "projects/creating-a-project",
+              "projects/managing-pages",
+              "projects/auditing-criteria",
+              "projects/logging-issues",
+              "projects/audit-versions"
+            ]
+          },
+          {
+            "group": "Collaboration",
+            "pages": [
+              "collaboration/team-members",
+              "collaboration/comments-and-notifications"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/jira",
+              "integrations/chrome-extension"
+            ]
+          },
+          {
+            "group": "Exporting Reports",
+            "pages": [
+              "exports/overview",
+              "exports/html-reports",
+              "exports/vpat-docx",
+              "exports/csv-and-jira"
+            ]
+          },
+          {
+            "group": "Account & Security",
+            "pages": [
+              "account/account-settings",
+              "account/two-factor-authentication",
+              "account/trust-and-security"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "help/faq",
+              "help/contact-support"
+            ]
+          }
+        ]
+      }
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }

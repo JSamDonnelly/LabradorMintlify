@@ -1,0 +1,98 @@
+{
+  "projectType": "saas",
+  "projectName": "Labrador",
+  "projectDescription": "Labrador is a guided manual accessibility testing platform that helps consultants and teams conduct structured WCAG 2.1 and 2.2 audits, document issues, collaborate, and export professional client-ready reports.",
+  "theme": "almond",
+  "primaryColor": "#694e32",
+  "lightColor": "#e3c18a",
+  "darkColor": "#090807",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "plans-and-pricing"
+            ]
+          },
+          {
+            "group": "Projects & Auditing",
+            "pages": [
+              "projects/creating-a-project",
+              "projects/managing-pages",
+              "projects/auditing-criteria",
+              "projects/logging-issues",
+              "projects/audit-versions"
+            ]
+          },
+          {
+            "group": "Collaboration",
+            "pages": [
+              "collaboration/team-members",
+              "collaboration/comments-and-notifications"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/jira",
+              "integrations/chrome-extension"
+            ]
+          },
+          {
+            "group": "Exporting Reports",
+            "pages": [
+              "exports/overview",
+              "exports/html-reports",
+              "exports/vpat-docx",
+              "exports/csv-and-jira"
+            ]
+          },
+          {
+            "group": "Account & Security",
+            "pages": [
+              "account/account-settings",
+              "account/two-factor-authentication",
+              "account/trust-and-security"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "help/faq",
+              "help/contact-support"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Guided WCAG 2.1 and 2.2 criterion-by-criterion testing with built-in testing tips",
+    "Page and component-level audit management within projects",
+    "Issue documentation with severity levels, remediation status, and media uploads",
+    "Audit versioning and retest workflows (v1.0 → v1.1 etc.)",
+    "AI-assisted remediation suggestions powered by Claude Opus 5 via Chrome extension",
+    "Jira Cloud integration with two-way status/priority sync",
+    "Professional exports: interactive HTML, DOCX/VPAT, CSV, and Jira-ready CSV",
+    "Team collaboration with role-based permissions (view-only, developer, editor)",
+    "Criterion-level comments and notifications for team members",
+    "Custom fields and reusable custom field templates"
+  ],
+  "publicApiSurface": [
+    "Projects dashboard — create, manage, and version accessibility audit projects",
+    "Pages & Components — add URLs and components to a project for individual testing",
+    "Criteria Overview — evaluate and mark WCAG success criteria Pass/Fail/N/A/Untested",
+    "Issue Logger — document failures with description, severity, remediation status, and attachments",
+    "Audit Versions — create retest versions (minor bump) or new audit versions (major bump)",
+    "Export — HTML report, CSV, Jira-ready CSV, VPAT DOCX",
+    "Jira Integration — connect project to Jira Cloud, configure mappings and templates",
+    "Chrome Extension (Labrador AI Accessibility Assistant) — capture live page HTML for AI remediation",
+    "Team Management — invite members, assign roles, manage seats",
+    "Account Settings — password, 2FA, active sessions"
+  ]
+}

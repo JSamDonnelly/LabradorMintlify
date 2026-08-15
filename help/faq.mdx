@@ -1,0 +1,90 @@
+---
+title: "Frequently Asked Questions about Labrador"
+sidebarTitle: "FAQ"
+description: "Answers to common questions about Labrador's plans, WCAG testing, exports, Jira integration, team collaboration, and data security."
+---
+
+Here are answers to the most common questions about Labrador. If you don't find what you're looking for, [contact the support team](/help/contact-support) — most questions are answered the same business day.
+
+## Getting Started
+
+<Accordion title="Is there a free plan?">
+  Yes. The Free plan costs $0 per month and never requires a credit card. It includes one project slot, the full WCAG 2.1 and 2.2 testing toolkit across Levels A, AA, and AAA, and HTML, VPAT, and CSV exports. It also includes live chat support. The demo project included in every account does not count against your one project slot.
+</Accordion>
+
+<Accordion title="What WCAG versions does Labrador support?">
+  Labrador supports WCAG 2.1 and 2.2 at Levels A, AA, and AAA on all plans, including the Free plan. You choose your target standard and conformance level when you create a project.
+</Accordion>
+
+<Accordion title="Is Labrador suitable for my first accessibility audit?">
+  Yes. Every criterion includes a built-in testing tip, key-points summary, and a link to the official W3C documentation. Complex criteria are broken into sub-criteria so you can evaluate specific elements — headings, lists, tables — individually. These built-in guides make Labrador practical for auditors at all experience levels, not just experts.
+</Accordion>
+
+## Projects and Auditing
+
+<Accordion title="Can I change the methodology after creating a project?">
+  No. The testing methodology — WCAG 2.2 AA or VPAT® 2.5 – WCAG 2.2 — is set at project creation and cannot be changed afterwards. If you need a different methodology, create a new project. This also means that if you want a `.docx` VPAT output, you must select the VPAT methodology when you create the project.
+</Accordion>
+
+<Accordion title="What happens when I reach my project capacity?">
+  When you reach your plan's project limit, Labrador will not let you create additional projects until you free up a slot or upgrade your plan. To free a slot, delete an existing project from your Projects dashboard. Deleting a project frees the slot immediately — no audit data on other projects, team memberships, or billing is affected. To gain more capacity without deleting projects, upgrade your plan from billing settings.
+</Accordion>
+
+<Accordion title="How do I retest after a developer has made fixes?">
+  Create a retest version from the **Version actions** menu inside your project. A retest bumps the minor version number (for example, v1.0 becomes v1.1) and carries all of your pages, criterion statuses, notes, and issues forward into the new version. Carried-forward issues are marked as such, so you know which findings you are retesting. When you verify a fix, set the issue's remediation status to **Closed**. When every carried-forward issue on a criterion is closed, the criterion's status updates automatically. Your original v1.0 findings are never modified.
+</Accordion>
+
+## Exports
+
+<Accordion title="What report formats are available?">
+  Labrador supports four export formats:
+
+  - **HTML** — an interactive, client-ready report with executive summary, detailed findings, screenshots, and remediation guidance. Includes Show Failures Only and Expand/Collapse All controls.
+  - **VPAT / DOCX** — a Word document formatted as a VPAT® 2.5 conformance report, available for projects created with the VPAT methodology.
+  - **CSV** — a flat export of all logged issues for flexible use in spreadsheets or other tools.
+  - **Jira-ready CSV** — a CSV formatted for direct import into Jira, available on all plans including Free.
+
+  HTML, VPAT (where applicable), and CSV exports are available on all plans.
+</Accordion>
+
+<Accordion title="Can I use VPAT export on the Free plan?">
+  Yes, if you created the project with the **VPAT® 2.5 – WCAG 2.2** methodology selected. The VPAT export format is available on all plans; the methodology choice at project creation is what determines whether it applies.
+</Accordion>
+
+<Accordion title="Can I brand the report with my company logo?">
+  Custom branding on exported reports is available on the Enterprise plan. All other plans produce reports with Labrador's standard formatting.
+</Accordion>
+
+## Jira Integration
+
+<Accordion title="Which plans include the Jira integration?">
+  The live Jira integration — which pushes issues to Jira automatically and syncs status changes in both directions — is available on the Core, Plus, and Enterprise plans. The Free plan does not include the live integration, but it does include the Jira-ready CSV export, which you can import into Jira manually.
+</Accordion>
+
+<Accordion title="What does two-way Jira sync mean?">
+  Once you connect a project to Jira Cloud and save your field mappings, new issues you log in Labrador are pushed to your Jira board automatically. After that, status and priority changes flow in both directions: close or reprioritise an issue in Labrador and the linked Jira ticket updates, and vice versa. The integration card in Labrador shows **Reverse sync active** when Jira-to-Labrador updates are enabled.
+</Accordion>
+
+## Team Collaboration
+
+<Accordion title="Can I invite team members on the Core plan?">
+  No. The Core plan is designed for solo practitioners and does not include team invites. Team collaboration — inviting colleagues, assigning pages or criteria, and collaborative comments — is available on the Plus plan and above.
+</Accordion>
+
+<Accordion title="What can a Developer-role team member do?">
+  A team member assigned the Developer role can update the remediation status of issues (for example, marking an issue as **In Progress** or **Fixed for Retesting**) and leave comments on any issue. They cannot modify criterion results, change project settings, or access billing. This role is designed for developers who need to track and update the fix status of accessibility issues without having full auditor access.
+</Accordion>
+
+## Security
+
+<Accordion title="Where is my audit data stored?">
+  All audit data — projects, pages, criteria, issues, screenshots, and file attachments — is stored in the United States on Microsoft Azure infrastructure in the East US 2 region (Virginia). See the [Trust & Security](/account/trust-and-security) page for full details on storage, encryption, and subprocessors.
+</Accordion>
+
+<Accordion title="Is my data backed up?">
+  Yes. Labrador runs two independent backup processes: a nightly database backup with point-in-time recovery covering the previous 35 days, and a separate daily backup to an independent system retained for 30 days. Access to backups is limited to Labrador's engineering team.
+</Accordion>
+
+<Accordion title="How do I delete my account?">
+  Email [security@testwithlabrador.com](mailto:security@testwithlabrador.com) from the email address registered to your account. A member of the Labrador team will process your request and confirm when it is complete. All account data, projects, audit records, issues, and attachments are deleted within 30 days. This action is permanent and cannot be undone.
+</Accordion>

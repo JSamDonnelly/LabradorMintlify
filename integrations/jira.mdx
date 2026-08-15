@@ -1,0 +1,99 @@
+---
+title: "Sync Accessibility Issues to Jira Cloud from Labrador"
+sidebarTitle: "Jira"
+description: "Connect Labrador to Jira Cloud to automatically create tickets for accessibility issues and keep status and priority in sync between both tools."
+---
+
+The Jira integration eliminates the copy-paste handoff between your accessibility audit and your development team's workflow. Once connected, every issue you log in Labrador is automatically created as a ticket on your Jira board. Status changes — such as moving an issue from Reported to Fixed for Retesting — flow between the two tools in both directions, as do priority and severity updates, so neither system ever falls out of step with the other.
+
+<Note>
+  The Jira integration is available on the **Core**, **Plus**, and **Enterprise** plans. It is not available on the Free plan. If you are on the Free plan, you can still export a Jira-ready CSV file — see [Jira CSV Export (without integration)](#jira-csv-export-without-integration) below.
+</Note>
+
+## Connecting Your Project to Jira
+
+You need edit access to the Labrador project and an Atlassian account with permission to create issues in the target Jira project.
+
+<Steps>
+  <Step title="Open your Labrador project">
+    Navigate to the project you want to connect from your Projects dashboard.
+  </Step>
+  <Step title="Expand the JIRA Integration section">
+    In the project view, scroll down to the **JIRA Integration** section and click to expand it.
+  </Step>
+  <Step title="Click Connect to JIRA">
+    Click the **Connect to JIRA** button to begin the OAuth flow with Atlassian.
+  </Step>
+  <Step title="Sign in with your Atlassian account">
+    You will be redirected to Atlassian to sign in and grant Labrador access to your Jira Cloud site. Approve the requested permissions to continue.
+  </Step>
+  <Step title="Choose your JIRA Project and Issue Type">
+    Back in Labrador, select the **JIRA Project** where new issues should be created and the **Issue Type** they should be filed as (for example, Bug or Task).
+  </Step>
+  <Step title="Click Save JIRA Mapping">
+    Click **Save JIRA Mapping** to confirm the connection. Labrador will immediately begin pushing new issues to Jira as you log them.
+  </Step>
+</Steps>
+
+## Configuring Mappings and Templates
+
+Once connected, you can tune how Labrador issues translate into Jira issues before saving your mapping. These settings control the shape and content of every ticket Labrador creates on your behalf.
+
+<CardGroup cols={2}>
+  <Card title="Severity → Priority Mapping" icon="arrow-right-arrow-left">
+    Map each Labrador severity level to the corresponding Jira priority level in your project. For example, you might map **Serious** to **High** and **Critical** to **Highest**, ensuring developers immediately understand urgency without needing to cross-reference the two systems.
+
+    The five Labrador severity levels you can map are: **Advisory**, **Minor**, **Moderate**, **Serious**, and **Critical**.
+  </Card>
+  <Card title="Custom Field Mapping" icon="table-columns">
+    If your Labrador project uses custom fields (such as Browser Version or Testing Environment), map each one to a corresponding custom field in your Jira project. This keeps specialist data in your audit from being lost when issues are pushed across.
+  </Card>
+</CardGroup>
+
+### Summary and Description Templates
+
+Control how the Jira issue title and body are composed using template variables. Click the insert buttons beneath each field to add a variable at the cursor position.
+
+| Variable | Inserts |
+|---|---|
+| `{{page}}` | The name of the Labrador page or component being tested |
+| `{{criterion}}` | The WCAG criterion number (e.g. `1.1.1`) |
+| `{{criterionName}}` | The WCAG criterion name (e.g. `Non-text Content`) |
+
+For example, a summary template of `[{{criterion}} {{criterionName}}] Issue on {{page}}` would produce a Jira ticket titled `[1.1.1 Non-text Content] Issue on Homepage`.
+
+## How Syncing Works
+
+Labrador maintains a live, two-way connection with Jira throughout the life of your project.
+
+<Accordion title="New issues are pushed to Jira automatically">
+  Every issue you log under a failing criterion is immediately created as a new ticket in the connected Jira project. You do not need to trigger a manual sync — the push happens as soon as you click **Submit Issue** in Labrador.
+</Accordion>
+
+<Accordion title="Status changes flow in both directions">
+  Labrador's four remediation statuses — **Reported**, **In Progress**, **Fixed for Retesting**, and **Closed** — map to corresponding statuses in Jira. When you update a status in Labrador, the linked Jira ticket updates automatically. The integration card displays _Reverse sync active_ when Jira-to-Labrador updates are also enabled, meaning status changes made directly in Jira will be reflected back in your Labrador issue.
+</Accordion>
+
+<Accordion title="Priority changes sync based on your mapping">
+  When you change an issue's severity in Labrador, the corresponding Jira ticket priority updates according to the severity-to-priority mapping you configured. Likewise, if the priority is changed in Jira, the severity level in Labrador updates to match.
+</Accordion>
+
+<Accordion title="Jump to the connected board">
+  Use the **Open in JIRA** link on the integration card to navigate directly to the connected Jira board at any time.
+</Accordion>
+
+## Jira CSV Export (without integration)
+
+Every Labrador plan, including Free, can export a Jira-ready CSV — no live integration required. This is useful for one-time handoffs to development teams that do not use Labrador on an ongoing basis.
+
+<Info>
+  The Jira CSV export is formatted specifically for Jira's CSV import tool. Open your project, click the **Export** dropdown, and select **Jira CSV Export**. Your development team can import the file directly into their Jira project without any reformatting. For full details on all export formats, see the Exports → CSV & Jira documentation.
+</Info>
+
+## Disconnecting
+
+To remove the Jira connection from a project, open the **JIRA Integration** section in your project and click **Disconnect**.
+
+<Warning>
+  Disconnecting stops all sync immediately. Issues that were already created in Jira while the integration was active will remain there, but they will no longer be updated when you change issue statuses, priorities, or other fields in Labrador. The disconnect cannot be undone — to resume syncing you would need to reconnect and reconfigure your mappings.
+</Warning>

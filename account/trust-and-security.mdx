@@ -1,0 +1,110 @@
+---
+title: "How Labrador Protects Your Accessibility Audit Data"
+sidebarTitle: "Trust & Security"
+description: "Labrador encrypts data in transit and at rest, runs daily backups, and hosts on Microsoft Azure. Review the full security practices and subprocessors."
+---
+
+Labrador stores sensitive accessibility audit data on your behalf — including screenshots, page markup, issue descriptions, and the full findings from every audit you run. This page explains exactly how that data is protected, where it lives, and what has not been built yet. We include the gaps because you deserve a complete picture.
+
+## Encryption and Data Protection
+
+Every layer of Labrador's infrastructure applies encryption, from the connection between your browser and our servers to the storage of your data at rest.
+
+<CardGroup cols={2}>
+  <Card title="Encrypted in transit" icon="shield-halved">
+    Every connection uses TLS with HSTS preloading. Insecure HTTP requests are automatically upgraded — no plain-text traffic ever reaches Labrador's servers.
+  </Card>
+  <Card title="Encrypted at rest" icon="database">
+    All stored data is encrypted using AES-256, applied at the database and file storage levels by our infrastructure providers.
+  </Card>
+  <Card title="Passwords never stored in plain text" icon="key">
+    Passwords are hashed with bcrypt before storage. Labrador cannot see, recover, or tell you your password. It is unrecoverable by design.
+  </Card>
+  <Card title="Card data handled by Stripe" icon="credit-card">
+    Payment processing is handled entirely by Stripe, a PCI DSS Level 1 provider. Your card number is submitted directly to Stripe and never passes through or touches Labrador's servers.
+  </Card>
+</CardGroup>
+
+## Where Your Data Lives
+
+<Info>
+  All data is stored in the United States — Microsoft Azure East US 2 (Virginia).
+</Info>
+
+Labrador uses two distinct storage systems:
+
+- **Audit records** — your projects, pages, criterion results, issues, and account data are stored in a managed PostgreSQL database on Microsoft Azure.
+- **Screenshots and file attachments** — stored in Microsoft Azure Blob Storage. Files are never accessible via public URLs. Every access is controlled through short-lived signed links scoped to your session, so a link that escapes your browser context cannot be reused.
+
+## Backups and Retention
+
+Labrador runs two independent backup processes so that no single failure can result in data loss.
+
+| Backup type | Frequency | Retention |
+|---|---|---|
+| Point-in-time database recovery | Continuous (nightly full snapshot) | 35 days |
+| Independent off-site backup | Daily | 30 days |
+
+The independent daily backup is written to a separate provider (GitHub — see the [Subprocessors](#subprocessors) table below), ensuring no single account or infrastructure failure holds the only copy of your data. Access to backups is restricted to Labrador's engineering team.
+
+**Deletions are permanent.** When you delete an issue, page, or project, it is removed from the live database immediately — Labrador uses hard deletes, not hidden flags. Deleted data then ages out of all backup systems within 35 days.
+
+## Access Controls
+
+Labrador enforces data access on the server, not just in the interface:
+
+- Every request for project data is checked against project ownership, team membership, and per-project roles before any data is returned.
+- Plan limits (project counts, seat limits, and feature access) are enforced server-side, not merely hidden in the UI.
+- All database queries use parameterised statements, so audit content you enter is never interpreted as a database command.
+
+## Subprocessors
+
+These are the third-party services that may process your data. Labrador updates this list before adding a new provider.
+
+| Provider | Purpose | Data involved |
+|---|---|---|
+| Microsoft Azure | Primary database and file storage | Audit records, account data, screenshots, attachments |
+| GitHub | Independent daily backups | Encrypted backup copies of audit and account records, retained 30 days |
+| Stripe | Billing and payments | Billing details; card data stays with Stripe |
+| Anthropic | AI remediation suggestions (only when you request one) | The issue description and page markup for that specific issue |
+| Google | Optional sign-in, site analytics | Email and name at sign-in; usage events |
+| Intercom | Support chat | Name, email, support conversations |
+| Sentry | Error monitoring | Technical error reports |
+
+<Note>
+  Nothing is sent to Anthropic unless you explicitly click **Generate Recommendation** on a specific issue. The data sent is limited to the issue description and the markup of the element being tested — no other audit data is included.
+</Note>
+
+## Security Features Available to You
+
+You control several security settings directly from your account:
+
+- **Two-factor authentication** — require a six-digit code from an authenticator app every time you sign in. See [Two-Factor Authentication](/account/two-factor-authentication) for full setup instructions.
+- **Password change triggers sign-out** — changing your password automatically ends every other active session. This is the fastest way to revoke access across all devices at once.
+- **Manual session termination** — under **Signed-in devices** in your account settings, click **Sign out other devices** to immediately end all sessions except your current one.
+
+## Reporting a Vulnerability
+
+If you discover a security issue in Labrador, email [security@testwithlabrador.com](mailto:security@testwithlabrador.com). Labrador will acknowledge your report within two business days and keep you informed as the issue is investigated. If you would like credit for the find, just say so in your report. Please allow reasonable time to fix the issue before disclosing it publicly.
+
+For security questionnaires (including CAIQ-Lite and HECVAT), email [security@testwithlabrador.com](mailto:security@testwithlabrador.com) and Labrador will typically return them within a few business days.
+
+## What's On the Roadmap
+
+Labrador believes in naming what isn't built yet, so you can make an informed decision about whether the platform is right for your organisation today.
+
+<Accordion title="Single sign-on (SAML)">
+  SAML-based SSO is not yet available. Enterprise customers who require SSO should [contact Labrador](mailto:security@testwithlabrador.com) to discuss timeline and requirements.
+</Accordion>
+
+<Accordion title="Organisation-wide 2FA enforcement">
+  Administrators cannot yet require all team members to enable two-factor authentication. Individual users can enable 2FA for their own accounts today from [Account Settings](/account/account-settings).
+</Accordion>
+
+<Accordion title="SOC 2 certification">
+  SOC 2 certification is planned for when Labrador's enterprise customers require it. The current security practices are designed so that a SOC 2 audit would confirm existing controls, not prompt a scramble to build them.
+</Accordion>
+
+<Accordion title="Self-service account deletion">
+  There is no in-app button to delete your account yet. Deletion is handled by emailing [security@testwithlabrador.com](mailto:security@testwithlabrador.com) from your account address. A person processes the request and confirms when it is done. Self-service deletion is on the roadmap.
+</Accordion>
