@@ -39,7 +39,8 @@
               "projects/managing-pages",
               "projects/auditing-criteria",
               "projects/logging-issues",
-              "projects/audit-versions"
+              "projects/audit-versions",
+              "projects/user-journeys"
             ]
           },
           {

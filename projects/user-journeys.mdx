@@ -1,0 +1,130 @@
+---
+title: "Build and Test User Journeys in a Labrador Project"
+sidebarTitle: "User Journeys"
+description: "Model real user flows in Labrador as ordered user journeys, sketch steps as you discover them, and audit each step against WCAG criteria without leaving the flow."
+---
+
+A **user journey** is an ordered walk through a flow in the product you are auditing, such as a checkout, a signup, or a password reset. Instead of testing pages in isolation, a journey captures the sequence a real user follows and lets you audit each step in place. Journeys live alongside pages and components in the project, under their own **User journeys** heading above the **Pages & Components** grid.
+
+A journey is version-scoped: it belongs to the audit version you were working in when you created it, so retests and major-version upgrades keep the original flow intact.
+
+## When to Use a User Journey
+
+User journeys are the right tool when the flow matters as much as the pages inside it.
+
+<Tabs>
+  <Tab title="Multi-step flows">
+    Checkout, signup, password reset, booking, and onboarding all depend on state built up by earlier steps. A journey records the order and the "how to get here" note so a teammate or a retest can return to the exact same state.
+  </Tab>
+  <Tab title="Coverage of key tasks">
+    Regulators and stakeholders often ask whether the primary tasks a user needs to complete are accessible. A journey answers that directly: the steps are named, the progress is counted in criteria, and the rollup shows whether the whole task is fully tested.
+  </Tab>
+  <Tab title="Progressive discovery">
+    You rarely know every step of a flow before you start clicking through it. A journey can be saved with zero steps and grown as you uncover the real path, so you never have to restart the model when the flow surprises you.
+  </Tab>
+</Tabs>
+
+## Journey Steps: Two Kinds
+
+Every step in a journey is one of two kinds. Both can carry a short "URL or how to get here" note so anyone reopening the journey can return to the right state.
+
+| Step kind | What it is | When to use it |
+| --- | --- | --- |
+| **Linked step** | Points at an existing page or component already in the project. Inherits that item's WCAG test results and counts toward the journey's testing progress. | The flow passes through a page or component you already track and audit. |
+| **Manual step** | A named waypoint typed straight into the journey (for example, `Enter shipping address`). Not tested on its own unless you mark it **Test**. | You want to sketch the flow quickly, or the step is a narrative waypoint that does not need its own audit. |
+
+When you tick **Test** on a manual step and save, Labrador mints a backing tracked item for that step inside the same save. The step keeps its name, note, and position, and it starts counting toward the journey's testing progress from that moment on.
+
+## Create a User Journey
+
+<Steps>
+  <Step title="Open your project">
+    From the Projects dashboard, click into the project. If you use audit versions, make sure the correct version is active before you begin, because the journey belongs to whichever version you create it in.
+  </Step>
+  <Step title="Open the Add menu">
+    Above the **Pages & Components** grid, click **\+ Add**, then choose **User journey**. On an empty project, use the **\+ Add** button in the empty state and choose the same option.
+  </Step>
+  <Step title="Name the journey">
+    In the **Add user journey** dialog, enter a **Name** that describes the flow, such as `Checkout`, `Password reset`, or `New account signup`. Optionally add a **Description** to explain the flow's scope or entry conditions.
+  </Step>
+  <Step title="Add the steps you know">
+    In **Add a step**, type a name like `Enter shipping address` and press Enter. Keep typing and pressing Enter to add several steps in a row. New steps are marked **Test** by default, so each one is ready to audit; untick **Test** on any step you do not need to audit.
+  </Step>
+  <Step title="Attach an existing page or component (optional)">
+    If the flow passes through a page or component that already exists in the project, open **Add an existing page or component as a step** and pick it from the list. It joins the journey as a linked step and inherits its test results.
+  </Step>
+  <Step title="Reorder or remove steps">
+    Use the up and down buttons on each step to reorder, and the remove button to delete. Nothing is saved until you click **Create journey**, so you can freely edit until you are happy with the flow.
+  </Step>
+  <Step title="Create the journey">
+    Click **Create journey**. The new journey appears at the top of the project under the **User journeys** heading. You can save a journey with no steps at all and add them later as you uncover the flow.
+  </Step>
+</Steps>
+
+<Tip>
+  Give each step a URL or a short "how to get here" path in the optional note field, especially for steps that depend on account state, cart contents, or filters. That is what leads a teammate, or a retest six months later, back to the exact same starting point.
+</Tip>
+
+## Testing a Journey
+
+Each journey has its own screen with the ordered steps, per-step status, and a rollup for the whole flow. Progress is counted in **criteria**, not steps, so the progress bar moves the moment you mark the first result.
+
+<Steps>
+  <Step title="Open the journey">
+    Click the journey's card in the project. The journey screen lists every step in order, with a status chip on each linked step: **Not started**, **In progress**, **Fully tested**, or **Failing** (**Does not support** on VPAT projects).
+  </Step>
+  <Step title="Continue where you left off">
+    Click **Continue testing** to jump straight to the first step that is not yet fully tested. Journeys are re-entered far more often than they are entered, so this is the fastest way back into the work.
+  </Step>
+  <Step title="Audit a step">
+    On a linked step, click through to the page or component overview and evaluate its WCAG criteria as normal. Results and issues live on the underlying page, so anywhere else that page is used stays in sync.
+  </Step>
+  <Step title="Promote a sketched step to a tested one">
+    On a manual step that has not been marked **Test** yet, use **Start testing** to promote it. Labrador mints its backing tracked item and takes you straight to that item's overview so you can begin auditing.
+  </Step>
+  <Step title="Watch the rollup">
+    The journey header shows how many steps are fully tested, how many criteria have failed across the flow, and a progress bar over the total criteria in the journey. The journey is marked **Fully tested** only when every linked step is complete and no criteria are failing.
+  </Step>
+</Steps>
+
+<Note>
+  Only linked steps and promoted manual steps contribute to the journey's testing totals. Unpromoted manual steps stay in the flow as narrative waypoints and are excluded from every denominator, so they never make the rollup look incomplete.
+</Note>
+
+## Edit or Add Steps Later
+
+A journey is meant to grow with the audit.
+
+- On the journey screen, click **Add step** to open the builder focused on the **Add a step** input, ready for the next step you just discovered.
+- Click **Edit** on the journey (or on the card in the project) to reorder, rename, add, or remove steps in bulk.
+- Everything in the builder is a draft until you click **Save journey**, so **Cancel** always cancels everything, including any new manual steps you were about to mark **Test**.
+
+## Delete a Journey
+
+Deleting a journey removes the flow and its ordering. It does **not** delete the pages, components, or test results the steps pointed at: those items remain in the project and keep every audit result, comment, and issue you logged against them.
+
+<Steps>
+  <Step title="Open the journey">
+    Click the journey card, or open the journey's actions menu directly from the project view.
+  </Step>
+  <Step title="Choose Delete">
+    Select **Delete**. Confirm the action in the dialog that appears.
+  </Step>
+  <Step title="Confirm the impact">
+    The journey is removed and you are returned to the project view. Its underlying pages and their test results are untouched. If any manual steps had been promoted to tracked items, those items also remain in the project.
+  </Step>
+</Steps>
+
+<Tip>
+  If you only want to remove a step from the flow, edit the journey instead of deleting it. Removing a step from a journey never deletes the underlying page or component; it only takes it out of that particular flow.
+</Tip>
+
+## Journeys and Audit Versions
+
+Journeys are attached to the audit version they were created in. When you create a **retest version** or a **major version upgrade** of the project, the journeys from the source version are preserved on the source version and can be worked with independently on the new version. See [Audit Versions](/projects/audit-versions) for how versions carry pages, components, and journeys forward.
+
+## Related
+
+- [Managing Pages](/projects/managing-pages) — add the pages and components that journey steps link to.
+- [Auditing Criteria](/projects/auditing-criteria) — how to evaluate WCAG criteria on a step's underlying page.
+- [Logging Issues](/projects/logging-issues) — record failures found while walking a journey.
