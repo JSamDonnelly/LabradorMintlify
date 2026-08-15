@@ -6,10 +6,10 @@ description: "Capture live page HTML with the Labrador Chrome extension and gene
 
 The Labrador Chrome extension bridges the gap between your audit in Labrador and the live page you are testing. It supports two core workflows:
 
-- **axe automated scanning** — run an axe scan against the page you are testing and let Labrador map each finding to the correct WCAG criterion as an issue.
-- **AI remediation guidance** — click a specific element on the page to capture its HTML and generate developer-ready fix suggestions from Claude Opus 5.
+- **axe automated scanning**, run an axe scan against the page you are testing and let Labrador map each finding to the correct WCAG criterion as an issue.
+- **AI remediation guidance**, click a specific element on the page to capture its HTML and generate developer-ready fix suggestions from Claude Opus 5.
 
-Both workflows depend on the URL set on the Page, Component, or User Journey you are testing. Set a valid URL on every item in your project wherever you can — the extension uses it to open the exact page for scans and captures, and other features like AI remediation depend on it too.
+Both workflows depend on the URL set on the Page, Component, or User Journey you are testing. Set a valid URL on every item in your project wherever you can, the extension uses it to open the exact page for scans and captures, and other features like AI remediation depend on it too.
 
 <Note>
   The AI remediation feature is currently in **beta**. Before using the extension on a page, component, or user journey, make sure a valid URL is set on that item in your Labrador project.
@@ -20,8 +20,8 @@ Both workflows depend on the URL set on the Page, Component, or User Journey you
 The extension is available from the Chrome Web Store and takes less than a minute to install.
 
 <Steps>
-  <Step title="Find the extension in the Chrome Web Store">
-    Visit the [Chrome Web Store](https://chromewebstore.google.com/detail/labrador-ai-accessibility/lndpalafhngglhpdjejhelccebmngoho) and search for **Labrador AI Accessibility Assistant**, or follow the direct link shown in your Labrador project when you click **Generate Recommendation** for the first time.
+  <Step title="Download Labrador Accessibility Assistant">
+    Download [Labrador Accessibility Assistant](https://chromewebstore.google.com/detail/labrador-accessibility-as/lndpalafhngglhpdjejhelccebmngoho) to add the extension to Chrome.
   </Step>
   <Step title="Click Add to Chrome">
     On the extension listing page, click the **Add to Chrome** button.
@@ -49,7 +49,7 @@ The extension can run an [axe-core](https://github.com/dequelabs/axe-core) autom
     When the scan completes, the extension shows a list of findings for you to review before anything is written to your project. Each finding shows the rule that failed, the affected element, and the WCAG criterion it maps to.
   </Step>
   <Step title="Choose whether to include Best Practice findings">
-    axe returns both WCAG violations and Best Practice recommendations. Best Practice findings are shown alongside violations but are left unchecked by default — tick the ones you want to include, or leave them unchecked to import only the WCAG-mapped failures.
+    axe returns both WCAG violations and Best Practice recommendations. Best Practice findings are shown alongside violations but are left unchecked by default, tick the ones you want to include, or leave them unchecked to import only the WCAG-mapped failures.
   </Step>
   <Step title="Add the selected findings to your test">
     Confirm your selection to import the findings. Each one is automatically added as an issue under the correct WCAG criterion on the item you are testing, with the axe rule and affected element pre-filled.
@@ -66,7 +66,7 @@ Follow these steps each time you want to generate AI-assisted guidance for a spe
 
 <Steps>
   <Step title="Create an issue with a clear description">
-    In your Labrador project, open the failing criterion on the relevant page or component. Under **Add New Issue**, write a detailed description of the accessibility problem — be specific about what is wrong and who is affected. The quality of your description directly influences the quality of the AI output.
+    In your Labrador project, open the failing criterion on the relevant page or component. Under **Add New Issue**, write a detailed description of the accessibility problem, be specific about what is wrong and who is affected. The quality of your description directly influences the quality of the AI output.
   </Step>
   <Step title="Click Generate Recommendation">
     Below the **Remediation Help** field, click **Generate Recommendation**. Labrador will prepare to capture HTML from the live page.
@@ -98,7 +98,7 @@ The recommendation Claude Opus 5 produces is designed to give developers the con
   </Card>
 
   <Card title="Code-Level Fix Suggestions" icon="code">
-    The recommendation includes concrete, actionable changes — for example, adding `aria-label="Search"` to an unlabelled button, or correcting a heading hierarchy by changing an `<h4>` to an `<h2>`.
+    The recommendation includes concrete, actionable changes, for example, adding `aria-label="Search"` to an unlabelled button, or correcting a heading hierarchy by changing an `<h4>` to an `<h2>`.
   </Card>
 
   <Card title="WCAG Context" icon="book-open">
@@ -111,7 +111,7 @@ The recommendation Claude Opus 5 produces is designed to give developers the con
 </CardGroup>
 
 <Tip>
-  A clear, specific issue description consistently produces better AI recommendations. Before clicking **Generate Recommendation**, describe what the problem is, where it occurs on the page, and which group of users is affected — for example: "The search button has no accessible name. Screen reader users cannot determine its purpose when navigating by button." The more context you provide, the more targeted the output will be.
+  A clear, specific issue description consistently produces better AI recommendations. Before clicking **Generate Recommendation**, describe what the problem is, where it occurs on the page, and which group of users is affected, for example: "The search button has no accessible name. Screen reader users cannot determine its purpose when navigating by button." The more context you provide, the more targeted the output will be.
 </Tip>
 
 ## Reviewing AI Output
@@ -147,5 +147,5 @@ Before using the Chrome extension and AI remediation feature, confirm that all o
 </CardGroup>
 
 <Info>
-  The page you are testing must be open and loaded in your browser. The extension captures HTML from your active browser session, so it can access any page you have already loaded — including pages behind authentication — as long as you are currently signed in. It cannot access pages that you have not loaded or that require authentication you have not completed in that browser session.
+  The page you are testing must be open and loaded in your browser. The extension captures HTML from your active browser session, so it can access any page you have already loaded, including pages behind authentication, as long as you are currently signed in. It cannot access pages that you have not loaded or that require authentication you have not completed in that browser session.
 </Info>

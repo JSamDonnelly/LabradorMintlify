@@ -13,7 +13,7 @@ The standard CSV export produces a flat file containing every issue logged acros
 **Columns included in the standard CSV:**
 
 | Column | Description |
-|--------|-------------|
+| --- | --- |
 | Page / Component | The name of the page or component where the issue was found |
 | WCAG Criterion | The criterion number and name (e.g. 1.1.1 Non-text Content) |
 | Issue Description | The full text of the issue as documented in Labrador |
@@ -42,7 +42,7 @@ The Jira CSV export contains the same issue data as the standard CSV, but the co
 **How Labrador severity maps to Jira priority:**
 
 | Labrador Severity | Jira Priority |
-|-------------------|---------------|
+| --- | --- |
 | Critical | Highest |
 | Serious | High |
 | Moderate | Medium |
@@ -70,7 +70,7 @@ The Jira CSV export contains the same issue data as the standard CSV, but the co
 </Steps>
 
 <Info>
-  Jira's CSV import wizard lets you review the column-to-field mapping before finalising the import. The Labrador Jira CSV is pre-formatted to match standard Jira field names, so most columns should map automatically — but always review the mapping screen before confirming.
+  Jira's CSV import wizard lets you review the column-to-field mapping before finalising the import. The Labrador Jira CSV is pre-formatted to match standard Jira field names, so most columns should map automatically, but always review the mapping screen before confirming.
 </Info>
 
 ## CSV vs Live Jira Integration
@@ -81,15 +81,16 @@ Both CSV exports and the live Jira integration get your issues into Jira, but th
   <Card title="Jira-Ready CSV" icon="file-arrow-up">
     **Best for:** One-time handoffs, projects where you do not need ongoing sync, or when you are on the Free plan.
 
-    Export the CSV at the end of your audit and import it into Jira as a batch. Once imported, the issues live in Jira independently — there is no connection back to Labrador, so status changes in Jira do not update Labrador and vice versa.
+    Export the CSV at the end of your audit and import it into Jira as a batch. Once imported, the issues live in Jira independently, there is no connection back to Labrador, so status changes in Jira do not update Labrador and vice versa.
   </Card>
+
   <Card title="Live Jira Integration" icon="arrow-right-arrow-left">
     **Best for:** Active remediation cycles where you want automatic issue creation and two-way status and priority sync throughout the process.
 
-    New issues you log in Labrador are pushed to your Jira board automatically. Status and priority changes flow in both directions — close a ticket in Jira and it updates in Labrador too. Available on Core, Plus, and Enterprise plans. See [Jira Integration](/integrations/jira) to set it up.
+    New issues you log in Labrador are pushed to your Jira board automatically. Status and priority changes flow in both directions, close a ticket in Jira and it updates in Labrador too. Available on Core, Plus, and Enterprise plans. See [Jira Integration](/integrations/jira) to set it up.
   </Card>
 </CardGroup>
 
 <Note>
-  Both the standard CSV and the Jira-ready CSV are available on all plans, including Free. The live Jira sync integration — with automatic issue creation and two-way status updates — requires a Core, Plus, or Enterprise subscription.
+  Both the standard CSV and the Jira-ready CSV are available on all plans, including Free. The live Jira sync integration, with automatic issue creation and two-way status updates, requires a Core, Plus, or Enterprise subscription.
 </Note>

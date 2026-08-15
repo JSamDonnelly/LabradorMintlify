@@ -4,7 +4,7 @@ sidebarTitle: "Logging Issues"
 description: "Document WCAG failures with severity levels, remediation status, and media attachments. Track and update issues through the full remediation cycle."
 ---
 
-An **issue** in Labrador is a documented failure against a specific WCAG success criterion on a specific page or component. Issues are the core output of an accessibility audit — they become the remediation backlog that your development team works through. Every issue you log is tied to the criterion and page where it was found, which means your reports always show exactly where failures occur and what standard they violate.
+An **issue** in Labrador is a documented failure against a specific WCAG success criterion on a specific page or component. Issues are the core output of an accessibility audit, they become the remediation backlog that your development team works through. Every issue you log is tied to the criterion and page where it was found, which means your reports always show exactly where failures occur and what standard they violate.
 
 ## Logging an Issue
 
@@ -13,13 +13,13 @@ An **issue** in Labrador is a documented failure against a specific WCAG success
     In the Criteria Overview for a page or component, select the criterion you have evaluated and marked as **Fail**. The testing panel opens on the right side of the screen (or as a pop-up, depending on your view mode).
   </Step>
   <Step title="Scroll to Add New Issue">
-    Scroll down within the testing panel until you reach the **Add New Issue** section. Each criterion can have multiple issues logged against it — for example, if the same failure type appears in several distinct places on the page.
+    Scroll down within the testing panel until you reach the **Add New Issue** section. Each criterion can have multiple issues logged against it, for example, if the same failure type appears in several distinct places on the page.
   </Step>
   <Step title="Write an issue description">
     Type a clear **Issue Description** that explains what the problem is and exactly where it occurs. Be specific: include the location on the page (for example, "the Search button in the site header"), the nature of the failure (for example, "has no accessible name"), and any relevant context (for example, "the button contains only an SVG icon with no text alternative").
   </Step>
   <Step title="Add remediation guidance">
-    In the **Remediation Help** field, explain how the problem can be fixed. Write this guidance for the developer who will implement the fix. Include the specific code change required — for example, the ARIA attribute to add, the HTML element to restructure, or the CSS property to update. You can also use the [AI remediation feature](/integrations/chrome-extension) to generate a code-level recommendation from the live page element.
+    In the **Remediation Help** field, explain how the problem can be fixed. Write this guidance for the developer who will implement the fix. Include the specific code change required, for example, the ARIA attribute to add, the HTML element to restructure, or the CSS property to update. You can also use the [AI remediation feature](/integrations/chrome-extension) to generate a code-level recommendation from the live page element.
   </Step>
   <Step title="Select a severity level">
     Choose the **Severity** that best reflects the impact this issue has on users with disabilities: Advisory, Minor, Moderate, Serious, or Critical. See the [Severity Levels](#severity-levels) section below for definitions.
@@ -41,28 +41,32 @@ An **issue** in Labrador is a documented failure against a specific WCAG success
 
 ## Severity Levels
 
-Severity reflects the impact of the issue on users with disabilities — not how difficult it is to fix. Use the definitions below to choose the right severity level for each issue.
+Severity reflects the impact of the issue on users with disabilities, not how difficult it is to fix. Use the definitions below to choose the right severity level for each issue.
 
 <CardGroup cols={2}>
   <Card title="Advisory" icon="circle-info">
     Not a WCAG AA non-conformance issue. Advisory findings identify best-practice improvements or potential user experience concerns that fall outside the scope of the standard but are worth addressing.
   </Card>
+
   <Card title="Minor" icon="circle-minus">
-    Low impact on users with disabilities. The issue exists but rarely causes a significant barrier — most users can still access the content or complete the task despite the problem.
+    Low impact on users with disabilities. The issue exists but rarely causes a significant barrier, most users can still access the content or complete the task despite the problem.
   </Card>
+
   <Card title="Moderate" icon="circle-exclamation">
     Noticeable impact. Users with disabilities may struggle with this content or interaction, but they can usually work around the issue and complete their task with additional effort.
   </Card>
+
   <Card title="Serious" icon="triangle-exclamation">
     Significant barrier. Users with disabilities may be unable to access important content or complete a meaningful step without encountering this issue. This level warrants high priority in the remediation backlog.
   </Card>
+
   <Card title="Critical" icon="circle-xmark">
     Total blocker. This issue prevents users with disabilities from accessing key functionality or content entirely. Address critical issues before any other severity level.
   </Card>
 </CardGroup>
 
 <Tip>
-  When assigning severity, consider the experience from the user's perspective — not the effort required to fix the issue. A missing `alt` attribute on a decorative image is Minor even if it is trivially easy to fix. A broken keyboard trap is Critical even if resolving it requires significant refactoring.
+  When assigning severity, consider the experience from the user's perspective, not the effort required to fix the issue. A missing `alt` attribute on a decorative image is Minor even if it is trivially easy to fix. A broken keyboard trap is Critical even if resolving it requires significant refactoring.
 </Tip>
 
 ## Remediation Status
@@ -88,9 +92,9 @@ Track each issue through its full lifecycle using the four remediation statuses.
 
 Screenshots and video recordings are a critical part of every issue record. They demonstrate the failure at the time of testing, help developers reproduce the issue, and form part of your formal audit evidence.
 
-**Screenshots** work well for static failures such as missing labels, colour contrast violations, missing focus indicators, or layout problems. Before uploading, use a screen annotation tool to mark up the screenshot — highlight the problem element, draw a box around the affected area, or add a callout to direct attention to the specific failure.
+**Screenshots** work well for static failures such as missing labels, colour contrast violations, missing focus indicators, or layout problems. Before uploading, use a screen annotation tool to mark up the screenshot, highlight the problem element, draw a box around the affected area, or add a callout to direct attention to the specific failure.
 
-**Video recordings** are essential for issues that only manifest during interaction — for example, a keyboard navigation trap, a focus order problem, a missing skip link, a modal that does not return focus on close, or an animation that cannot be paused. A short screen recording paired with a screen reader or keyboard walkthrough gives developers a clear and reproducible demonstration of the issue.
+**Video recordings** are essential for issues that only manifest during interaction, for example, a keyboard navigation trap, a focus order problem, a missing skip link, a modal that does not return focus on close, or an animation that cannot be paused. A short screen recording paired with a screen reader or keyboard walkthrough gives developers a clear and reproducible demonstration of the issue.
 
 <Info>
   Each file you attach can be up to **100 MB**. You can attach multiple files to a single issue. Attachments are embedded directly in your HTML export reports, so stakeholders can review the evidence without needing access to Labrador.
@@ -98,7 +102,7 @@ Screenshots and video recordings are a critical part of every issue record. They
 
 ## Updating Issues
 
-You can edit any aspect of a logged issue at any time — the description, the remediation guidance, the severity, the remediation status, or the attached media. Issues are never locked after submission.
+You can edit any aspect of a logged issue at any time, the description, the remediation guidance, the severity, the remediation status, or the attached media. Issues are never locked after submission.
 
 Use the **Comments** section at the bottom of each issue to discuss findings with your team, ask questions, or record context that does not fit neatly into the description field. Comments are visible to all project members, including any teammates or clients you have invited.
 

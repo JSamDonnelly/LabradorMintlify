@@ -4,7 +4,7 @@ sidebarTitle: "Audit Versions"
 description: "Create retest versions to verify developer fixes and major version upgrades to start fresh. Labrador preserves your original audit results throughout."
 ---
 
-Labrador uses a versioned model so you can track remediation progress over time without overwriting your original audit findings. Every project starts at **v1.0**. When a development team implements fixes and you need to verify them, you create a new version that carries your work forward — Labrador keeps the original intact. When a site undergoes major changes and you need to start a fresh evaluation, you create a new major version. At every stage, your full history is preserved.
+Labrador uses a versioned model so you can track remediation progress over time without overwriting your original audit findings. Every project starts at **v1.0**. When a development team implements fixes and you need to verify them, you create a new version that carries your work forward, Labrador keeps the original intact. When a site undergoes major changes and you need to start a fresh evaluation, you create a new major version. At every stage, your full history is preserved.
 
 ## Retest Versions (v1.0 → v1.1)
 
@@ -15,7 +15,7 @@ A retest version is a minor version bump. Use it when a development team has add
     Open your project and locate the **Audit version** bar near the top of the project view. It shows the version you are currently working in and contains the version controls.
   </Step>
   <Step title="Create a retest version">
-    Click **Version actions** and select **Create retest version**. Labrador creates a new minor version — for example, v1.0 becomes v1.1.
+    Click **Version actions** and select **Create retest version**. Labrador creates a new minor version, for example, v1.0 becomes v1.1.
   </Step>
   <Step title="Review what was carried forward">
     Labrador copies all your pages, all criterion statuses, all notes, and every logged issue into the new version. Carried-forward issues are labelled **Carried forward** from their source version so you can identify them at a glance.
@@ -26,27 +26,27 @@ A retest version is a minor version bump. Use it when a development team has add
 </Steps>
 
 <Note>
-  When every carried-forward issue on a criterion is closed, Labrador automatically updates the criterion's status to reflect the resolved state — you do not need to update it manually. If you reopen a closed issue, the criterion status reverts accordingly. Your original version (v1.0) is never modified by the retest process.
+  When every carried-forward issue on a criterion is closed, Labrador automatically updates the criterion's status to reflect the resolved state, you do not need to update it manually. If you reopen a closed issue, the criterion status reverts accordingly. Your original version (v1.0) is never modified by the retest process.
 </Note>
 
 ## New Audit Versions (v1.x → v2.0)
 
 A new audit version is a major version bump. Use it whenever you need a fresh, standalone evaluation rather than a targeted retest of previous findings. That covers two common situations:
 
-- **Scheduled re-evaluations.** Regular cadence testing — quarterly, twice-yearly, or annual accessibility check-ins on a stable product — should be captured as a new major version. This keeps each round of testing cleanly separated in your history, which is often exactly what compliance programmes, procurement conversations, and internal reporting expect.
+- **Scheduled re-evaluations.** Regular cadence testing, quarterly, twice-yearly, or annual accessibility check-ins on a stable product, should be captured as a new major version. This keeps each round of testing cleanly separated in your history, which is often exactly what compliance programmes, procurement conversations, and internal reporting expect.
 - **Significant product changes.** A redesign, platform migration, or major feature release also warrants a new major version, because the previous audit no longer reflects what is on the site.
 
 From **Version actions**, choose one of two options:
 
 <CardGroup cols={2}>
   <Card title="Keep Pages" icon="copy">
-    Copies your page, component, and user journey list — including names, URLs, and any testing environment details — into the new version. Criterion statuses and issues start completely fresh.
+    Copies your page, component, and user journey list, including names, URLs, and any testing environment details, into the new version. Criterion statuses and issues start completely fresh.
 
     **Use this when:** you are running a scheduled re-evaluation on a stable scope, or the site has changed but the same pages, components, and journeys still apply.
   </Card>
 
   <Card title="Blank Audit" icon="file">
-    Creates a completely empty new version of the project. Nothing is carried over — no items, no statuses, no issues.
+    Creates a completely empty new version of the project. Nothing is carried over, no items, no statuses, no issues.
 
     **Use this when:** the site has been rebuilt from the ground up, the scope has changed significantly, or you want a clean slate with no reference to previous findings.
   </Card>
@@ -57,7 +57,7 @@ From **Version actions**, choose one of two options:
 Use the version dropdown in the **Audit version** bar to switch between any version of your project. When you are viewing a version that is not the latest, a **Viewing vX** badge appears in the interface as a reminder that you are looking at historical data rather than the current working version.
 
 <Info>
-  Switching versions is read-only for older versions — you can review and export findings from any version, but edits are only possible in the current working version. This ensures your audit history is preserved accurately.
+  Switching versions is read-only for older versions, you can review and export findings from any version, but edits are only possible in the current working version. This ensures your audit history is preserved accurately.
 </Info>
 
 ## Deleting a Version
@@ -65,7 +65,7 @@ Use the version dropdown in the **Audit version** bar to switch between any vers
 To remove a version you no longer need, click **Version actions** and select **Delete v…**. A confirmation dialog appears, spelling out exactly what will be removed before anything is deleted. After deletion, you are moved to another available version automatically.
 
 <Warning>
-  Version deletion is permanent and cannot be undone. All pages, criterion results, issues, and attachments within the deleted version are removed. You must have more than one version in the project to delete one — Labrador will not allow you to delete the only remaining version.
+  Version deletion is permanent and cannot be undone. All pages, criterion results, issues, and attachments within the deleted version are removed. You must have more than one version in the project to delete one, Labrador will not allow you to delete the only remaining version.
 </Warning>
 
 ## Recommended Workflow
@@ -73,19 +73,19 @@ To remove a version you no longer need, click **Version actions** and select **D
 This versioning model maps naturally to a typical client engagement cycle. Following this pattern keeps your findings organised and makes it easy to demonstrate remediation progress to stakeholders.
 
 <Steps>
-  <Step title="Initial audit — v1.0">
+  <Step title="Initial audit, v1.0">
     Run your full accessibility audit. Evaluate all pages and components, log every issue you find, and assign severity levels and remediation statuses. When testing is complete, export the report and share it with the development team.
   </Step>
   <Step title="Development team implements fixes">
-    The development team works through the remediation backlog. As they fix issues, they update remediation statuses to **In Progress** and **Fixed for Retesting** — either directly in Labrador (if they have access) or by communicating with you so you can update the statuses on their behalf.
+    The development team works through the remediation backlog. As they fix issues, they update remediation statuses to **In Progress** and **Fixed for Retesting**, either directly in Labrador (if they have access) or by communicating with you so you can update the statuses on their behalf.
   </Step>
-  <Step title="Retest — v1.1">
+  <Step title="Retest, v1.1">
     Once a meaningful batch of fixes is ready for verification, create a retest version. Work through the carried-forward issues, test each fix on the updated site, and set verified issues to **Closed**. Export an updated report showing the improved conformance state.
   </Step>
   <Step title="Repeat retests as needed">
     If fixes are incomplete or new issues emerge during the retest, create additional retest versions as needed (v1.2, v1.3, and so on). Each version captures the state of the audit at that point in time.
   </Step>
-  <Step title="Scheduled re-evaluation or major redesign — v2.0">
+  <Step title="Scheduled re-evaluation or major redesign, v2.0">
     Start a new major audit version whenever you need a fresh evaluation. This covers scheduled cadence testing (for example, a quarterly or annual re-audit of a stable product) as well as significant redesigns and rebuilds. Choose **Keep pages** if the scope is largely unchanged and you just want fresh results, or **Blank audit** if you are starting from scratch. Your entire previous audit history remains accessible in the earlier versions.
   </Step>
 </Steps>

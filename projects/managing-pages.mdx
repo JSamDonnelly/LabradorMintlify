@@ -4,7 +4,7 @@ sidebarTitle: "Managing Pages"
 description: "Add individual pages and UI components to your Labrador project, attach screenshots, and organise your audit scope before testing begins."
 ---
 
-Every Labrador project is made up of **pages**, **components**, and **user journeys** — the individual items you test against WCAG criteria. Each item is audited independently, so you can track progress and log issues at a granular level. Pages represent full web pages such as a homepage, a checkout flow, or an article template. Components represent reusable UI elements — a navigation header, a carousel, a modal dialog, or a video player — that appear across multiple pages of the site. User journeys represent multi-step task flows, such as signing up for an account or completing a purchase, that span more than one page.
+Every Labrador project is made up of **pages**, **components**, and **user journeys**, the individual items you test against WCAG criteria. Each item is audited independently, so you can track progress and log issues at a granular level. Pages represent full web pages such as a homepage, a checkout flow, or an article template. Components represent reusable UI elements, a navigation header, a carousel, a modal dialog, or a video player, that appear across multiple pages of the site. User journeys represent multi-step task flows, such as signing up for an account or completing a purchase, that span more than one page.
 
 ## Add a Page, Component, or User Journey
 
@@ -16,10 +16,10 @@ Every Labrador project is made up of **pages**, **components**, and **user journ
     Select the **\+ Add** button to open the dropdown, then choose **Page**, **Component**, or **User Journey** depending on what you want to test.
   </Step>
   <Step title="Enter a name">
-    Type a descriptive **Name** for the item — for example, `Homepage`, `Product Listing Page`, `Navigation Header`, or `New User Signup`. Use a name that makes it immediately clear what is being tested.
+    Type a descriptive **Name** for the item, for example, `Homepage`, `Product Listing Page`, `Navigation Header`, or `New User Signup`. Use a name that makes it immediately clear what is being tested.
   </Step>
   <Step title="Provide a URL">
-    Enter the full **URL** of the page, component, or the starting page of the user journey. The URL is required if you plan to use AI-assisted remediation via the Labrador Chrome extension — Labrador uses it to open the exact page when generating recommendations.
+    Enter the full **URL** of the page, component, or the starting page of the user journey. The URL is required if you plan to use AI-assisted remediation via the Labrador Chrome extension, Labrador uses it to open the exact page when generating recommendations.
   </Step>
   <Step title="Upload a screenshot (optional)">
     Optionally upload a **Screenshot** of the page, component, or user journey to help you and your teammates visually identify it during testing. This is especially useful when you have multiple items with similar names.
@@ -39,17 +39,17 @@ You can structure your audit scope in several ways. The approach you choose affe
 
 <Tabs>
   <Tab title="Page Testing">
-    Test every WCAG criterion against a complete web page. This approach is best suited to pages with unique content and structure — for example, a contact form, a product detail page, a blog article, or a checkout screen.
+    Test every WCAG criterion against a complete web page. This approach is best suited to pages with unique content and structure, for example, a contact form, a product detail page, a blog article, or a checkout screen.
 
     **When to use it:** When the page has content or functionality that does not appear elsewhere on the site, and you need a full per-page conformance record.
   </Tab>
   <Tab title="Component Testing">
-    Test a reusable UI element once, independently of any specific page. Add your site header, primary navigation, cookie consent banner, or video player as a component and test it in isolation. Because the component is audited once, you log issues against it once — and those findings apply wherever the component appears.
+    Test a reusable UI element once, independently of any specific page. Add your site header, primary navigation, cookie consent banner, or video player as a component and test it in isolation. Because the component is audited once, you log issues against it once, and those findings apply wherever the component appears.
 
     **When to use it:** When the same element appears on many pages and retesting it repeatedly would add effort without adding insight.
   </Tab>
   <Tab title="User Journey Testing">
-    Test a complete multi-step task flow end to end — for example, account signup, checkout, or password reset. Because a user journey spans multiple pages and interactions, it surfaces accessibility issues that only appear in transitions, focus handling between steps, error recovery, and cumulative cognitive load.
+    Test a complete multi-step task flow end to end, for example, account signup, checkout, or password reset. Because a user journey spans multiple pages and interactions, it surfaces accessibility issues that only appear in transitions, focus handling between steps, error recovery, and cumulative cognitive load.
 
     **When to use it:** When a critical task requires the user to move through several pages or states, and you need confidence that the whole flow is usable end to end, not just each screen in isolation.
   </Tab>
@@ -68,7 +68,7 @@ You can structure your audit scope in several ways. The approach you choose affe
 
 ## Organising Your Audit Scope
 
-Choosing the right sample of pages, components, and user journeys to include is as important as how you test them. You do not need to test every page on a large site — the goal is a representative sample that covers all distinct page types, templates, interactive patterns, and critical task flows.
+Choosing the right sample of pages, components, and user journeys to include is as important as how you test them. You do not need to test every page on a large site, the goal is a representative sample that covers all distinct page types, templates, interactive patterns, and critical task flows.
 
 <Accordion title="How many items should I include?">
   For most sites, **10 to 20 pages, components, and user journeys combined** is a practical and defensible scope. Focus on coverage of:
@@ -82,7 +82,7 @@ Choosing the right sample of pages, components, and user journeys to include is 
 </Accordion>
 
 <Accordion title="Should I test every page template or just the unique ones?">
-  Test one representative page per distinct template. If your site has 200 blog articles that all use the same layout, test one article page — not all 200. Record your rationale in the project description.
+  Test one representative page per distinct template. If your site has 200 blog articles that all use the same layout, test one article page, not all 200. Record your rationale in the project description.
 
   However, if a template varies significantly based on content type (for example, an article with embedded video versus an article with only text), consider adding both variants as separate items so you can capture the full range of interactive patterns.
 </Accordion>

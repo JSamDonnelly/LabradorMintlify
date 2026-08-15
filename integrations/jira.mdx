@@ -7,7 +7,7 @@ description: "Connect Labrador to Jira Cloud to automatically create tickets for
 The Jira integration eliminates the copy-paste handoff between your accessibility audit and your development team's workflow. Once connected, every issue you log in Labrador is automatically created as a ticket on your Jira board. Status and priority changes can sync between the two tools, so neither system falls out of step with the other.
 
 <Note>
-  The Jira integration is available on the **Core**, **Plus**, and **Enterprise** plans. It is not available on the Free plan. If you are on the Free plan, you can still export a Jira-ready CSV file — see [Jira CSV Export (without integration)](#jira-csv-export-without-integration) below.
+  The Jira integration is available on the **Core**, **Plus**, and **Enterprise** plans. It is not available on the Free plan. If you are on the Free plan, you can still export a Jira-ready CSV file, see [Jira CSV Export (without integration)](#jira-csv-export-without-integration) below.
 </Note>
 
 ## Connecting Your Project to Jira
@@ -45,6 +45,7 @@ Once connected, you can tune how Labrador issues translate into Jira issues befo
 
     The five Labrador severity levels you can map are: **Advisory**, **Minor**, **Moderate**, **Serious**, and **Critical**.
   </Card>
+
   <Card title="Custom Field Mapping" icon="table-columns">
     If your Labrador project uses custom fields (such as Browser Version or Testing Environment), map each one to a corresponding custom field in your Jira project. This keeps specialist data in your audit from being lost when issues are pushed across.
   </Card>
@@ -55,7 +56,7 @@ Once connected, you can tune how Labrador issues translate into Jira issues befo
 Control how the Jira issue title and body are composed using template variables. Click the insert buttons beneath each field to add a variable at the cursor position.
 
 | Variable | Inserts |
-|---|---|
+| --- | --- |
 | `{{page}}` | The name of the Labrador page or component being tested |
 | `{{criterion}}` | The WCAG criterion number (e.g. `1.1.1`) |
 | `{{criterionName}}` | The WCAG criterion name (e.g. `Non-text Content`) |
@@ -67,11 +68,11 @@ For example, a summary template of `[{{criterion}} {{criterionName}}] Issue on {
 Labrador maintains a live connection with Jira throughout the life of your project.
 
 <Accordion title="New issues are pushed to Jira automatically">
-  Every issue you log under a failing criterion is immediately created as a new ticket in the connected Jira project. You do not need to trigger a manual sync — the push happens as soon as you click **Submit Issue** in Labrador.
+  Every issue you log under a failing criterion is immediately created as a new ticket in the connected Jira project. You do not need to trigger a manual sync, the push happens as soon as you click **Submit Issue** in Labrador.
 </Accordion>
 
 <Accordion title="Status changes sync between tools">
-  Labrador's four remediation statuses — **Reported**, **In Progress**, **Fixed for Retesting**, and **Closed** — map to corresponding statuses in Jira. When you update a status in Labrador, the linked Jira ticket updates automatically. The integration card displays _Reverse sync active_ when Jira-to-Labrador updates are also enabled, meaning status changes made directly in Jira will be reflected back in your Labrador issue.
+  Labrador's four remediation statuses, **Reported**, **In Progress**, **Fixed for Retesting**, and **Closed**, map to corresponding statuses in Jira. When you update a status in Labrador, the linked Jira ticket updates automatically. The integration card displays _Reverse sync active_ when Jira-to-Labrador updates are also enabled, meaning status changes made directly in Jira will be reflected back in your Labrador issue.
 </Accordion>
 
 <Accordion title="Priority changes sync based on your mapping">
@@ -84,7 +85,7 @@ Labrador maintains a live connection with Jira throughout the life of your proje
 
 ## Jira CSV Export (without integration)
 
-Every Labrador plan, including Free, can export a Jira-ready CSV — no live integration required. This is useful for one-time handoffs to development teams that do not use Labrador on an ongoing basis.
+Every Labrador plan, including Free, can export a Jira-ready CSV, no live integration required. This is useful for one-time handoffs to development teams that do not use Labrador on an ongoing basis.
 
 <Info>
   The Jira CSV export is formatted specifically for Jira's CSV import tool. Open your project, click the **Export** dropdown, and select **Jira CSV Export**. Your development team can import the file directly into their Jira project without any reformatting. For full details on all export formats, see [CSV & Jira Exports](/exports/csv-and-jira).
@@ -95,5 +96,5 @@ Every Labrador plan, including Free, can export a Jira-ready CSV — no live int
 To remove the Jira connection from a project, open the **JIRA Integration** section in your project and click **Disconnect**.
 
 <Warning>
-  Disconnecting stops all sync immediately. Issues that were already created in Jira while the integration was active will remain there, but they will no longer be updated when you change issue statuses, priorities, or other fields in Labrador. The disconnect cannot be undone — to resume syncing you would need to reconnect and reconfigure your mappings.
+  Disconnecting stops all sync immediately. Issues that were already created in Jira while the integration was active will remain there, but they will no longer be updated when you change issue statuses, priorities, or other fields in Labrador. The disconnect cannot be undone, to resume syncing you would need to reconnect and reconfigure your mappings.
 </Warning>
