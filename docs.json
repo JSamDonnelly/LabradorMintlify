@@ -9,8 +9,8 @@
   },
   "favicon": "https://media.brand.dev/be90c83a-cc50-4b4e-9301-52e84a71c0a5.png",
   "logo": {
-    "light": "/images/WhiteLogo.png",
-    "dark": "/images/3574d316-af81-4ae6-a0a2-21366516309f1SMALL.png",
+    "light": "/images/3574d316-af81-4ae6-a0a2-21366516309f1SMALL.png",
+    "dark": "/images/WhiteLogo.png",
     "href": "https://www.testwithlabrador.com/"
   },
   "navbar": {
