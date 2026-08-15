@@ -1,10 +1,10 @@
 ---
-title: "AI Remediation with the Labrador Chrome Extension"
+title: "Labrador Chrome Extension: AI Accessibility Remediation"
 sidebarTitle: "Chrome Extension"
-description: "Install the Labrador Chrome extension to capture live page HTML and generate AI-powered remediation guidance for accessibility issues using Claude Opus."
+description: "Capture live page HTML with the Labrador Chrome extension and generate AI-powered accessibility remediation guidance for your issues using Claude Opus 5."
 ---
 
-The Labrador Chrome extension bridges the gap between your audit in Labrador and the live page you are testing. When you click a specific element on the page, the extension captures that element's HTML and sends it back to Labrador. Labrador then combines the captured HTML with your issue description and the WCAG criterion being tested to generate developer-ready remediation guidance, powered by Claude Opus. The result appears directly inside the issue under **Remediation Help**, ready for you to review, refine, and include in your exported report.
+The Labrador Chrome extension bridges the gap between your audit in Labrador and the live page you are testing. When you click a specific element on the page, the extension captures that element's HTML and sends it back to Labrador. Labrador then combines the captured HTML with your issue description and the WCAG criterion being tested to generate developer-ready remediation guidance, powered by Claude Opus 5. The result appears directly inside the issue under **Remediation Help**, ready for you to review, refine, and include in your exported report.
 
 <Note>
   The AI remediation feature is currently in **beta**. Before using the extension on a page or component, make sure a valid URL is set on that Page/Component in your Labrador project — the extension uses the URL to navigate to the exact page being tested.
@@ -59,7 +59,7 @@ Follow these steps each time you want to generate AI-assisted guidance for a spe
 
 ## What the AI Generates
 
-The recommendation Claude Opus produces is designed to give developers the context they need to fix the issue without requiring additional back-and-forth.
+The recommendation Claude Opus 5 produces is designed to give developers the context they need to fix the issue without requiring additional back-and-forth.
 
 <CardGroup cols={2}>
   <Card title="Root Cause Identification" icon="magnifying-glass">
@@ -84,7 +84,7 @@ The recommendation Claude Opus produces is designed to give developers the conte
 
 Always review AI-generated recommendations before sharing them with developers or including them in exported reports.
 
-Claude Opus is capable of producing high-quality, technically accurate remediation guidance in most cases, but it can occasionally misidentify the root cause, suggest a fix that does not account for your specific codebase structure, or produce guidance that needs adaptation to fit your project's conventions. You are responsible for the accuracy of the remediation guidance that appears in your reports.
+Claude Opus 5 is capable of producing high-quality, technically accurate remediation guidance in most cases, but it can occasionally misidentify the root cause, suggest a fix that does not account for your specific codebase structure, or produce guidance that needs adaptation to fit your project's conventions. You are responsible for the accuracy of the remediation guidance that appears in your reports.
 
 <Warning>
   AI-generated content is a starting point, not a final answer. Treat each recommendation as a first draft: verify that the suggested code change actually resolves the issue, check that it does not introduce new problems, and adjust the wording to match your organization's reporting style before sending it to a development team.

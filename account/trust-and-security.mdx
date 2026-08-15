@@ -64,12 +64,16 @@ These are the third-party services that may process your data. Labrador updates 
 | Provider | Purpose | Data involved |
 |---|---|---|
 | Microsoft Azure | Primary database and file storage | Audit records, account data, screenshots, attachments |
-| GitHub | Independent daily backups | Encrypted backup copies of audit and account records, retained 30 days |
+| GitHub | Independent daily database backups; source code hosting | Encrypted backup copies of audit and account records, retained 30 days |
 | Stripe | Billing and payments | Billing details; card data stays with Stripe |
 | Anthropic | AI remediation suggestions (only when you request one) | The issue description and page markup for that specific issue |
 | Google | Optional sign-in, site analytics | Email and name at sign-in; usage events |
 | Intercom | Support chat | Name, email, support conversations |
+| Mailmodo | Account and marketing email | Name and email address |
+| Mixpanel | Product analytics | Feature-usage events |
+| LinkedIn | Advertising analytics on public marketing pages | Visits to public pages; never audit data |
 | Sentry | Error monitoring | Technical error reports |
+| Wistia | Video hosting on marketing pages | Viewing analytics on public pages |
 
 <Note>
   Nothing is sent to Anthropic unless you explicitly click **Generate Recommendation** on a specific issue. The data sent is limited to the issue description and the markup of the element being tested — no other audit data is included.
