@@ -9,8 +9,8 @@
   },
   "favicon": "https://media.brand.dev/be90c83a-cc50-4b4e-9301-52e84a71c0a5.png",
   "logo": {
-    "light": "https://media.brand.dev/314ef119-b0e9-46b8-ab06-234b38b705bc.png",
-    "dark": "https://media.brand.dev/314ef119-b0e9-46b8-ab06-234b38b705bc.png"
+    "light": "/images/WhiteLogo.png",
+    "dark": "/images/3574d316-af81-4ae6-a0a2-21366516309f1SMALL.png"
   },
   "navbar": {
     "primary": {
@@ -87,5 +87,17 @@
   },
   "seo": {
     "indexing": "navigable"
+  },
+  "appearance": {
+    "strict": false
+  },
+  "fonts": {
+    "heading": {
+      "family": "Neue Haas Unica",
+      "weight": 400
+    },
+    "body": {
+      "family": "Atkinson hyperlegible next"
+    }
   }
 }
