@@ -4,92 +4,90 @@ sidebarTitle: "Team Members"
 description: "Add team members to your Labrador projects, assign roles, and control what each person can see and do across your accessibility audits."
 ---
 
-Labrador is built for team-based accessibility auditing. On Plus and Enterprise plans, you can invite colleagues directly into a project, assign each person a role that matches their responsibilities, and work through audits together in real time, without passing spreadsheets back and forth or managing access outside the platform.
+Labrador projects are built for collaboration. As the project owner, you can invite teammates directly into a project and assign each person a role that matches what they need to do. Some roles can be given to anyone with an email address; others require the invited person to already be on a paid Labrador plan of their own. This page explains both, and walks through the invitation and acceptance flow.
 
 <Info>
-  Team collaboration, including invites and role management, is available on Plus and Enterprise plans only. Free and Core plans support a single user per account.
+  This page is about **project collaboration**: inviting people into an individual project you own. That is separate from the **Teams** feature, which requires a paid plan of its own. Nothing on this page depends on you, the project owner, being on a paid plan.
 </Info>
 
-## Inviting a Team Member
+## Who Can Invite Collaborators
 
-When you invite someone to a project, Labrador sends them an email with a link to join. If they don't already have a Labrador account, they'll be prompted to create one before accessing the project.
+Only the **project owner**, meaning the person who created the project, can send invitations. Project Admins can change a collaborator's role and remove collaborators, but they cannot invite new people. Ownership is not a role that can be assigned to someone else.
+
+## Roles
+
+When you invite a collaborator, you can choose one of three roles. A fourth role, Admin, is not available at invitation time; you can only grant it later by changing an existing collaborator's role.
+
+| Role | What they can do | Requires an existing Labrador account? | Requires the invited person to be on a paid plan? |
+| --- | --- | --- | --- |
+| View Only | View all audit content. Cannot make changes. | No | No |
+| Developer | View audit content, add comments, and update the remediation status of issues. Cannot edit the audit or create issues. | No | No |
+| Edit | Run audits, create and edit issues, add comments. Cannot manage collaborators. | Yes | Yes |
+| Admin (change-role only) | Everything Edit can do, plus manage collaborators. Cannot be assigned at invite time. | Yes | Yes |
+
+A few points that catch people out:
+
+- The paid plan requirement applies to the **invited person's own account**, not yours. You paying for a plan does not grant editing rights to anyone else.
+- Labrador enforces the paid-account requirement both when inviting and when changing a collaborator's role later. You cannot invite someone as View Only or Developer and then promote them to Edit or Admin unless their own account is on a paid plan at that point.
+- A newly created Labrador account is on a trial and **counts as free** for this rule. If a colleague just signed up, they cannot be given Edit or Admin until they move onto a paid plan. Having an account is not the same as having a paid account.
+
+## Inviting a Collaborator
 
 <Steps>
   <Step title="Open your project">
-    From the Projects dashboard, click the project you want to add a team member to.
+    From the Projects dashboard, click the project you want to add a collaborator to. Only the project owner will see the invite controls.
   </Step>
-  <Step title="Click the Teammates button">
-    Find the **Teammates** button in the project view and click it to open the team management panel.
+  <Step title="Open the Teammates panel">
+    Find the **Teammates** button in the project view and click it.
   </Step>
-  <Step title="Enter the team member's email address">
-    Type the email address of the person you want to invite into the invite field.
+  <Step title="Enter the collaborator's email address">
+    Type the email address of the person you want to invite.
   </Step>
-  <Step title="Select their role">
-    Choose the role that matches what you want them to be able to do on the project. See [Roles and Permissions](#roles-and-permissions) below for a description of each option.
+  <Step title="Choose their role">
+    Pick **View Only**, **Developer**, or **Edit**. If you are inviting someone as Edit, their account must already exist and already be on a paid plan.
   </Step>
   <Step title="Send the invitation">
-    Click **Invite**. The team member will receive an email invitation to join Labrador and access the project.
+    Click **Invite**. Labrador emails the invitation to that address.
   </Step>
 </Steps>
 
-## Roles and Permissions
+## Accepting an Invitation
 
-Labrador gives you three roles to choose from when inviting a team member. Assign the role that reflects what each person actually needs to do, this keeps audit data accurate and prevents accidental changes.
+Every collaborator must be signed in to accept an invitation. What that looks like depends on whether they already have a Labrador account:
 
-<CardGroup cols={3}>
-  <Card title="View-only" icon="eye">
-    Can view all project content, criteria results, logged issues, and comments, but cannot make any changes. Ideal for clients or stakeholders who need to review findings without editing anything.
-  </Card>
+- **They already have an account.** They follow the link in the email, sign in, and land on the project.
+- **They do not have an account.** The invitation page offers both **Sign in** and **Create an account**. They can create a free account right there, and Labrador returns them to the invitation once they finish.
 
-  <Card title="Developer" icon="code">
-    Can update the remediation status on issues and leave comments, but cannot modify criterion results or project settings. Designed for developers who are tracking and resolving reported issues without needing edit access to the audit itself.
-  </Card>
+This is the answer to the most common question we hear: **yes, a developer with no Labrador account and no subscription can follow an invite link, create a free account, and start reviewing and commenting on your issues.** Invite them as **Developer**, send them the link, and they can do the rest themselves.
 
-  <Card title="Editor" icon="pen-to-square">
-    Full access to create and edit pages and components, evaluate audit criteria, log issues, manage custom fields, and update project settings. Use this role for auditors and team leads.
-  </Card>
-</CardGroup>
+## Changing a Role or Removing a Collaborator
 
-<Tip>
-  When in doubt, start with the most restrictive role that still lets the person do their job. Use the **Developer** role for teammates who only need to update remediation status and leave fix-related comments, they won't accidentally alter your audit results or criterion assessments. You can update a team member's role at any time from the Teammates panel.
-</Tip>
+The project owner and any Admin can change a collaborator's role or remove them from the project through the Teammates panel. The same paid-account rule applies when promoting someone to Edit or Admin: the invited person's own account must be on a paid plan at the moment you make the change.
 
-## Team Seat Limits by Plan
-
-The number of people you can add to your projects depends on your Labrador subscription. Here's how each plan compares:
-
-<Tabs>
-  <Tab title="Free">
-    The Free plan supports a single user only. You cannot invite team members or share project access on this plan. It's suited for running a full audit solo, with one active project slot at a time.
-  </Tab>
-  <Tab title="Core">
-    The Core plan also supports a single user. While it unlocks Jira integration and three new projects per month, it does not include team invites or collaborative features.
-  </Tab>
-  <Tab title="Plus">
-    The Plus plan is priced **per seat at \$55/month** and includes full team invite and management capabilities. Add as many seats as your team needs, each seat covers one team member across your projects.
-  </Tab>
-  <Tab title="Enterprise">
-    The Enterprise plan includes **unlimited team seats** under custom pricing. It also adds SSO, dedicated support, personalized onboarding, and custom integrations for larger organizations.
-  </Tab>
-</Tabs>
-
-For a full breakdown of what each plan includes, see the [Plans and Pricing](/plans-and-pricing) page.
-
-## Removing a Team Member
-
-If someone no longer needs access to a project, you can remove them at any time from the Teammates panel.
-
-<Steps>
-  <Step title="Open the Teammates panel">
-    Navigate to the project and click the **Teammates** button to open the team management panel.
-  </Step>
-  <Step title="Remove the team member">
-    Locate the team member you want to remove and select the option to remove them from the project.
-  </Step>
-</Steps>
-
-Removing a team member revokes their access to the project immediately, they will no longer be able to view or interact with any project content. However, their historical contributions remain intact. Issues they logged, comments they left, and criterion results they recorded are all preserved in the project exactly as they were.
+Removing a collaborator revokes their access immediately, but their contributions stay intact. Issues they logged, comments they left, and criterion results they recorded remain in the project exactly as they were.
 
 <Warning>
-  Removing a team member cannot be undone from within the project. If you need to restore their access, you'll need to send a new invitation and reassign their role.
+  Removing a collaborator cannot be undone from within the project. To restore their access, send a new invitation and reassign their role.
 </Warning>
+
+## Answers to Common Questions
+
+<AccordionGroup>
+  <Accordion title="My developer has no Labrador account and no subscription. Can they review and comment on my issues?">
+    Yes. Invite them as **Developer**. When they follow the invitation link, Labrador will let them create a free account and drop them straight back into the project. Developer role lets them view the audit, comment on issues, and update remediation status without needing a paid plan.
+  </Accordion>
+
+  <Accordion title="Can I add a colleague as an Editor while I am on the free plan?">
+    Only if that colleague is themselves on a paid plan. Your plan is not the constraint. The paid-account requirement applies to the invited person's own account.
+  </Accordion>
+
+  <Accordion title="My colleague just signed up. Why can't I make them an Editor?">
+    A newly created account is on a trial, which counts as free for this rule. They need to be on a paid plan of their own before you can assign them Edit or Admin.
+  </Accordion>
+
+  <Accordion title="I invited someone as View Only. Can I promote them to Edit later?">
+    Only once their own account is on a paid plan. The same requirement applies at role-change time as at invite time, so there is no way to add someone as View Only or Developer and promote them to Edit without them paying for their own plan first.
+  </Accordion>
+</AccordionGroup>
+
+For a full breakdown of what each plan includes, see the [Plans and Pricing](/plans-and-pricing) page.
