@@ -1,12 +1,12 @@
 ---
-title: "How Labrador Protects Your Accessibility Audit Data"
-sidebarTitle: "Trust & Security"
+title: "How Labrador protects your accessibility audit data"
+sidebarTitle: "Trust & security"
 description: "Labrador encrypts data in transit and at rest, runs daily backups, and hosts on Microsoft Azure. Review the full security practices and subprocessors."
 ---
 
 Labrador stores sensitive accessibility audit data on your behalf, including screenshots, page markup, issue descriptions, and the full findings from every audit you run. This page explains exactly how that data is protected, where it lives, and what has not been built yet. We include the gaps because you deserve a complete picture.
 
-## Encryption and Data Protection
+## Encryption and data protection
 
 Every layer of Labrador's infrastructure applies encryption, from the connection between your browser and our servers to the storage of your data at rest.
 
@@ -28,7 +28,7 @@ Every layer of Labrador's infrastructure applies encryption, from the connection
   </Card>
 </CardGroup>
 
-## Where Your Data Lives
+## Where your data lives
 
 <Info>
   All data is stored in the United States, Microsoft Azure East US 2 (Virginia).
@@ -39,7 +39,7 @@ Labrador uses two distinct storage systems:
 - **Audit records**, your projects, pages, criterion results, issues, and account data are stored in a managed PostgreSQL database on Microsoft Azure.
 - **Screenshots and file attachments**, stored in Microsoft Azure Blob Storage. Files are never accessible via public URLs. Every access is controlled through short-lived signed links scoped to your session, so a link that escapes your browser context cannot be reused.
 
-## Backups and Retention
+## Backups and retention
 
 Labrador runs two independent backup processes so that no single failure can result in data loss.
 
@@ -52,7 +52,7 @@ The independent daily backup is written to a separate provider (GitHub, see the 
 
 **Deletions are permanent.** When you delete an issue, page, or project, it is removed from the live database immediately, Labrador uses hard deletes, not hidden flags. Deleted data then ages out of all backup systems within 35 days.
 
-## Access Controls
+## Access controls
 
 Labrador enforces data access on the server, not just in the interface:
 
@@ -82,7 +82,7 @@ These are the third-party services that may process your data. Labrador updates 
   Nothing is sent to Anthropic unless you explicitly click **Generate Recommendation** on a specific issue. The data sent is limited to the issue description and the markup of the element being tested, no other audit data is included.
 </Note>
 
-## Security Features Available to You
+## Security features available to you
 
 You control several security settings directly from your account:
 
@@ -90,13 +90,13 @@ You control several security settings directly from your account:
 - **Password change triggers sign-out**, changing your password automatically ends every other active session. This is the fastest way to revoke access across all devices at once.
 - **Manual session termination**, under **Signed-in devices** in your account settings, click **Sign out other devices** to immediately end all sessions except your current one.
 
-## Reporting a Vulnerability
+## Reporting a vulnerability
 
 If you discover a security issue in Labrador, email [security@testwithlabrador.com](mailto:security@testwithlabrador.com). Labrador will acknowledge your report within two business days and keep you informed as the issue is investigated. If you would like credit for the find, just say so in your report. Please allow reasonable time to fix the issue before disclosing it publicly.
 
 For security questionnaires (including CAIQ-Lite and HECVAT), email [security@testwithlabrador.com](mailto:security@testwithlabrador.com) and Labrador will typically return them within a few business days.
 
-## What's On the Roadmap
+## What's on the roadmap
 
 Labrador believes in naming what isn't built yet, so you can make an informed decision about whether the platform is right for your organisation today.
 

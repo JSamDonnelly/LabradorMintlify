@@ -1,5 +1,5 @@
 ---
-title: "Sync Accessibility Issues to Jira Cloud from Labrador"
+title: "Sync accessibility issues to Jira Cloud from Labrador"
 sidebarTitle: "Jira"
 description: "Connect Labrador to Jira Cloud to automatically create tickets for accessibility issues and keep status and priority in sync between both tools."
 ---
@@ -10,7 +10,7 @@ The Jira integration eliminates the copy-paste handoff between your accessibilit
   The Jira integration is available on the **Core**, **Plus**, and **Enterprise** plans. It is not available on the Free plan. If you are on the Free plan, you can still export a Jira-ready CSV file, see [Jira CSV Export (without integration)](#jira-csv-export-without-integration) below.
 </Note>
 
-## Connecting Your Project to Jira
+## Connecting your project to Jira
 
 You need edit access to the Labrador project and an Atlassian account with permission to create issues in the target Jira project.
 
@@ -35,7 +35,7 @@ You need edit access to the Labrador project and an Atlassian account with permi
   </Step>
 </Steps>
 
-## Configuring Mappings and Templates
+## Configuring mappings and templates
 
 Once connected, you can tune how Labrador issues translate into Jira issues before saving your mapping. These settings control the shape and content of every ticket Labrador creates on your behalf.
 
@@ -51,7 +51,7 @@ Once connected, you can tune how Labrador issues translate into Jira issues befo
   </Card>
 </CardGroup>
 
-### Summary and Description Templates
+### Summary and description templates
 
 Control how the Jira issue title and body are composed using template variables. Click the insert buttons beneath each field to add a variable at the cursor position.
 
@@ -63,7 +63,7 @@ Control how the Jira issue title and body are composed using template variables.
 
 For example, a summary template of `[{{criterion}} {{criterionName}}] Issue on {{page}}` would produce a Jira ticket titled `[1.1.1 Non-text Content] Issue on Homepage`.
 
-## How Syncing Works
+## How syncing works
 
 Labrador maintains a live connection with Jira throughout the life of your project.
 
@@ -83,7 +83,7 @@ Labrador maintains a live connection with Jira throughout the life of your proje
   Use the **Open in JIRA** link on the integration card to navigate directly to the connected Jira board at any time.
 </Accordion>
 
-## Jira CSV Export (without integration)
+## Jira CSV export (without integration)
 
 Every Labrador plan, including Free, can export a Jira-ready CSV, no live integration required. This is useful for one-time handoffs to development teams that do not use Labrador on an ongoing basis.
 

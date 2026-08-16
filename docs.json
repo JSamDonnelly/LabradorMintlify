@@ -26,7 +26,7 @@
         "tab": "Documentation",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Get started",
             "pages": [
               "introduction",
               "quickstart",
@@ -34,7 +34,7 @@
             ]
           },
           {
-            "group": "Projects & Auditing",
+            "group": "Projects & auditing",
             "pages": [
               "projects/creating-a-project",
               "projects/managing-pages",
@@ -59,7 +59,7 @@
             ]
           },
           {
-            "group": "Exporting Reports",
+            "group": "Exporting reports",
             "pages": [
               "exports/overview",
               "exports/html-reports",
@@ -68,7 +68,7 @@
             ]
           },
           {
-            "group": "Account & Security",
+            "group": "Account & security",
             "pages": [
               "account/account-settings",
               "account/two-factor-authentication",

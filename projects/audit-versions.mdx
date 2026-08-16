@@ -1,12 +1,12 @@
 ---
-title: "Version Control and Retesting for Accessibility Audits"
-sidebarTitle: "Audit Versions"
+title: "Version control and retesting for accessibility audits"
+sidebarTitle: "Audit versions"
 description: "Create retest versions to verify developer fixes and major version upgrades to start fresh. Labrador preserves your original audit results throughout."
 ---
 
 Labrador uses a versioned model so you can track remediation progress over time without overwriting your original audit findings. Every project starts at **v1.0**. When a development team implements fixes and you need to verify them, you create a new version that carries your work forward, Labrador keeps the original intact. When a site undergoes major changes and you need to start a fresh evaluation, you create a new major version. At every stage, your full history is preserved.
 
-## Retest Versions (v1.0 → v1.1)
+## Retest versions (v1.0 → v1.1)
 
 A retest version is a minor version bump. Use it when a development team has addressed your findings and you need to verify that fixes are correct. Labrador copies your entire audit forward so you can check each finding without re-documenting anything from scratch.
 
@@ -29,7 +29,7 @@ A retest version is a minor version bump. Use it when a development team has add
   When every carried-forward issue on a criterion is closed, Labrador automatically updates the criterion's status to reflect the resolved state, you do not need to update it manually. If you reopen a closed issue, the criterion status reverts accordingly. Your original version (v1.0) is never modified by the retest process.
 </Note>
 
-## New Audit Versions (v1.x → v2.0)
+## New audit versions (v1.x → v2.0)
 
 A new audit version is a major version bump. Use it whenever you need a fresh, standalone evaluation rather than a targeted retest of previous findings. That covers two common situations:
 
@@ -52,7 +52,7 @@ From **Version actions**, choose one of two options:
   </Card>
 </CardGroup>
 
-## Switching Between Versions
+## Switching between versions
 
 Use the version dropdown in the **Audit version** bar to switch between any version of your project. When you are viewing a version that is not the latest, a **Viewing vX** badge appears in the interface as a reminder that you are looking at historical data rather than the current working version.
 
@@ -60,7 +60,7 @@ Use the version dropdown in the **Audit version** bar to switch between any vers
   Switching versions is read-only for older versions, you can review and export findings from any version, but edits are only possible in the current working version. This ensures your audit history is preserved accurately.
 </Info>
 
-## Deleting a Version
+## Deleting a version
 
 To remove a version you no longer need, click **Version actions** and select **Delete v…**. A confirmation dialog appears, spelling out exactly what will be removed before anything is deleted. After deletion, you are moved to another available version automatically.
 
@@ -68,7 +68,7 @@ To remove a version you no longer need, click **Version actions** and select **D
   Version deletion is permanent and cannot be undone. All pages, criterion results, issues, and attachments within the deleted version are removed. You must have more than one version in the project to delete one, Labrador will not allow you to delete the only remaining version.
 </Warning>
 
-## Recommended Workflow
+## Recommended workflow
 
 This versioning model maps naturally to a typical client engagement cycle. Following this pattern keeps your findings organised and makes it easy to demonstrate remediation progress to stakeholders.
 

@@ -1,6 +1,6 @@
 ---
-title: "Labrador Chrome Extension: AI Accessibility Remediation"
-sidebarTitle: "Chrome Extension"
+title: "Labrador Chrome extension: axe scans and AI accessibility remediation"
+sidebarTitle: "Chrome extension"
 description: "Capture live page HTML with the Labrador Chrome extension and generate AI-powered accessibility remediation guidance for your issues using Claude Opus 5."
 ---
 
@@ -15,7 +15,7 @@ Both workflows depend on the URL set on the Page, Component, or User Journey you
   The AI remediation feature is currently in **beta**. Before using the extension on a page, component, or user journey, make sure a valid URL is set on that item in your Labrador project.
 </Note>
 
-## Installing the Extension
+## Installing the extension
 
 The extension is available from the Chrome Web Store and takes less than a minute to install.
 
@@ -34,7 +34,7 @@ The extension is available from the Chrome Web Store and takes less than a minut
   </Step>
 </Steps>
 
-## Running an axe Scan
+## Running an axe scan
 
 The extension can run an [axe-core](https://github.com/dequelabs/axe-core) automated scan against the page you are testing and pull the findings directly into your Labrador project. Each result is mapped to the corresponding WCAG criterion on the item you are testing, so you never have to file findings by hand.
 
@@ -60,7 +60,7 @@ The extension can run an [axe-core](https://github.com/dequelabs/axe-core) autom
   Automated scanning catches roughly 30 to 50 percent of accessibility issues on a typical page. Use the axe scan as a fast first pass, then work through the remaining criteria manually and use AI Remediation Recommendations to help draft fixes for anything the scan surfaces.
 </Tip>
 
-## Generating a Remediation Recommendation
+## Generating a remediation recommendation
 
 Follow these steps each time you want to generate AI-assisted guidance for a specific issue.
 
@@ -88,7 +88,7 @@ Follow these steps each time you want to generate AI-assisted guidance for a spe
   </Step>
 </Steps>
 
-## What the AI Generates
+## What the AI generates
 
 The recommendation Claude Opus 5 produces is designed to give developers the context they need to fix the issue without requiring additional back-and-forth.
 
@@ -114,7 +114,7 @@ The recommendation Claude Opus 5 produces is designed to give developers the con
   A clear, specific issue description consistently produces better AI recommendations. Before clicking **Generate Recommendation**, describe what the problem is, where it occurs on the page, and which group of users is affected, for example: "The search button has no accessible name. Screen reader users cannot determine its purpose when navigating by button." The more context you provide, the more targeted the output will be.
 </Tip>
 
-## Reviewing AI Output
+## Reviewing AI output
 
 Always review AI-generated recommendations before sharing them with developers or including them in exported reports.
 

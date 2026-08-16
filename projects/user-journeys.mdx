@@ -1,6 +1,6 @@
 ---
-title: "Build and Test User Journeys in a Labrador Project"
-sidebarTitle: "User Journeys"
+title: "Build and test user journeys in a Labrador project"
+sidebarTitle: "User journeys"
 description: "Model real user flows in Labrador as ordered user journeys, sketch steps as you discover them, and audit each step against WCAG criteria without leaving the flow."
 ---
 
@@ -8,7 +8,7 @@ A **user journey** is an ordered walk through a flow in the product you are audi
 
 A journey is version-scoped: it belongs to the audit version you were working in when you created it, so retests and major-version upgrades keep the original flow intact.
 
-## When to Use a User Journey
+## When to use a user journey
 
 User journeys are the right tool when the flow matters as much as the pages inside it.
 
@@ -24,7 +24,7 @@ User journeys are the right tool when the flow matters as much as the pages insi
   </Tab>
 </Tabs>
 
-## Journey Steps: Two Kinds
+## Journey steps: two kinds
 
 Every step in a journey is one of two kinds. Both can carry a short "URL or how to get here" note so anyone reopening the journey can return to the right state.
 
@@ -35,7 +35,7 @@ Every step in a journey is one of two kinds. Both can carry a short "URL or how 
 
 When you tick **Test** on a manual step and save, Labrador mints a backing tracked item for that step inside the same save. The step keeps its name, note, and position, and it starts counting toward the journey's testing progress from that moment on.
 
-## Create a User Journey
+## Create a user journey
 
 <Steps>
   <Step title="Open your project">
@@ -65,7 +65,7 @@ When you tick **Test** on a manual step and save, Labrador mints a backing track
   Give each step a URL or a short "how to get here" path in the optional note field, especially for steps that depend on account state, cart contents, or filters. That is what leads a teammate, or a retest six months later, back to the exact same starting point.
 </Tip>
 
-## Testing a Journey
+## Testing a journey
 
 Each journey has its own screen with the ordered steps, per-step status, and a rollup for the whole flow. Progress is counted in **criteria**, not steps, so the progress bar moves the moment you mark the first result.
 
@@ -91,7 +91,7 @@ Each journey has its own screen with the ordered steps, per-step status, and a r
   Only linked steps and promoted manual steps contribute to the journey's testing totals. Unpromoted manual steps stay in the flow as narrative waypoints and are excluded from every denominator, so they never make the rollup look incomplete.
 </Note>
 
-## Edit or Add Steps Later
+## Edit or add steps later
 
 A journey is meant to grow with the audit.
 
@@ -99,7 +99,7 @@ A journey is meant to grow with the audit.
 - Click **Edit** on the journey (or on the card in the project) to reorder, rename, add, or remove steps in bulk.
 - Everything in the builder is a draft until you click **Save journey**, so **Cancel** always cancels everything, including any new manual steps you were about to mark **Test**.
 
-## Delete a Journey
+## Delete a journey
 
 Deleting a journey removes the flow and its ordering. It does **not** delete the pages, components, or test results the steps pointed at: those items remain in the project and keep every audit result, comment, and issue you logged against them.
 
@@ -119,7 +119,7 @@ Deleting a journey removes the flow and its ordering. It does **not** delete the
   If you only want to remove a step from the flow, edit the journey instead of deleting it. Removing a step from a journey never deletes the underlying page or component; it only takes it out of that particular flow.
 </Tip>
 
-## Journeys and Audit Versions
+## Journeys and audit versions
 
 Journeys are attached to the audit version they were created in. When you create a **retest version** or a **major version upgrade** of the project, the journeys from the source version are preserved on the source version and can be worked with independently on the new version. See [Audit Versions](/projects/audit-versions) for how versions carry pages, components, and journeys forward.
 
