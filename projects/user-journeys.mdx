@@ -33,7 +33,7 @@ Every step in a journey is one of two kinds. Both can carry a short "URL or how 
 | **Linked step** | Points at an existing page or component already in the project. Inherits that item's WCAG test results and counts toward the journey's testing progress. | The flow passes through a page or component you already track and audit. |
 | **Manual step** | A named waypoint typed straight into the journey (for example, `Enter shipping address`). Not tested on its own unless you mark it **Test**. | You want to sketch the flow quickly, or the step is a narrative waypoint that does not need its own audit. |
 
-When you tick **Test** on a manual step and save, Labrador mints a backing tracked item for that step inside the same save. The step keeps its name, note, and position, and it starts counting toward the journey's testing progress from that moment on.
+When you tick **Test** on a manual step and save, Labrador mints a backing tracked item for that step inside the same save. The step keeps its name, note, and position, and it starts counting toward the journey's testing progress from that moment on. That item is listed on the project under **User journey steps**, a section that is collapsed by default and shows a count beside its heading.
 
 ## Create a user journey
 
@@ -97,21 +97,25 @@ A journey is meant to grow with the audit.
 
 - On the journey screen, click **Add step** to open the builder focused on the **Add a step** input, ready for the next step you just discovered.
 - Click **Edit** on the journey (or on the card in the project) to reorder, rename, add, or remove steps in bulk.
+- You can rename any step, including one that already has a tracked item behind it. Labrador renames that item to match, so the step and the item it points at never drift apart.
 - Everything in the builder is a draft until you click **Save journey**, so **Cancel** always cancels everything, including any new manual steps you were about to mark **Test**.
 
 ## Delete a journey
 
-Deleting a journey removes the flow and its ordering. It does **not** delete the pages, components, or test results the steps pointed at: those items remain in the project and keep every audit result, comment, and issue you logged against them.
+Deleting a journey removes the flow and its ordering. By default it leaves the steps alone: the pages, components, and flow states the steps pointed at remain in the project and keep every audit result, comment, and issue you logged against them. The confirmation dialog also offers to clear the steps out, so decide which you want before you confirm.
 
 <Steps>
   <Step title="Open the journey">
     Click the journey card, or open the journey's actions menu directly from the project view.
   </Step>
   <Step title="Choose Delete">
-    Select **Delete**. Confirm the action in the dialog that appears.
+    Select **Delete**. A confirmation dialog appears.
+  </Step>
+  <Step title="Decide what happens to the steps">
+    **Also delete its steps** starts unticked. Leave it that way to keep every step, or tick it to clear the steps out. The dialog states the limit on what ticking it removes: "Only steps with no test results, and not used by another journey, are removed."
   </Step>
   <Step title="Confirm the impact">
-    The journey is removed and you are returned to the project view. Its underlying pages and their test results are untouched. If any manual steps had been promoted to tracked items, those items also remain in the project.
+    The journey is removed and you are returned to the project view. Steps that survive move into **Pages & Components**, with their test results untouched.
   </Step>
 </Steps>
 
