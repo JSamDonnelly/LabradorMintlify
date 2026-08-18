@@ -38,10 +38,10 @@
             "pages": [
               "projects/creating-a-project",
               "projects/managing-pages",
+              "projects/user-journeys",
               "projects/auditing-criteria",
               "projects/logging-issues",
-              "projects/audit-versions",
-              "projects/user-journeys"
+              "projects/audit-versions"
             ]
           },
           {
