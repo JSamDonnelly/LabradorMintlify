@@ -86,4 +86,56 @@ jobs:
           # apply when you run Claude locally against this repo.
           claude_args: |
             --model claude-opus-5
-            --max-turns 25
+            --max-turns 40
+
+      # Tag mode gives Claude git add/commit/push but no `gh`, so it pushes a
+      # branch and stops. Do not try to grant `gh` through claude_args: the
+      # action already sets --allowedTools itself and appends yours after, so a
+      # second one would replace its list rather than extend it.
+      #
+      # Runs on failure too. A run that does the work and then trips the turn
+      # limit still leaves a branch worth opening.
+      - name: Open a draft pull request for whatever Claude pushed
+        if: always() && github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          BASE: ${{ github.event.repository.default_branch }}
+          ISSUE: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          REQUESTER: ${{ github.event.issue.user.login }}
+        run: |
+          set -euo pipefail
+
+          branch=$(gh api "repos/${REPO}/branches?per_page=100" \
+            --jq "[.[].name | select(startswith(\"claude/issue-${ISSUE}-\"))] | sort | last // empty")
+          if [ -z "$branch" ]; then
+            echo "Claude pushed no branch for issue #${ISSUE}; nothing to open."
+            exit 0
+          fi
+
+          if [ "$(gh pr list --repo "$REPO" --head "$branch" --state all --json number --jq 'length')" != "0" ]; then
+            echo "A pull request already exists for ${branch}."
+            exit 0
+          fi
+
+          # An empty branch means Claude answered a question rather than
+          # editing anything. That is a valid outcome, not a pull request.
+          if [ "$(gh api "repos/${REPO}/compare/${BASE}...${branch}" --jq '.ahead_by')" = "0" ]; then
+            echo "${branch} has no commits ahead of ${BASE}; nothing to open."
+            exit 0
+          fi
+
+          # Claude writes its reasoning into the issue in the shape AGENTS.md
+          # asks for. Carry it over verbatim rather than reformatting it.
+          {
+            echo "Drafted by the docs agent for #${ISSUE}, requested by @${REQUESTER}."
+            echo
+            echo "---"
+            echo
+            gh api "repos/${REPO}/issues/${ISSUE}/comments" \
+              --jq '[.[] | select(.user.login | test("claude"; "i"))] | last | .body // ""'
+          } > /tmp/pr-body.md
+
+          gh pr create --repo "$REPO" --draft --base "$BASE" --head "$branch" \
+            --title "${ISSUE_TITLE}" --body-file /tmp/pr-body.md
