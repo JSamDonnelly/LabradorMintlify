@@ -1,28 +1,30 @@
 ---
-title: "Add and manage pages, components, and user journeys in a Labrador project"
+title: "Add and manage pages and components in a Labrador project"
 sidebarTitle: "Managing pages"
 description: "Add individual pages and UI components to your Labrador project, attach screenshots, and organise your audit scope before testing begins."
 ---
 
 Every Labrador project is made up of **pages**, **components**, and **user journeys**, the individual items you test against WCAG criteria. Each item is audited independently, so you can track progress and log issues at a granular level. Pages represent full web pages such as a homepage, a checkout flow, or an article template. Components represent reusable UI elements, a navigation header, a carousel, a modal dialog, or a video player, that appear across multiple pages of the site. User journeys represent multi-step task flows, such as signing up for an account or completing a purchase, that span more than one page.
 
-## Add a page, component, or user journey
+This page covers adding and organising pages and components. For user journeys, see [User journeys](/projects/user-journeys).
+
+## Add a page or component
 
 <Steps>
   <Step title="Open your project">
     From the Projects dashboard, click the project you want to add items to. The project view shows all pages, components, and user journeys already in your audit scope.
   </Step>
   <Step title="Click + Add">
-    Select the **\+ Add** button to open the dropdown, then choose **Page**, **Component**, or **User Journey** depending on what you want to test.
+    Select the **\+ Add** button to open the dropdown, then choose **Page** or **Component** depending on what you want to test.
   </Step>
   <Step title="Enter a name">
-    Type a descriptive **Name** for the item, for example, `Homepage`, `Product Listing Page`, `Navigation Header`, or `New User Signup`. Use a name that makes it immediately clear what is being tested.
+    Type a descriptive **Name** for the item, for example, `Homepage`, `Product Listing Page`, or `Navigation Header`. Use a name that makes it immediately clear what is being tested.
   </Step>
   <Step title="Provide a URL">
-    Enter the full **URL** of the page, component, or the starting page of the user journey. The URL is required if you plan to use AI-assisted remediation via the Labrador Chrome extension, Labrador uses it to open the exact page when generating recommendations.
+    Enter the full **URL** of the page or component. The URL is required if you plan to use AI-assisted remediation via the Labrador Chrome extension, Labrador uses it to open the exact page when generating recommendations.
   </Step>
   <Step title="Upload a screenshot (optional)">
-    Optionally upload a **Screenshot** of the page, component, or user journey to help you and your teammates visually identify it during testing. This is especially useful when you have multiple items with similar names.
+    Optionally upload a **Screenshot** of the page or component to help you and your teammates visually identify it during testing. This is especially useful when you have multiple items with similar names.
   </Step>
   <Step title="Click Create">
     Click **Create** to add the item to your project. It will appear in the project view and is ready to audit immediately.
@@ -30,8 +32,12 @@ Every Labrador project is made up of **pages**, **components**, and **user journ
 </Steps>
 
 <Tip>
-  Always enter a valid URL for each page, component, and user journey. The Labrador Chrome extension uses this URL to navigate directly to the page when you trigger AI-assisted remediation from an issue. Without a URL, the AI recommendation feature will not work for that item.
+  Always enter a valid URL for each page and component. The Labrador Chrome extension uses this URL to navigate directly to the page when you trigger AI-assisted remediation from an issue. Without a URL, the AI recommendation feature will not work for that item.
 </Tip>
+
+<Note>
+  User journeys are added from the same **\+ Add** menu, but a journey is built out of ordered steps rather than added as a single item. [User journeys](/projects/user-journeys) is the full walkthrough, from naming the journey to adding, reordering, and testing its steps.
+</Note>
 
 ## Page, component, and user journey testing
 
@@ -52,6 +58,8 @@ You can structure your audit scope in several ways. The approach you choose affe
     Test a complete multi-step task flow end to end, for example, account signup, checkout, or password reset. Because a user journey spans multiple pages and interactions, it surfaces accessibility issues that only appear in transitions, focus handling between steps, error recovery, and cumulative cognitive load.
 
     **When to use it:** When a critical task requires the user to move through several pages or states, and you need confidence that the whole flow is usable end to end, not just each screen in isolation.
+
+    See [User journeys](/projects/user-journeys) for how to build one, step by step.
   </Tab>
   <Tab title="Blended Approach (Recommended)">
     Combine page, component, and user journey testing for the most efficient scope. List the pages that contain unique content or functionality, add shared UI elements as separate components, and add critical multi-step flows as user journeys. Test each component once, then test only the page-specific content on each page item, and validate the end-to-end experience through your user journeys.
