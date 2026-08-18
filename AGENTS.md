@@ -38,6 +38,36 @@ Treat it as a lead, not a specification:
 - If nothing needs to change, say why and close the issue. A closed issue is a
   correct outcome, not a failure.
 
+## Show your work in the pull request
+
+Open the pull request as a **draft**. It is a proposal, not a finished change,
+and the person merging it is the one who decides whether it is true.
+
+The description is the part they read first, so write it for someone who has not
+seen the diff and does not know what changed in the product. Use this shape:
+
+```markdown
+## What changed in the product
+One or two sentences, from the brief. Link the originating issue.
+
+## What I changed here
+Page by page. For anything a reader would notice, show the wording:
+- `projects/user-journeys.mdx`: "Steps are added from the Add menu"
+  becomes "Steps are renamed from the journey's Edit button"
+
+## What I left alone
+Pages the brief named that turned out to be fine, and why. This is not
+padding: it is how the reviewer knows the page was read, not skipped.
+
+## What I could not verify
+Anything asserted on the brief alone, with no confirmation from the docs
+as they stand. If this section is empty, say so explicitly.
+```
+
+Never describe an edit you did not make, and never leave a change out of the
+list because it seemed minor. A reviewer who finds one undocumented change in
+the diff has to re-read all of them.
+
 ## Do not publish what you cannot verify
 
 The brief describes a code change. It is not evidence of what the interface
