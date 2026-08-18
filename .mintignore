@@ -8,3 +8,8 @@ drafts/
 
 # Scraped source content (not documentation pages)
 sources/
+
+# Instructions for agents and contributors, not pages for readers.
+# Without these, Mintlify publishes them (AGENTS.md was live at /AGENTS).
+AGENTS.md
+CLAUDE.md

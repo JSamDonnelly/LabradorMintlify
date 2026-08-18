@@ -1,6 +1,7 @@
 # Labrador Help Center: project instructions
 
-This repo is the published Help Center at <https://docs.testwithlabrador.com>.
+This repo is the published Help Center at
+[docs.testwithlabrador.com](https://docs.testwithlabrador.com).
 It is built on [Mintlify](https://mintlify.com): pages are MDX with YAML
 frontmatter, and the sidebar is defined in `docs.json`. Pushing to `main`
 publishes, so every change arrives through a pull request.
