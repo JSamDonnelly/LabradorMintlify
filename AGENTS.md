@@ -168,6 +168,7 @@ install the Mintlify skill:
 npx skills add https://mintlify.com/docs
 ```
 
-Mintlify also exposes MCP servers: `https://mcp.mintlify.com` to edit content
-and settings, and `https://www.mintlify.com/docs/mcp` to query how Mintlify
-works.
+Do not reach for Mintlify's MCP servers or its developer API to make changes
+here. They are a paid-plan feature, and this repo deliberately depends on
+nothing but git: edit the MDX files directly and open a pull request. Merging
+is what publishes.
