@@ -30,7 +30,7 @@ Labrador is a browser-based guided manual accessibility testing platform built f
 
 ### Guided WCAG criterion testing
 
-Work through every applicable WCAG 2.1 and 2.2 success criterion with built-in Testing Tips, plain-language criterion summaries, and a **Why This Matters** section that explains the real-world impact of each requirement. Complex criteria, such as 1.3.1 Info and Relationships, break down into expandable sub-criteria (Headings, Lists, Tables, and more) so you can mark each element independently rather than making a single sweeping judgment.
+Work through every applicable WCAG 2.1 and 2.2 success criterion with built-in Testing Tips, plain-language criterion summaries, and a **Why This Matters** section that explains the real-world impact of each criterion. Complex criteria, such as 1.3.1 Info and Relationships, break down into expandable sub-criteria (Headings, Lists, Tables, and more) so you can mark each element independently rather than making a single sweeping judgment.
 
 ### Page, component, and user journey management
 
@@ -55,10 +55,6 @@ Every project starts at **v1.0**. When your client returns with fixes to verify,
 
 Labrador pairs guided manual testing with automated [axe-core](https://github.com/dequelabs/axe-core) scans, run straight from the Criteria Overview through the Labrador Chrome extension. The scan gets the machine-detectable issues out of the way first: findings arrive mapped to their WCAG criteria, you review each one before it is imported, and every accepted result becomes an issue under the right criterion with the axe rule and affected element pre-filled. That leaves your effort for the roughly 70 percent of issues only a human can find.
 
-### AI-assisted remediation
-
-The **Labrador AI Accessibility Assistant** Chrome extension lets you capture the HTML of a specific element directly from a live page. Once you've written an issue description, click **Generate Recommendation** and select the problem element, Labrador drafts developer-ready remediation guidance based on your description, the captured HTML, and the WCAG criterion under review. The suggestion is editable before it becomes part of your exported report. The feature is powered by Claude Opus and is currently in beta.
-
 ### Jira Cloud integration
 
 On any paid plan, connect a project to your Jira Cloud board and every issue you log is created in Jira automatically, no copy-paste handoff. Status and priority changes sync in both directions, so closing a ticket in Jira marks it as Closed in Labrador and vice versa. On the Free plan, use the Jira-ready CSV export instead.
@@ -79,6 +75,10 @@ Invite colleagues to a project and assign pages or criteria between team members
 - **View-only**, for clients and stakeholders who need to review findings without making changes
 - **Developer**, can update remediation status and add comments only
 - **Editor**, full testing and documentation access
+
+### AI-assisted remediation
+
+The **Labrador AI Accessibility Assistant** Chrome extension lets you capture the HTML of a specific element directly from a live page. Once you've written an issue description, click **Generate Recommendation** and select the problem element, Labrador drafts developer-ready remediation guidance based on your description, the captured HTML, and the WCAG criterion under review. The suggestion is editable before it becomes part of your exported report. The feature is powered by Claude Opus and is currently in beta.
 
 ## Feature quick-links
 
