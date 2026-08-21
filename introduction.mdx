@@ -31,6 +31,10 @@ All issue data is auto-saved as you type.
 
 Every project starts at **v1.0**. When your client returns with fixes to verify, create a retest version (v1.0 → v1.1): Labrador carries your pages, criterion statuses, and logged issues forward so you can check each finding without re-documenting it. When you need a fresh top-to-bottom evaluation of the same site, start a new major audit version (v1.x → v2.0), either with the existing page list or as a completely blank slate.
 
+### Automated axe scans
+
+Run an [axe-core](https://github.com/dequelabs/axe-core) scan against the live page you are testing, straight from the Criteria Overview, using the Labrador Chrome extension. Findings arrive mapped to the matching WCAG criteria, and you review every finding before it is imported, so each accepted result becomes an issue under the right criterion with the axe rule and affected element pre-filled. Automated checks catch roughly 30 to 50 percent of accessibility issues on a typical page, which makes the scan a fast first pass before manual testing.
+
 ### AI-assisted remediation
 
 The **Labrador AI Accessibility Assistant** Chrome extension lets you capture the HTML of a specific element directly from a live page. Once you've written an issue description, click **Generate Recommendation** and select the problem element, Labrador drafts developer-ready remediation guidance based on your description, the captured HTML, and the WCAG criterion under review. The suggestion is editable before it becomes part of your exported report. The feature is powered by Claude Opus and is currently in beta.
