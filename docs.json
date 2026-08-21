@@ -106,5 +106,11 @@
       "source": "/introduction",
       "destination": "/"
     }
-  ]
+  ],
+  "integrations": {
+    "posthog": {
+      "apiKey": "phc_x4mJdKecRAJtgMDvXssukkVXmNZmxxipXuGQwX2BMymV",
+      "apiHost": "https://f.testwithlabrador.com"
+    }
+  }
 }
