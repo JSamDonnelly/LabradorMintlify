@@ -28,7 +28,7 @@
           {
             "group": "Get started",
             "pages": [
-              "introduction",
+              "index",
               "quickstart",
               "plans-and-pricing"
             ]
@@ -101,6 +101,12 @@
       "family": "Atkinson hyperlegible next"
     }
   },
+  "redirects": [
+    {
+      "source": "/introduction",
+      "destination": "/"
+    }
+  ],
   "integrations": {
     "posthog": {
       "apiKey": "phc_x4mJdKecRAJtgMDvXssukkVXmNZmxxipXuGQwX2BMymV",
