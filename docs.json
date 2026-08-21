@@ -28,7 +28,7 @@
           {
             "group": "Get started",
             "pages": [
-              "introduction",
+              "index",
               "quickstart",
               "plans-and-pricing"
             ]
@@ -100,5 +100,11 @@
     "body": {
       "family": "Atkinson hyperlegible next"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/introduction",
+      "destination": "/"
+    }
+  ]
 }

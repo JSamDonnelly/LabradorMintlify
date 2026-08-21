@@ -1,40 +1,12 @@
 ---
-title: "Labrador: guided WCAG accessibility testing platform"
-sidebarTitle: "Home"
-description: "Labrador is a guided manual WCAG testing platform for accessibility consultants and teams. Audit, document, and export professional reports."
+title: "Labrador: guided manual WCAG accessibility testing"
+sidebarTitle: "Introduction"
+description: "Labrador is a browser-based platform for structured WCAG 2.1 and 2.2 manual accessibility audits. Learn how it works and what's included."
 ---
 
-Labrador is a purpose-built manual accessibility testing platform. Instead of spreadsheets and ad-hoc note-taking, you get a guided criterion-by-criterion workflow that keeps every audit organised, collaborative, and ready to export, whether you're a solo consultant or part of a larger team.
-
-<CardGroup cols={2}>
-  <Card title="Quick Start" icon="rocket" href="/quickstart">
-    Create your first project and run your first audit in minutes.
-  </Card>
-
-  <Card title="Plans & Pricing" icon="tag" href="/plans-and-pricing">
-    Compare Free, Core, Plus, and Enterprise plans.
-  </Card>
-
-  <Card title="Projects & Auditing" icon="clipboard-check" href="/projects/creating-a-project">
-    Learn how to set up projects, add pages, and audit WCAG criteria.
-  </Card>
-
-  <Card title="Exporting Reports" icon="file-export" href="/exports/overview">
-    Export HTML, VPAT/DOCX, or CSV reports for clients and developers.
-  </Card>
-
-  <Card title="Jira Integration" icon="jira" href="/integrations/jira">
-    Push accessibility issues straight to your Jira Cloud board.
-  </Card>
-
-  <Card title="Team Collaboration" icon="users" href="/collaboration/team-members">
-    Invite team members and collaborate on audits in real time.
-  </Card>
-</CardGroup>
+Labrador is a browser-based guided manual accessibility testing platform built for accessibility consultants and teams. Instead of cobbling together spreadsheets and templates, you run your audits inside a structured interface that walks you through every applicable WCAG criterion, helps you document issues with precision, and generates professional, client-ready reports in a few clicks. Everything happens in your browser at [testwithlabrador.com](https://www.testwithlabrador.com), no software to install, no configuration required.
 
 ## How Labrador works
-
-Labrador structures your audit around the WCAG success criteria that matter. You work through each criterion, mark it Pass / Fail / N/A, log issues with screenshots and severity levels, and generate a polished report, all without leaving the browser.
 
 <Steps>
   <Step title="Create an account">
@@ -54,22 +26,98 @@ Labrador structures your audit around the WCAG success criteria that matter. You
   </Step>
 </Steps>
 
-## What makes Labrador different
+## Core features
+
+### Guided WCAG criterion testing
+
+Work through every applicable WCAG 2.1 and 2.2 success criterion with built-in Testing Tips, plain-language criterion summaries, and a **Why This Matters** section that explains the real-world impact of each requirement. Complex criteria, such as 1.3.1 Info and Relationships, break down into expandable sub-criteria (Headings, Lists, Tables, and more) so you can mark each element independently rather than making a single sweeping judgment.
+
+### Page, component, and user journey management
+
+Organise your work the way it makes sense for your project. Add individual pages, UI components, and multi-step user journeys to a project, test each one against the full WCAG checklist, and track progress at a glance. The Criteria Overview for each item shows a live progress bar and a status tally, Pass, Fail, N/A, and Untested, broken down by Level A and Level AA.
+
+### Issue documentation
+
+When a criterion fails, log the specific issue directly underneath it. Each issue supports:
+
+- A written description and remediation guidance
+- **Severity levels:** Advisory, Minor, Moderate, Serious, and Critical
+- **Remediation status:** Reported, In Progress, Fixed for Retesting, or Closed
+- Media attachments, screenshots and video recordings up to 100 MB per upload
+
+All issue data is auto-saved as you type.
+
+### Audit versioning
+
+Every project starts at **v1.0**. When your client returns with fixes to verify, create a retest version (v1.0 → v1.1): Labrador carries your pages, criterion statuses, and logged issues forward so you can check each finding without re-documenting it. When you need a fresh top-to-bottom evaluation of the same site, start a new major audit version (v1.x → v2.0), either with the existing page list or as a completely blank slate.
+
+### Hybrid manual and automated testing
+
+Labrador pairs guided manual testing with automated [axe-core](https://github.com/dequelabs/axe-core) scans, run straight from the Criteria Overview through the Labrador Chrome extension. The scan gets the machine-detectable issues out of the way first: findings arrive mapped to their WCAG criteria, you review each one before it is imported, and every accepted result becomes an issue under the right criterion with the axe rule and affected element pre-filled. That leaves your effort for the roughly 70 percent of issues only a human can find.
+
+### AI-assisted remediation
+
+The **Labrador AI Accessibility Assistant** Chrome extension lets you capture the HTML of a specific element directly from a live page. Once you've written an issue description, click **Generate Recommendation** and select the problem element, Labrador drafts developer-ready remediation guidance based on your description, the captured HTML, and the WCAG criterion under review. The suggestion is editable before it becomes part of your exported report. The feature is powered by Claude Opus and is currently in beta.
+
+### Jira Cloud integration
+
+On any paid plan, connect a project to your Jira Cloud board and every issue you log is created in Jira automatically, no copy-paste handoff. Status and priority changes sync in both directions, so closing a ticket in Jira marks it as Closed in Labrador and vice versa. On the Free plan, use the Jira-ready CSV export instead.
+
+### Professional exports
+
+Generate reports your clients and stakeholders can actually use:
+
+- **Interactive HTML**, includes an executive summary, detailed findings, embedded screenshots and videos, clickable WCAG criterion links, and a "Show Failures Only" toggle for developers
+- **VPAT® 2.5 / DOCX**, a fully editable Word document following the VPAT template, available for projects created with the VPAT methodology
+- **CSV**, a detailed flat export for use in Excel, Google Sheets, or custom workflows
+- **Jira-ready CSV**, formatted for direct import into Jira, available on all plans
+
+### Team collaboration
+
+Invite colleagues to a project and assign pages or criteria between team members. Role-based permissions let you control exactly what each person can do:
+
+- **View-only**, for clients and stakeholders who need to review findings without making changes
+- **Developer**, can update remediation status and add comments only
+- **Editor**, full testing and documentation access
+
+## Feature quick-links
 
 <CardGroup cols={2}>
-  <Card title="Manual-first by design" icon="hand-pointer">
-    Automated tools catch roughly 30% of accessibility issues. Labrador is built specifically for the manual testing that catches the rest.
+  <Card title="Quick Start" icon="rocket" href="/quickstart">
+    Create your first project and run your first audit in minutes.
   </Card>
 
-  <Card title="Guided WCAG workflow" icon="map">
-    Built-in testing tips, sub-criteria breakdowns, and "Why This Matters" context for every WCAG success criterion.
+  <Card title="Plans & Pricing" icon="tag" href="/plans-and-pricing">
+    Compare Free, Core, Plus, and Enterprise plans.
   </Card>
 
-  <Card title="AI-assisted remediation" icon="wand-magic-sparkles">
-    Generate developer-ready remediation guidance from live page HTML using the Labrador Chrome extension, powered by Claude Opus.
+  <Card title="Creating a Project" icon="folder-plus" href="/projects/creating-a-project">
+    Set up a new project, choose your testing methodology, and add pages, components, and user journeys.
   </Card>
 
-  <Card title="Client-ready exports" icon="file-lines">
-    Interactive HTML reports, fully-editable VPAT DOCX, and Jira-ready CSV, no extra formatting required.
+  <Card title="Auditing Criteria" icon="list-check" href="/projects/auditing-criteria">
+    Step through WCAG criteria, use Testing Tips, mark statuses, and log issues.
+  </Card>
+
+  <Card title="Exporting Reports" icon="file-export" href="/exports/overview">
+    Generate interactive HTML, VPAT/DOCX, CSV, and Jira-ready exports.
+  </Card>
+
+  <Card title="Jira Integration" icon="jira" href="/integrations/jira">
+    Connect to Jira Cloud for automatic issue creation and two-way status sync.
+  </Card>
+
+  <Card title="Team Collaboration" icon="users" href="/collaboration/team-members">
+    Invite team members, set permissions, and collaborate on audits.
+  </Card>
+
+  <Card title="AI Remediation" icon="wand-magic-sparkles" href="/integrations/chrome-extension">
+    Use the Chrome extension to capture HTML and generate remediation guidance.
   </Card>
 </CardGroup>
+
+## Standards coverage
+
+<Note>
+  Labrador supports **WCAG 2.1 and 2.2** at conformance Levels **A**, **AA**, and **AAA**. All plans include the full testing toolkit for both versions. For organisations that need formal accessibility conformance documentation, projects created with the VPAT methodology produce a **VPAT® 2.5 (WCAG version)** report, suitable for government procurement and enterprise compliance requirements.
+</Note>
