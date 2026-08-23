@@ -24,69 +24,25 @@ Here are answers to the most common questions about Labrador. If you don't find 
   <Accordion title="What is the demo project?">
     Every new account comes with **(Demo) University of Montauk**, a sample audit that is most of the way through testing. Use it to explore documented issues, severities, and remediation guidance, try the exports, and finish the last pages yourself to get a feel for the workflow. It never counts towards your plan's project limit, and you can delete it whenever you like. On the Free plan, if you delete it and want it back, click **Add sample project** on the Projects dashboard.
   </Accordion>
-
-  <Accordion title="Is Labrador suitable for my first accessibility audit?">
-    Yes. Every criterion includes a built-in testing tip, key-points summary, and a link to the official W3C documentation. Complex criteria are broken into sub-criteria so you can evaluate specific elements, headings, lists, tables, individually. These built-in guides make Labrador practical for auditors at all experience levels, not just experts.
-  </Accordion>
-
-  <Accordion title="Can I see Labrador in action before committing?">
-    Yes. You can book a free 1-on-1 product demo through the [Labrador homepage](https://www.testwithlabrador.com). The demo covers the full audit workflow and gives you a chance to ask questions before committing to a paid plan. And since the Free plan needs no credit card, you can also just sign up and explore the demo project at your own pace.
-  </Accordion>
 </AccordionGroup>
 
 ## Projects and auditing
 
 <AccordionGroup>
   <Accordion title="Can I change the methodology after creating a project?">
-    No. The testing methodology, WCAG 2.2 AA or VPAT® 2.5 – WCAG 2.2, is set at project creation and cannot be changed afterwards. If you need a different methodology, create a new project. This also means that if you want a `.docx` VPAT output, you must select the VPAT methodology when you create the project.
-  </Accordion>
-
-  <Accordion title="Which methodology should I choose?">
-    If you are unsure, pick **WCAG 2.2 AA Testing**. It fits almost every engagement, including most cases where a VPAT is the eventual deliverable, you can complete your testing and then author the VPAT document yourself against the results. Reach for **VPAT® 2.5 – WCAG 2.2** only when you specifically want to record findings in VPAT conformance terms (Supports, Partially Supports, Does Not Support) as you test and generate the VPAT DOCX directly from the tool. See [Creating a project](/projects/creating-a-project) for a full comparison.
+    No. The testing methodology, WCAG 2.2 AA or VPAT® 2.5 – WCAG 2.2, is set at project creation and cannot be changed afterwards. If you need a different methodology, create a new project. This also means that if you want a `.docx` VPAT output, you must select the VPAT methodology when you create the project. If you are unsure which to pick, choose **WCAG 2.2 AA Testing**: it fits almost every engagement, including most cases where a VPAT is the eventual deliverable.
   </Accordion>
 
   <Accordion title="What happens when I reach my project capacity?">
-    When you reach your plan's project limit, Labrador will not let you create additional projects until you free up a slot or upgrade your plan. To free a slot, delete an existing project from your Projects dashboard. Deleting a project frees the slot immediately, no audit data on other projects, team memberships, or billing is affected. To gain more capacity without deleting projects, upgrade your plan from billing settings.
-  </Accordion>
-
-  <Accordion title="Is there a limit on pages within a project?">
-    No. Your plan determines how many projects you can create, but there is no limit on the number of pages, components, and user journeys you can add within a single project. That said, you rarely need to test every page on a site: for most audits, 10 to 20 items covering each distinct template, key user journeys, and site-wide components is a practical and defensible scope. See [Managing pages](/projects/managing-pages) for sampling guidance.
+    When you reach your plan's project limit, Labrador will not let you create additional projects until you free up a slot or upgrade your plan. To free a slot, delete an existing project from your Projects dashboard. Deleting a project frees the slot immediately, no audit data on other projects, team memberships, or billing is affected. Note that capacity limits apply to projects only: there is no limit on the number of pages, components, and user journeys you can add within a single project.
   </Accordion>
 
   <Accordion title="What is the difference between pages, components, and user journeys?">
-    **Pages** are full web pages, a homepage, a checkout screen, an article template. **Components** are reusable UI elements, a navigation header, a cookie banner, a modal, that appear across many pages; you audit them once and the findings apply wherever they are used. **User journeys** are ordered multi-step task flows, such as signup or checkout, that surface issues which only appear in transitions between steps. Most audits combine all three. See [Managing pages](/projects/managing-pages) and [User journeys](/projects/user-journeys).
-  </Accordion>
-
-  <Accordion title="Do I have to test every step of a user journey?">
-    No. A journey step can be a **linked step** (pointing at a page or component you audit) or a plain **manual step**, a named waypoint like "Enter shipping address" that documents the flow without being tested itself. Untested manual steps are excluded from the journey's progress calculations, so they never make the rollup look incomplete. You can promote a manual step to a tested one at any time. Journey progress is counted in criteria, not steps.
-  </Accordion>
-
-  <Accordion title="Does my work save automatically?">
-    Yes. Criterion statuses and issues auto-save as you work, there is no save button to remember. If you close the browser mid-way through filling in an issue, your work is preserved.
-  </Accordion>
-
-  <Accordion title="Can I record a partial failure on a complex criterion?">
-    Yes. Complex criteria, such as **1.3.1 Info and Relationships**, expand into sub-groups (Headings, Lists, Tables, and more) that you can mark Pass, Fail, or N/A independently. That lets you record, for example, that tables are correctly marked up while lists are not, without treating the whole criterion as a single binary result.
-  </Accordion>
-
-  <Accordion title="How do I keep track of criteria I want to come back to?">
-    Bookmark them. Click the **Bookmark** icon on any criterion, then use the **Bookmarked** filter in the Criteria Overview toolbar to pull up everything you flagged. Bookmarks are useful for criteria that need a second opinion or a specific assistive technology you have not set up yet, and they are visible to all team members with access to the project.
-  </Accordion>
-
-  <Accordion title="Can I add my own fields to the issue form?">
-    Yes. **Custom fields** capture extra metadata on every issue in a project, for example, browser and version, testing environment, or an internal ticket reference. Fields can be Single Line Text, Number, or Dropdown, and can be marked required. If you use the same fields across engagements, save them as a template and apply it with **Load Template** instead of recreating them each time. See [Creating a project](/projects/creating-a-project#adding-custom-fields).
+    **Pages** are full web pages, a homepage, a checkout screen, an article template. **Components** are reusable UI elements, a navigation header, a cookie banner, a modal, that appear across many pages; you audit them once and the findings apply wherever they are used. **User journeys** are ordered multi-step task flows, such as signup or checkout, that surface issues which only appear in transitions between steps. Most audits combine all three, and for most sites 10 to 20 items in total is a practical, defensible scope. See [Managing pages](/projects/managing-pages) and [User journeys](/projects/user-journeys).
   </Accordion>
 
   <Accordion title="How do I retest after a developer has made fixes?">
-    Create a retest version from the **Version actions** menu inside your project. A retest bumps the minor version number (for example, v1.0 becomes v1.1) and carries all of your pages, criterion statuses, notes, and issues forward into the new version. Carried-forward issues are marked as such, so you know which findings you are retesting. When you verify a fix, set the issue's remediation status to **Closed**. When every carried-forward issue on a criterion is closed, the criterion's status updates automatically. Your original v1.0 findings are never modified.
-  </Accordion>
-
-  <Accordion title="What is the difference between a retest version and a new audit version?">
-    A **retest version** (v1.0 → v1.1) is for verifying fixes: everything is carried forward so you can check each finding without re-documenting it. A **new audit version** (v1.x → v2.0) is for a fresh evaluation, a scheduled re-audit or a major redesign: choose **Keep pages** to reuse your page list with fresh results, or **Blank audit** to start completely clean. Your full history is preserved either way. See [Audit versions](/projects/audit-versions).
-  </Accordion>
-
-  <Accordion title="Can I edit an older audit version?">
-    No, older versions are read-only. You can switch to any previous version to review it and export reports from it, but edits are only possible in the current working version. This is deliberate: it preserves your audit history accurately, which matters for compliance programmes and client disputes.
+    Create a retest version from the **Version actions** menu inside your project. A retest bumps the minor version number (for example, v1.0 becomes v1.1) and carries all of your pages, criterion statuses, notes, and issues forward into the new version. Carried-forward issues are marked as such, so you know which findings you are retesting. When you verify a fix, set the issue's remediation status to **Closed**; when every carried-forward issue on a criterion is closed, the criterion's status updates automatically. For a scheduled re-audit or a major redesign, create a new major version (v2.0) instead, with your existing page list or a blank slate. Older versions are never modified: they become read-only, and you can still review and export from them at any time. See [Audit versions](/projects/audit-versions).
   </Accordion>
 </AccordionGroup>
 
@@ -94,11 +50,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
 
 <AccordionGroup>
   <Accordion title="Does Labrador include automated scanning?">
-    Yes. With the [Chrome extension](/integrations/chrome-extension) installed, you can run an [axe-core](https://github.com/dequelabs/axe-core) scan straight from the Criteria Overview of any page, component, or user journey with a URL set. Findings arrive mapped to their WCAG criteria, you review every result before anything is written to your project, and each accepted finding becomes an issue under the correct criterion with the axe rule and affected element pre-filled.
-  </Accordion>
-
-  <Accordion title="Can automated scanning replace manual testing?">
-    No, and Labrador is honest about this. Automated scanning catches roughly 30 to 50 percent of accessibility issues on a typical page. The rest, confusing reading order, keyboard focus problems, misleading link text, cognitive barriers, require a human tester. Labrador's approach is hybrid: run the axe scan first to get the machine-detectable issues out of the way, then spend your effort on the issues only a human can find.
+    Yes. With the [Chrome extension](/integrations/chrome-extension) installed, you can run an [axe-core](https://github.com/dequelabs/axe-core) scan straight from the Criteria Overview of any page, component, or user journey with a URL set. Findings arrive mapped to their WCAG criteria, you review every result before anything is written to your project, and each accepted finding becomes an issue under the correct criterion with the axe rule and affected element pre-filled. Automated scanning catches roughly 30 to 50 percent of accessibility issues on a typical page; the rest require a human tester. Labrador's approach is hybrid: run the scan first to get the machine-detectable issues out of the way, then spend your effort on the issues only a human can find.
   </Accordion>
 
   <Accordion title="How does the AI remediation feature work?">
@@ -107,10 +59,6 @@ Here are answers to the most common questions about Labrador. If you don't find 
 
   <Accordion title="Is my audit data sent to an AI provider?">
     Only when you explicitly click **Generate Recommendation** on a specific issue, and only the minimum needed: the issue description and the markup of the element being tested. No other audit data is included, and nothing is sent at any other time. See [Trust & Security](/account/trust-and-security) for the full subprocessor list.
-  </Accordion>
-
-  <Accordion title="Why isn't the axe scan or AI recommendation working?">
-    Check four things: you are using Google Chrome (the extension does not run in other browsers), the Labrador extension is installed and active, the page, component, or user journey you are testing has a valid **URL** set in your project, and, for AI recommendations, you have written an issue description first. The URL is the most common culprit, without it the extension cannot navigate to the right page. The page must also be one you can load in your own browser session, including completing any sign-in it requires.
   </Accordion>
 </AccordionGroup>
 
@@ -125,11 +73,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
     - **CSV**, a flat export of all logged issues for flexible use in spreadsheets or other tools.
     - **Jira-ready CSV**, a CSV formatted for direct import into Jira, available on all plans including Free.
 
-    HTML, VPAT (where applicable), and CSV exports are available on all plans.
-  </Accordion>
-
-  <Accordion title="Can my client open the HTML report without a Labrador account?">
-    Yes. The HTML report is a single self-contained file that opens in any modern browser, no account, no login, no special software. Every screenshot and video is embedded directly in the file rather than linked externally, so the evidence works even offline and nothing breaks when you send the report by email or file transfer.
+    HTML, VPAT (where applicable), and CSV exports are available on all plans. The HTML report is fully self-contained: your client opens the file in any modern browser with no Labrador account, no login, and all screenshots and videos embedded. Custom report branding (your logo and identity) is available on the Enterprise plan.
   </Accordion>
 
   <Accordion title="Is there a PDF export?">
@@ -139,37 +83,17 @@ Here are answers to the most common questions about Labrador. If you don't find 
   <Accordion title="Can I use VPAT export on the Free plan?">
     Yes, if you created the project with the **VPAT® 2.5 – WCAG 2.2** methodology selected. The VPAT export format is available on all plans; the methodology choice at project creation is what determines whether it applies.
   </Accordion>
-
-  <Accordion title="Can I export a report from an older audit version?">
-    Yes. Switch to any previous version using the version dropdown in the Audit version bar and export from there. Older versions are read-only for editing, but reviewing and exporting work exactly as they do on the current version.
-  </Accordion>
-
-  <Accordion title="Can I brand the report with my company logo?">
-    Custom branding on exported reports, your logo, colour scheme, and identity elements, is available on the Enterprise plan. All other plans produce reports with Labrador's standard formatting.
-  </Accordion>
 </AccordionGroup>
 
 ## Jira integration
 
 <AccordionGroup>
   <Accordion title="Which plans include the Jira integration?">
-    The live Jira integration, which pushes issues to Jira automatically and syncs status changes in both directions, is available on the Core, Plus, and Enterprise plans. The Free plan does not include the live integration, but it does include the Jira-ready CSV export, which you can import into Jira manually.
+    The live Jira integration, which pushes issues to Jira automatically and syncs status changes in both directions, is available on the Core, Plus, and Enterprise plans. It connects to **Jira Cloud** through Atlassian's sign-in flow; if your team runs self-hosted Jira Server or Data Center, use the Jira-ready CSV export instead. The Free plan does not include the live integration, but it does include the Jira-ready CSV export, which you can import into Jira manually.
   </Accordion>
 
   <Accordion title="What does two-way Jira sync mean?">
     Once you connect a project to Jira Cloud and save your field mappings, new issues you log in Labrador are pushed to your Jira board automatically. After that, status and priority changes flow in both directions: close or reprioritise an issue in Labrador and the linked Jira ticket updates, and vice versa. The integration card in Labrador shows **Reverse sync active** when Jira-to-Labrador updates are enabled.
-  </Accordion>
-
-  <Accordion title="Does the integration work with Jira Server or Data Center?">
-    The live integration connects to **Jira Cloud** through Atlassian's sign-in flow. If your team runs a self-hosted Jira, use the Jira-ready CSV export instead, it is formatted for Jira's standard CSV import tool. See [CSV & Jira exports](/exports/csv-and-jira).
-  </Accordion>
-
-  <Accordion title="Can I control how Labrador issues appear in Jira?">
-    Yes. Before saving your mapping you can map each of Labrador's five severity levels to a Jira priority, map project custom fields to Jira custom fields, and compose the ticket summary and description with template variables such as `{{page}}`, `{{criterion}}`, and `{{criterionName}}`. See [Jira integration](/integrations/jira#configuring-mappings-and-templates).
-  </Accordion>
-
-  <Accordion title="What happens if I disconnect Jira?">
-    Sync stops immediately. Tickets already created in Jira stay there, but they no longer update when you change statuses, priorities, or fields in Labrador. The disconnect cannot be undone, to resume syncing you reconnect and reconfigure your mappings.
   </Accordion>
 </AccordionGroup>
 
@@ -181,67 +105,19 @@ Here are answers to the most common questions about Labrador. If you don't find 
   </Accordion>
 
   <Accordion title="My developer has no Labrador account. Can they still review my issues?">
-    Yes. Invite them as **Developer**: they follow the invitation link, create a free account on the spot, and land straight in the project. The Developer role lets them view the audit, comment on issues, and update remediation status, no subscription needed on their side.
-  </Accordion>
-
-  <Accordion title="What can a Developer-role team member do?">
-    A team member assigned the Developer role can update the remediation status of issues (for example, marking an issue as **In Progress** or **Fixed for Retesting**) and leave comments on any issue. They cannot modify criterion results, change project settings, or access billing. This role is designed for developers who need to track and update the fix status of accessibility issues without having full auditor access.
+    Yes. Invite them as **Developer**: they follow the invitation link, create a free account on the spot, and land straight in the project. The Developer role lets them view the audit, leave comments, and update the remediation status of issues (for example, marking an issue as **In Progress** or **Fixed for Retesting**). They cannot modify criterion results, log new issues, or change project settings, so your audit stays intact.
   </Accordion>
 
   <Accordion title="Why can't I promote my colleague to Editor?">
     Because the paid-plan requirement applies to the invited person's own account, not yours. Edit and Admin roles require the collaborator to be on a paid plan at the moment you assign the role, and a newly created account on trial counts as free for this rule. Once they move onto a paid plan, you can promote them from the Teammates panel.
   </Accordion>
-
-  <Accordion title="How do comments and notifications work?">
-    On Plus and Enterprise plans, team members can comment directly on issues and criterion results, so discussion stays attached to the finding it relates to. Labrador notifies you when someone comments on an issue you are involved in, when remediation statuses change, and when team membership changes. You can switch individual notification types on or off in your account settings; preferences apply across all your projects. See [Comments & notifications](/collaboration/comments-and-notifications).
-  </Accordion>
 </AccordionGroup>
 
-## Billing
+## Billing and account
 
 <AccordionGroup>
   <Accordion title="Can I upgrade or downgrade at any time?">
-    Yes, from your **Billing Settings**. Upgrades take effect immediately, you get the additional capacity and features the moment you confirm. Downgrades take effect at the end of your current billing cycle, so you keep everything you have paid for until the period runs out.
-  </Accordion>
-
-  <Accordion title="How is my payment information handled?">
-    Payments are processed by Stripe, a PCI DSS Level 1 provider. Your card number is submitted directly to Stripe and never reaches or passes through Labrador's servers.
-  </Accordion>
-
-  <Accordion title="How does Enterprise pricing work?">
-    Enterprise pricing is custom, based on your organisation's needs: unlimited projects and seats, custom integrations, export branding, dedicated support, and personalised onboarding. [Contact the Labrador team](https://www.testwithlabrador.com/support) to discuss requirements.
-  </Accordion>
-</AccordionGroup>
-
-## Security and account
-
-<AccordionGroup>
-  <Accordion title="Where is my audit data stored?">
-    All audit data, projects, pages, criteria, issues, screenshots, and file attachments, is stored in the United States on Microsoft Azure infrastructure in the East US 2 region (Virginia). See the [Trust & Security](/account/trust-and-security) page for full details on storage, encryption, and subprocessors.
-  </Accordion>
-
-  <Accordion title="Is my data encrypted?">
-    Yes, at every layer. Connections use TLS with HSTS preloading, so no plain-text traffic reaches Labrador's servers. Stored data is encrypted at rest with AES-256. Passwords are hashed with bcrypt before storage, Labrador cannot see or recover your password by design.
-  </Accordion>
-
-  <Accordion title="Is my data backed up?">
-    Yes. Labrador runs two independent backup processes: a nightly database backup with point-in-time recovery covering the previous 35 days, and a separate daily backup to an independent system retained for 30 days. Access to backups is limited to Labrador's engineering team.
-  </Accordion>
-
-  <Accordion title="If I delete something, is it really gone?">
-    Yes. When you delete an issue, page, or project, it is removed from the live database immediately, Labrador uses hard deletes, not hidden flags. Deleted data then ages out of all backup systems within 35 days. This is also why project deletion asks you to type `delete` to confirm: there is no undo.
-  </Accordion>
-
-  <Accordion title="Does Labrador support two-factor authentication?">
-    Yes. You can enable 2FA with any authenticator app (Google Authenticator, Authy, 1Password) from your account settings, and Labrador issues single-use recovery codes at setup, save them immediately, they are shown only once. If you sign in with Google, your Google account's own two-step verification applies instead. See [Two-factor authentication](/account/two-factor-authentication).
-  </Accordion>
-
-  <Accordion title="I forgot my password. What do I do?">
-    Click **Forgot your password?** on the sign-in page and Labrador sends a reset link to your registered email address. Support cannot tell you your password, it is stored as a bcrypt hash and is unrecoverable by design. Note that changing your password automatically signs out every other device, which is also the fastest way to revoke access if you suspect your account is compromised.
-  </Accordion>
-
-  <Accordion title="Is single sign-on (SSO) available?">
-    SSO and tailored security support are part of the Enterprise plan offering, but SAML-based SSO is not yet generally available. Enterprise customers who require SSO should [contact Labrador](mailto:security@testwithlabrador.com) to discuss timeline and requirements. Labrador's [Trust & Security](/account/trust-and-security) page keeps an honest list of what is and is not built yet.
+    Yes, from your **Billing Settings**. Upgrades take effect immediately, you get the additional capacity and features the moment you confirm. Downgrades take effect at the end of your current billing cycle, so you keep everything you have paid for until the period runs out. Payments are processed by Stripe, a PCI DSS Level 1 provider; your card number is submitted directly to Stripe and never reaches Labrador's servers.
   </Accordion>
 
   <Accordion title="How do I delete my account?">
@@ -249,14 +125,26 @@ Here are answers to the most common questions about Labrador. If you don't find 
   </Accordion>
 </AccordionGroup>
 
+## Security
+
+<AccordionGroup>
+  <Accordion title="Where is my audit data stored?">
+    All audit data, projects, pages, criteria, issues, screenshots, and file attachments, is stored in the United States on Microsoft Azure infrastructure in the East US 2 region (Virginia). Connections use TLS with HSTS preloading, and stored data is encrypted at rest with AES-256. See the [Trust & Security](/account/trust-and-security) page for full details on storage, encryption, and subprocessors.
+  </Accordion>
+
+  <Accordion title="Is my data backed up?">
+    Yes. Labrador runs two independent backup processes: a nightly database backup with point-in-time recovery covering the previous 35 days, and a separate daily backup to an independent system retained for 30 days. Access to backups is limited to Labrador's engineering team. Deletions, on the other hand, are permanent: Labrador uses hard deletes, not hidden flags, and deleted data ages out of all backup systems within 35 days.
+  </Accordion>
+
+  <Accordion title="Does Labrador support two-factor authentication?">
+    Yes. You can enable 2FA with any authenticator app (Google Authenticator, Authy, 1Password) from your account settings, and Labrador issues single-use recovery codes at setup, save them immediately, they are shown only once. If you sign in with Google, your Google account's own two-step verification applies instead. See [Two-factor authentication](/account/two-factor-authentication).
+  </Accordion>
+</AccordionGroup>
+
 ## Support
 
 <AccordionGroup>
   <Accordion title="How do I contact support?">
-    Three ways: **live chat** via the yellow chat button on any Labrador page (weekdays, 9am to 5pm GMT and EDT, typically answered within minutes), **email** to [help@testwithlabrador.com](mailto:help@testwithlabrador.com) (answered within 24 hours on business days, put "Urgent" in the subject for time-sensitive issues), or the **support form** at [testwithlabrador.com/support](https://www.testwithlabrador.com/support). See [Contact support](/help/contact-support) for details.
-  </Accordion>
-
-  <Accordion title="I found an accessibility issue in Labrador itself. Where do I report it?">
-    Email [accessibility@testwithlabrador.com](mailto:accessibility@testwithlabrador.com). Labrador aims for WCAG 2.2 AA conformance on its own site and takes these reports seriously, expect a response within one business day for most issues. For security vulnerabilities, use [security@testwithlabrador.com](mailto:security@testwithlabrador.com) instead.
+    Three ways: **live chat** via the yellow chat button on any Labrador page (weekdays, 9am to 5pm GMT and EDT, typically answered within minutes), **email** to [help@testwithlabrador.com](mailto:help@testwithlabrador.com) (answered within 24 hours on business days, put "Urgent" in the subject for time-sensitive issues), or the **support form** at [testwithlabrador.com/support](https://www.testwithlabrador.com/support). Accessibility issues on Labrador's own site go to [accessibility@testwithlabrador.com](mailto:accessibility@testwithlabrador.com), and security reports to [security@testwithlabrador.com](mailto:security@testwithlabrador.com).
   </Accordion>
 </AccordionGroup>
