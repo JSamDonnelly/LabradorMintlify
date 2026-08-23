@@ -41,6 +41,10 @@ Here are answers to the most common questions about Labrador. If you don't find 
     **Pages** are full web pages, a homepage, a checkout screen, an article template. **Components** are reusable UI elements, a navigation header, a cookie banner, a modal, that appear across many pages; you audit them once and the findings apply wherever they are used. **User journeys** are ordered multi-step task flows, such as signup or checkout, that surface issues which only appear in transitions between steps. Most audits combine all three, and for most sites 10 to 20 items in total is a practical, defensible scope. See [Managing pages](/projects/managing-pages) and [User journeys](/projects/user-journeys).
   </Accordion>
 
+  <Accordion title="Does my work save automatically?">
+    Yes. Criterion statuses and issues auto-save as you work, there is no save button to remember. If you close the browser mid-way through filling in an issue, your work is preserved.
+  </Accordion>
+
   <Accordion title="How do I retest after a developer has made fixes?">
     Create a retest version from the **Version actions** menu inside your project. A retest bumps the minor version number (for example, v1.0 becomes v1.1) and carries all of your pages, criterion statuses, notes, and issues forward into the new version. Carried-forward issues are marked as such, so you know which findings you are retesting. When you verify a fix, set the issue's remediation status to **Closed**; when every carried-forward issue on a criterion is closed, the criterion's status updates automatically. For a scheduled re-audit or a major redesign, create a new major version (v2.0) instead, with your existing page list or a blank slate. Older versions are never modified: they become read-only, and you can still review and export from them at any time. See [Audit versions](/projects/audit-versions).
   </Accordion>
@@ -59,6 +63,10 @@ Here are answers to the most common questions about Labrador. If you don't find 
 
   <Accordion title="Is my audit data sent to an AI provider?">
     Only when you explicitly click **Generate Recommendation** on a specific issue, and only the minimum needed: the issue description and the markup of the element being tested. No other audit data is included, and nothing is sent at any other time. See [Trust & Security](/account/trust-and-security) for the full subprocessor list.
+  </Accordion>
+
+  <Accordion title="Why isn't the axe scan or AI recommendation working?">
+    Check four things: you are using Google Chrome (the extension does not run in other browsers), the Labrador extension is installed and active, the page, component, or user journey you are testing has a valid **URL** set in your project, and, for AI recommendations, you have written an issue description first. The URL is the most common culprit, without it the extension cannot navigate to the right page. The page must also be one you can load in your own browser session, including completing any sign-in it requires.
   </Accordion>
 </AccordionGroup>
 
@@ -138,6 +146,10 @@ Here are answers to the most common questions about Labrador. If you don't find 
 
   <Accordion title="Does Labrador support two-factor authentication?">
     Yes. You can enable 2FA with any authenticator app (Google Authenticator, Authy, 1Password) from your account settings, and Labrador issues single-use recovery codes at setup, save them immediately, they are shown only once. If you sign in with Google, your Google account's own two-step verification applies instead. See [Two-factor authentication](/account/two-factor-authentication).
+  </Accordion>
+
+  <Accordion title="Is single sign-on (SSO) available?">
+    SSO and tailored security support are part of the Enterprise plan offering, but SAML-based SSO is not yet generally available. Enterprise customers who require SSO should [contact Labrador](mailto:security@testwithlabrador.com) to discuss timeline and requirements. Labrador's [Trust & Security](/account/trust-and-security) page keeps an honest list of what is and is not built yet.
   </Accordion>
 </AccordionGroup>
 
