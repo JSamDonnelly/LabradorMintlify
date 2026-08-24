@@ -113,5 +113,8 @@
       "apiHost": "https://f.testwithlabrador.com",
       "sessionRecording": true
     }
+  },
+  "search": {
+    "prompt": "ask or search..."
   }
 }
