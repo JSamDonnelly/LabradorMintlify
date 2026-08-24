@@ -84,6 +84,7 @@ With criteria selected, the toolbar offers:
 | --- | --- | --- |
 | Positive result | **Mark Pass** | **Mark Supports** |
 | Negative result | **Mark Fail** | **Mark Does Not Support** |
+| Does not apply | **Mark N/A** | **Mark N/A** |
 | Reset to unmarked | **Mark Untested** | **Mark Not Evaluated** |
 
 **Clear selection** sits to the right and drops the selection without changing anything.
@@ -108,9 +109,24 @@ The common case: you have finished testing, and you know the criteria you never 
   Only do this for criteria you have genuinely evaluated and concluded pass. Batch marking is for recording conclusions you already reached, not for clearing a list you have not worked through. A report that says Pass on a criterion nobody tested is worse than one that honestly says Not Evaluated, and it is your name on the export.
 </Warning>
 
-<Tip>
-  Marking criteria as not applicable in bulk works differently: use the dedicated N/A batch tool, which groups criteria by the reason they do not apply.
-</Tip>
+### The N/A batch tool
+
+**Mark N/A** in the toolbar applies to whatever you selected. When a whole class of criteria does not apply to a page, there is a faster route that does the thinking for you.
+
+Below the criteria list, next to the automated scan button, is **Batch mark N/A**. Instead of asking you to find the right criteria, it asks what is true about the page:
+
+- This page has no prerecorded audio or video
+- This page has no forms, user input, or authentication
+- This page has no time limits or auto-updating content
+- All content on this page is in a single language
+
+Tick the statements that describe your page and the tool marks every criterion that depends on them as not applicable. So confirming a page has no media covers the captions, audio description, and media alternative criteria in one action, without you having to remember which numbers those are.
+
+It only ever touches criteria you have not already marked, so it cannot overwrite a result you reached yourself. Groups where everything is already marked show as complete rather than offering work that would do nothing.
+
+<Note>
+  The tool appears on pages and components you can edit, alongside the automated scan. If you do not see it, you are either on a view without edit permission or every applicable group has already been handled.
+</Note>
 
 ## Progress tracking
 
