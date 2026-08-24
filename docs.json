@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Labrador",
-  "description": "Labrador is a guided manual WCAG accessibility testing platform for auditors and teams. Create audit projects, evaluate WCAG 2.1 and 2.2 success criteria page by page, log issues with evidence, and export client-ready HTML, VPAT DOCX, and CSV reports.",
+  "description": "Labrador is a guided WCAG accessibility testing platform for auditors and teams, taking a manual hybrid approach: you evaluate criteria yourself, with automated axe-core scans clearing the machine-detectable issues first. Create audit projects, work through WCAG 2.1 and 2.2 success criteria, log issues with evidence, and export client-ready HTML, VPAT DOCX, and CSV reports.",
   "theme": "maple",
   "colors": {
     "primary": "#694e32",
