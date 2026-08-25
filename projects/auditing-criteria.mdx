@@ -46,7 +46,7 @@ The filter toolbar at the top of the Criteria Overview helps you focus on specif
   </Card>
 
   <Card title="Filter by Status" icon="filter">
-    Show only criteria with a specific status: **Pass**, **Fail**, **N/A**, **Untested**, or **Bookmarked**. Use the Fail filter to quickly review all outstanding issues, or the Untested filter to find remaining work.
+    Show only criteria with a specific status: **Pass**, **Fail**, **N/A**, **Not Evaluated**, or **Bookmarked**, each with a count beside it. Use the Fail filter to review outstanding issues, or **Not Evaluated** to find remaining work. That filter pairs with [batch marking](#batch-marking) to close out an audit quickly.
   </Card>
 
   <Card title="Filter by Conformance Level" icon="layer-group">
@@ -64,6 +64,69 @@ Use the toggle beside the filter toolbar to switch between two layouts:
 
 - **Side by side** (default), the criteria list stays visible on one side while the testing panel opens alongside it. This is the best mode for working through criteria in sequence.
 - **Pop-up**, the testing panel opens as a modal dialog over the criteria list. Use this mode on smaller screens or when you prefer a more focused view of a single criterion at a time.
+
+## Batch marking
+
+Every criterion row has a checkbox on its left. There is no mode to turn on: the checkboxes are always there, and a toolbar appears as soon as you select something, showing how many criteria are selected.
+
+### Selecting a range
+
+Selecting criteria one at a time is fine for two or three. For anything larger, select a range:
+
+- **With a mouse**, click the first checkbox, then hold **Shift** and click the last one. Everything between them is selected.
+- **With the keyboard**, move to a checkbox and press **Space** or **Enter** to select it. That criterion becomes your anchor. Move to another checkbox and press **Shift + Space** or **Shift + Enter** to select everything between the anchor and where you are now.
+
+Range selection only reaches criteria currently visible in the list, so **whatever you have filtered to is what a range can select**. That is what makes the next part work.
+
+### Marking a selection
+
+With criteria selected, the toolbar offers:
+
+- **Mark Pass**
+- **Mark Fail**
+- **Mark N/A**
+- **Mark Untested**, which returns them to unmarked
+
+**Clear selection** sits to the right and drops the selection without changing anything.
+
+### Closing out an audit
+
+The common case: you have finished testing, and you know the criteria you never marked were fine. Rather than clicking through them one at a time:
+
+<Steps>
+  <Step title="Filter to Not Evaluated">
+    In the status filter, choose **Not Evaluated**. The list narrows to only the criteria you never marked, and the badge tells you how many there are.
+  </Step>
+  <Step title="Select the whole list">
+    Click the first checkbox, then **Shift + click** the last one. Because the list is filtered, this selects exactly the unmarked criteria and nothing else.
+  </Step>
+  <Step title="Mark them">
+    Click **Mark Pass**. The count in the toolbar tells you how many you are about to change before you commit to it.
+  </Step>
+</Steps>
+
+<Warning>
+  Only do this for criteria you have genuinely evaluated and concluded pass. Batch marking is for recording conclusions you already reached, not for clearing a list you have not worked through. A report that says Pass on a criterion nobody tested is worse than one that honestly says Not Evaluated, and it is your name on the export.
+</Warning>
+
+### The N/A batch tool
+
+**Mark N/A** in the toolbar applies to whatever you selected. When a whole class of criteria does not apply to a page, there is a faster route that does the thinking for you.
+
+Below the criteria list, next to the automated scan button, is **Batch mark N/A**. Instead of asking you to find the right criteria, it asks what is true about the page:
+
+- This page has no prerecorded audio or video
+- This page has no forms, user input, or authentication
+- This page has no time limits or auto-updating content
+- All content on this page is in a single language
+
+Tick the statements that describe your page and the tool marks every criterion that depends on them as not applicable. So confirming a page has no media covers the captions, audio description, and media alternative criteria in one action, without you having to remember which numbers those are.
+
+It only ever touches criteria you have not already marked, so it cannot overwrite a result you reached yourself. Groups where everything is already marked show as complete rather than offering work that would do nothing.
+
+<Note>
+  The tool appears on pages and components you can edit, alongside the automated scan. If you do not see it, you are either on a view without edit permission or every applicable group has already been handled.
+</Note>
 
 ## Progress tracking
 

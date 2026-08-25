@@ -44,6 +44,8 @@ The extension can run an [axe-core](https://github.com/dequelabs/axe-core) autom
   </Step>
   <Step title="Trigger an axe scan">
     Click the **Run axe Scan** action on the Criteria Overview. Labrador will open the URL set on the item and the extension will run axe against the loaded page.
+
+    **Batch mark N/A** sits next to it. That one needs no extension and is worth a moment before or after scanning: it marks whole groups of criteria as not applicable based on what the page does not contain. See [the N/A batch tool](/projects/auditing-criteria#the-na-batch-tool).
   </Step>
   <Step title="Review findings before importing">
     When the scan completes, the extension shows a list of findings for you to review before anything is written to your project. Each finding shows the rule that failed, the affected element, and the WCAG criterion it maps to.
