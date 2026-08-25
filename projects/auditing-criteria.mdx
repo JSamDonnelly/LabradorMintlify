@@ -44,7 +44,7 @@ The filter toolbar at the top of the Criteria Overview helps you focus on specif
   </Card>
 
   <Card title="Filter by Status" icon="filter">
-    Show only criteria with a specific status: **Pass**, **Fail**, **N/A**, **Not Evaluated**, or **Bookmarked**, each with a count beside it. Use the Fail filter to review outstanding issues, or **Not Evaluated** to find remaining work. That filter pairs with [batch marking](#batch-marking) to close out an audit quickly.
+    Show only criteria with a specific status: **Pass**, **Fail**, **N/A**, **Untested**, or **Bookmarked**, each with a count beside it. Use the Fail filter to review outstanding issues, or **Untested** to find remaining work. That filter pairs with [batch marking](#batch-marking) to close out an audit quickly.
   </Card>
 
   <Card title="Filter by Conformance Level" icon="layer-group">
@@ -92,8 +92,8 @@ With criteria selected, the toolbar offers:
 The common case: you have finished testing, and you know the criteria you never marked were fine. Rather than clicking through them one at a time:
 
 <Steps>
-  <Step title="Filter to Not Evaluated">
-    In the status filter, choose **Not Evaluated**. The list narrows to only the criteria you never marked, and the badge tells you how many there are.
+  <Step title="Filter to Untested">
+    In the status filter, choose **Untested**. The list narrows to only the criteria you never marked, and the badge tells you how many there are.
   </Step>
   <Step title="Select the whole list">
     Click the first checkbox, then **Shift + click** the last one. Because the list is filtered, this selects exactly the unmarked criteria and nothing else.
@@ -104,7 +104,7 @@ The common case: you have finished testing, and you know the criteria you never 
 </Steps>
 
 <Warning>
-  Only do this for criteria you have genuinely evaluated and concluded pass. Batch marking is for recording conclusions you already reached, not for clearing a list you have not worked through. A report that says Pass on a criterion nobody tested is worse than one that honestly says Not Evaluated, and it is your name on the export.
+  Only do this for criteria you have genuinely evaluated and concluded pass. Batch marking is for recording conclusions you already reached, not for clearing a list you have not worked through. A report that says Pass on a criterion nobody tested is worse than one that honestly leaves it Untested, and it is your name on the export.
 </Warning>
 
 ### The N/A batch tool
