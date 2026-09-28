@@ -17,8 +17,8 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Get Started Free",
-      "href": "https://www.testwithlabrador.com/signup"
+      "label": "Go to Labrador",
+      "href": "https://www.testwithlabrador.com"
     }
   },
   "navigation": {
