@@ -9,6 +9,8 @@ The Labrador Chrome extension bridges the gap between your audit in Labrador and
 - **axe automated scanning**, run an axe scan against the page you are testing and let Labrador map each finding to the correct WCAG criterion as an issue.
 - **AI remediation guidance**, click a specific element on the page to capture its HTML and generate developer-ready fix suggestions from Claude Opus 5.5.
 
+The extension runs in Chromium browsers, so do both workflows: audit in Chrome or Edge. In Firefox, Safari, or another non-Chromium browser, Labrador shows a **Needs Chrome or Edge** note where the install link would be, and clicking the trigger shows **Chrome or Edge Required** instead of starting the scan or the capture.
+
 Both workflows depend on the URL set on the Page, Component, or User Journey you are testing. Set a valid URL on every item in your project wherever you can, the extension uses it to open the exact page for scans and captures, and other features like AI remediation depend on it too.
 
 <Note>
@@ -131,12 +133,12 @@ Claude Opus 5.5 is capable of producing high-quality, technically accurate remed
 Before using the Chrome extension and AI remediation feature, confirm that all of the following conditions are met:
 
 <CardGroup cols={2}>
-  <Card title="Google Chrome" icon="chrome">
-    The Labrador extension is only available for Google Chrome. It is not currently available for other Chromium-based browsers or Firefox.
+  <Card title="Chrome or Edge" icon="chrome">
+    The extension needs a Chromium browser, so audit in Chrome or Edge. Firefox and Safari show **Chrome or Edge Required** when you trigger a scan or a recommendation.
   </Card>
 
   <Card title="Extension Installed" icon="puzzle-piece">
-    The Labrador AI Accessibility Assistant extension must be installed and active in Chrome before you click Generate Recommendation.
+    The Labrador AI Accessibility Assistant extension must be installed and active in Chrome or Edge before you click Generate Recommendation.
   </Card>
 
   <Card title="Valid URL on the Page/Component/User Journey" icon="link">

@@ -14,7 +14,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
   </Accordion>
 
   <Accordion title="Do I need to install anything to use Labrador?">
-    No. Labrador runs entirely in your browser at [testwithlabrador.com](https://www.testwithlabrador.com), there is no software to install or configure. The one optional install is the [Labrador Chrome extension](/integrations/chrome-extension), which you only need for two features: running axe automated scans and generating AI remediation recommendations from a live page. The extension is available for Google Chrome only.
+    No. Labrador runs entirely in your browser at [testwithlabrador.com](https://www.testwithlabrador.com), there is no software to install or configure. The one optional install is the [Labrador Chrome extension](/integrations/chrome-extension), which you only need for two features: running axe automated scans and generating AI remediation recommendations from a live page. The extension needs a Chromium browser, so install it in Chrome or Edge. In Firefox, Safari, or another non-Chromium browser, Labrador shows **Needs Chrome or Edge** next to those two features.
   </Accordion>
 
   <Accordion title="What WCAG versions does Labrador support?">
@@ -86,7 +86,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
   </Accordion>
 
   <Accordion title="Why isn't the axe scan or AI recommendation working?">
-    Check four things: you are using Google Chrome (the extension does not run in other browsers), the Labrador extension is installed and active, the page, component, or user journey you are testing has a valid **URL** set in your project, and, for AI recommendations, you have written an issue description first. The URL is the most common culprit, without it the extension cannot navigate to the right page. The page must also be one you can load in your own browser session, including completing any sign-in it requires.
+    Check four things: you are using Chrome or Edge (in Firefox, Safari, and other non-Chromium browsers Labrador shows **Chrome or Edge Required** instead of running the feature), the Labrador extension is installed and active, the page, component, or user journey you are testing has a valid **URL** set in your project, and, for AI recommendations, you have written an issue description first. The URL is the most common culprit, without it the extension cannot navigate to the right page. The page must also be one you can load in your own browser session, including completing any sign-in it requires.
   </Accordion>
 </AccordionGroup>
 
