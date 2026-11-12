@@ -39,6 +39,35 @@ An **issue** in Labrador is a documented failure against a specific WCAG success
   A new issue auto-saves as a draft while you fill it in. If you close the browser mid-way through, your work is preserved. Editing an issue you have already submitted works differently: those changes are kept only when you click **Save**. See [Updating issues](#updating-issues).
 </Note>
 
+## Log an issue from a page, component, or user journey
+
+You do not have to open the criterion first. On the testing screen for a page or component, and on a user journey, click **Log an issue** to start the issue in a dialog.
+
+<Steps>
+  <Step title="Describe the issue">
+    Write what the problem is and exactly where it occurs, as you would in the full issue form.
+  </Step>
+  <Step title="Choose the step (user journeys only)">
+    When you log an issue from a journey, choose the step it applies to. The issue is recorded against the page or component behind that step.
+  </Step>
+  <Step title="Find the success criterion">
+    Search for the success criterion the issue applies to and select it. A normal issue needs one. For a best-practice recommendation it is optional.
+  </Step>
+  <Step title="Save the issue">
+    Saving a normal issue sets that criterion's result to **Fail**, and leaves it alone if it is already failing. On a VPAT project the result becomes **Does not support**, and a criterion already marked **Does not support** or **Partially supports** keeps the result it has.
+  </Step>
+</Steps>
+
+## Best-practice recommendations
+
+A **best-practice recommendation** is an issue type for improvements that are not conformance failures, such as a usability concern or a change that would help users without the standard requiring it.
+
+- Mark an issue as a best-practice recommendation in the **Log an issue** dialog, or in the **Add New Issue** form on a criterion. On a criterion, the criterion you are testing is linked for you.
+- The related success criterion is optional. Severity works exactly as it does on any other issue.
+- A recommendation never changes a test result, so a criterion you marked Pass stays Pass.
+- Recommendations carry a **Best practice** badge wherever issues are listed, so nobody reads one as a failure.
+- [HTML reports](/exports/html-reports) give recommendations their own section, and [CSV exports](/exports/csv-and-jira) group them separately.
+
 ## Severity levels
 
 Severity reflects the impact of the issue on users with disabilities, not how difficult it is to fix. Use the definitions below to choose the right severity level for each issue.
