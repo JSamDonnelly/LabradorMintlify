@@ -12,6 +12,8 @@ The Labrador Chrome extension bridges the gap between your audit in Labrador and
 
 Both workflows depend on the URL set on the Page, Component, or User Journey you are testing. Set a valid URL on every item in your project wherever you can, the extension uses it to open the exact page for scans and captures, and other features like AI remediation depend on it too.
 
+The extension runs in Chromium browsers, so do your auditing in Chrome or Edge. In Firefox, Safari, or another non-Chromium browser, Labrador shows a **Needs Chrome or Edge** note where the install link would be, and asking for a recommendation shows **Chrome or Edge required**.
+
 <Note>
   The AI remediation feature is currently in **beta**. Before using the extension on a page, component, or user journey, make sure a valid URL is set on that item in your Labrador project.
 </Note>
@@ -176,12 +178,12 @@ Claude Opus 5.5 is capable of producing high-quality, technically accurate remed
 Before using the Chrome extension and AI remediation feature, confirm that all of the following conditions are met:
 
 <CardGroup cols={2}>
-  <Card title="Google Chrome" icon="chrome">
-    The Labrador extension is only available for Google Chrome. It is not currently available for other Chromium-based browsers or Firefox.
+  <Card title="Chrome or Edge" icon="chrome">
+    The extension needs a Chromium browser, so audit in Chrome or Edge. It does not run in Firefox or Safari.
   </Card>
 
   <Card title="Extension Installed" icon="puzzle-piece">
-    The Labrador AI Accessibility Assistant extension must be installed and active in Chrome before you click Generate Recommendation.
+    The Labrador AI Accessibility Assistant extension must be installed and active in Chrome or Edge before you click Generate Recommendation.
   </Card>
 
   <Card title="Valid URL on the Page/Component/User Journey" icon="link">
