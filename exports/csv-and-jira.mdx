@@ -14,12 +14,19 @@ The standard CSV export produces a flat file containing every issue logged acros
 
 | Column | Description |
 | --- | --- |
-| Page / Component | The name of the page or component where the issue was found |
-| WCAG Criterion | The criterion number and name (e.g. 1.1.1 Non-text Content) |
-| Issue Description | The full text of the issue as documented in Labrador |
-| Severity | Advisory, Minor, Moderate, Serious, or Critical |
+| Issue ID | A reference for the issue, in the form `LAB-` followed by a number |
+| Title | The page name and WCAG criterion, with an issue number when a criterion has more than one issue on that page |
+| WCAG Criterion | The criterion number and name (e.g. SC 1.1.1 - Non-text Content) |
+| Page | The name of the page or component where the issue was found |
+| Severity | The severity you set on the issue |
 | Remediation Status | Reported, In Progress, Fixed for Retesting, or Closed |
-| Remediation Guidance | The fix recommendation written during the audit |
+| Issue Description | The full text of the issue as documented in Labrador |
+| Additional Notes | Any additional notes on the issue |
+| Remediation Help | The fix recommendation written during the audit |
+| User Journeys | The user journeys the issue belongs to |
+| Media URLs | Links to the screenshots and videos attached to the issue |
+
+If your project has custom fields, each one gets its own column between **User Journeys** and **Media URLs**.
 
 **To export a standard CSV:**
 
@@ -37,17 +44,16 @@ The standard CSV export produces a flat file containing every issue logged acros
 
 ## Jira-ready CSV export
 
-The Jira CSV export contains the same issue data as the standard CSV, but the columns are restructured and labelled to match the fields that Jira's CSV import tool expects. Severity levels are automatically mapped to Jira priority values, so you do not need to manually reformat the file before importing it.
+The Jira CSV export covers the same issues as the standard CSV, packed into the two columns Jira's CSV import tool needs:
 
-**How Labrador severity maps to Jira priority:**
-
-| Labrador Severity | Jira Priority |
+| Column | Description |
 | --- | --- |
-| Critical | Highest |
-| Serious | High |
-| Moderate | Medium |
-| Minor | Low |
-| Advisory | Lowest |
+| Summary | The issue title: the page name and WCAG criterion, with an issue number when a criterion has more than one issue on that page |
+| Description | Everything else about the issue, formatted so Jira displays it with bold labels and line breaks: page or component, WCAG criterion, severity, description, additional notes, remediation help, custom fields, and links to attachments |
+
+<Note>
+  Severity appears as text inside the description. The file has no priority column, so imported tickets get your Jira project's default priority. If you want severity to set Jira priority automatically, use the [live Jira integration](/integrations/jira).
+</Note>
 
 **To export and import a Jira CSV:**
 
@@ -70,7 +76,7 @@ The Jira CSV export contains the same issue data as the standard CSV, but the co
 </Steps>
 
 <Info>
-  Jira's CSV import wizard lets you review the column-to-field mapping before finalising the import. The Labrador Jira CSV is pre-formatted to match standard Jira field names, so most columns should map automatically, but always review the mapping screen before confirming.
+  Jira's CSV import wizard lets you review the column-to-field mapping before finalising the import. The Labrador Jira CSV uses Jira's standard **Summary** and **Description** field names, so both columns should map automatically, but always review the mapping screen before confirming.
 </Info>
 
 ## CSV vs live Jira integration

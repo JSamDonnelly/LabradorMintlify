@@ -4,7 +4,7 @@ sidebarTitle: "Overview"
 description: "Generate HTML, VPAT DOCX, CSV, and Jira-ready reports from your Labrador audit. All formats are available on every plan; VPAT DOCX requires a VPAT project."
 ---
 
-Labrador can export your audit results in four formats. The right format depends on your audience, use interactive HTML for client presentations, a VPAT DOCX for formal procurement, and CSV or Jira CSV for developer handoffs and issue tracking. All export formats are generated instantly and downloaded directly from the project toolbar, with no additional processing step required.
+Labrador can export your audit results in four formats. The right format depends on your audience, use interactive HTML for client presentations, a VPAT DOCX for formal procurement, and CSV or Jira CSV for developer handoffs and issue tracking. Every format is generated when you choose it from the **Export** menu in the project toolbar. CSV and DOCX files download straight away. The HTML report opens in a new browser tab, where you can read it, print it, or download it as a file.
 
 ## Available export formats
 
@@ -26,15 +26,19 @@ Labrador can export your audit results in four formats. The right format depends
     In the project toolbar at the top of the project view, click the **Export** dropdown button.
   </Step>
   <Step title="Select your format">
-    Choose your desired format from the dropdown menu:
+    Choose a format from the menu. Every project shows:
 
-    - **HTML**, a self-contained, interactive web report
+    - **HTML**, an interactive web report
     - **CSV Export**, a flat spreadsheet of all logged issues
-    - **Jira CSV Export**, issue data formatted for Jira's CSV import tool
-    - **PDF/Word (VPAT)**, a fully editable VPAT 2.5 DOCX file (only shown for VPAT projects)
+    - **Jira CSV Export**, issue titles and descriptions formatted for Jira's CSV import tool
+
+    VPAT projects show three report options above the two CSV items:
+
+    - **.docx**, a fully editable VPAT 2.5 DOCX file
+    - **HTML** and **HTML (VPAT style)**, two HTML versions of the report
   </Step>
-  <Step title="Download the file">
-    The export is generated and downloaded to your device immediately. No waiting, no email link, the file is ready as soon as you click.
+  <Step title="Get the file">
+    **CSV Export**, **Jira CSV Export**, and **.docx** download to your device straight away. The HTML options open the report in a new browser tab. To keep a copy, select **Download HTML** at the top of the report, or **Print / Save PDF** to print it or save it as a PDF.
   </Step>
 </Steps>
 
@@ -42,7 +46,7 @@ Labrador can export your audit results in four formats. The right format depends
 
 <CardGroup cols={2}>
   <Card title="Interactive HTML Report" icon="file-code" href="/exports/html-reports">
-    A polished, self-contained HTML file your clients can open in any browser. Includes an executive summary, embedded screenshots and videos, clickable WCAG links, and interactive navigation between pages and components.
+    A polished HTML report your clients can open in any browser. Includes testing information, an overview, screenshots and videos, clickable WCAG links, and navigation between sections.
   </Card>
 
   <Card title="VPAT / DOCX" icon="file-word" href="/exports/vpat-docx">
@@ -50,7 +54,7 @@ Labrador can export your audit results in four formats. The right format depends
   </Card>
 
   <Card title="CSV & Jira CSV" icon="table" href="/exports/csv-and-jira">
-    Export all logged issues as a standard CSV for Excel or Google Sheets, or as a Jira-formatted CSV ready for direct import into a Jira project, no integration setup required.
+    Export all logged issues as a standard CSV for Excel or Google Sheets, or as a two-column Jira CSV ready to import into a Jira project, no integration setup required.
   </Card>
 
   <Card title="Live Jira Integration" icon="arrow-right-arrow-left" href="/integrations/jira">
