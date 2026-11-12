@@ -74,13 +74,20 @@ A **best-practice recommendation** is an issue type for improvements that are no
 - Recommendations carry a **Best practice** badge in a criterion's issue list and on the project's **All Issues** page, so nobody reads one as a failure.
 - [HTML reports](/exports/html-reports) and the [VPAT DOCX](/exports/vpat-docx) give recommendations their own **Best-practice recommendations** section. [CSV exports](/exports/csv-and-jira) list them after the conformance issues.
 
+### Advisory severity or a best-practice recommendation?
+
+There are two ways to record a best-practice finding. Pick by where you want it to appear.
+
+- **Advisory severity**: the finding stays an ordinary issue under its criterion, listed with the other issues in reports. It counts against that criterion like any other issue, so logging one from the **Log an issue** dialog changes the criterion's result.
+- **Best-practice recommendation**: the finding stays out of the conformance results and gets its own section in reports. The criterion keeps the result you gave it.
+
 ## Severity levels
 
 Severity reflects the impact of the issue on users with disabilities, not how difficult it is to fix. Use the definitions below to choose the right severity level for each issue.
 
 <CardGroup cols={2}>
   <Card title="Advisory" icon="circle-info">
-    Not a WCAG AA non-conformance issue. Advisory findings identify best-practice improvements or potential user experience concerns that fall outside the scope of the standard but are worth addressing.
+    Not a WCAG AA non-conformance issue. Advisory findings identify best-practice improvements or potential user experience concerns that fall outside the scope of the standard but are worth addressing. To keep a finding out of the conformance results altogether, log it as a [best-practice recommendation](#advisory-severity-or-a-best-practice-recommendation) instead.
   </Card>
 
   <Card title="Minor" icon="circle-minus">
