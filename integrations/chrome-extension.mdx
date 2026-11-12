@@ -4,12 +4,15 @@ sidebarTitle: "Chrome extension"
 description: "Capture live page HTML with the Labrador Chrome extension and generate accessibility remediation guidance for your issues using Claude Opus 5.5."
 ---
 
-The Labrador Chrome extension bridges the gap between your audit in Labrador and the live page you are testing. It supports two core workflows:
+The Labrador Chrome extension bridges the gap between your audit in Labrador and the live page you are testing. It supports three workflows:
 
 - **axe automated scanning**, run an axe scan against the page you are testing and let Labrador map each finding to the correct WCAG criterion as an issue.
 - **Remediation recommendations**, click a specific element on the page to capture its HTML and generate developer-ready fix suggestions from Claude Opus 5.5, an AI model from Anthropic.
+- **Page checks**, a side panel of quick visual checks you can run on any page you have open. See [Page checks in the side panel](#page-checks-in-the-side-panel).
 
-Both workflows depend on the URL set on the Page, Component, or User Journey you are testing. Set a valid URL on every item in your project wherever you can, the extension uses it to open the exact page for scans and captures, and other features like remediation recommendations depend on it too.
+Scans and recommendations both depend on the URL set on the Page, Component, or User Journey you are testing. Set a valid URL on every item in your project wherever you can, the extension uses it to open the exact page for scans and captures, and other features like remediation recommendations depend on it too.
+
+The extension runs in Chromium browsers, so do your auditing in Chrome or Edge. In Firefox, Safari, or another non-Chromium browser, Labrador shows a **Needs Chrome or Edge** note where the install link would be, and asking for a recommendation shows **Chrome or Edge required**.
 
 <Note>
   The remediation recommendations feature is currently in **beta**. Before using the extension on a page, component, or user journey, make sure a valid URL is set on that item in your Labrador project.
@@ -42,25 +45,69 @@ The extension can run an [axe-core](https://github.com/dequelabs/axe-core) autom
   <Step title="Open the Criteria Overview for the item you are testing">
     In your Labrador project, open the Page, Component, or User Journey you want to scan and go to its **Criteria Overview**.
   </Step>
-  <Step title="Trigger an axe scan">
-    Click the **Run axe Scan** action on the Criteria Overview. Labrador will open the URL set on the item and the extension will run axe against the loaded page.
+  <Step title="Start the scan">
+    Click **Run automated scan (axe)** on the Criteria Overview. A dialog titled **Automated accessibility scan** opens in Labrador, and the extension loads the URL set on the item in its own tab and runs axe against it. The page stays open so you can review each finding there.
 
     **Batch mark N/A** sits next to it. That one needs no extension and is worth a moment before or after scanning: it marks whole groups of criteria as not applicable based on what the page does not contain. See [the N/A batch tool](/projects/auditing-criteria#the-na-batch-tool).
   </Step>
-  <Step title="Review findings before importing">
-    When the scan completes, the extension shows a list of findings for you to review before anything is written to your project. Each finding shows the rule that failed, the affected element, and the WCAG criterion it maps to.
+  <Step title="Go to the tab with the scanned page">
+    The review happens on the page itself, not in Labrador. A review panel on the scanned page walks you through the findings one failing element at a time, with the element outlined on the page. The panel shows where you are, for example **Finding 3 of 12**.
+
+    Keep the Labrador tab open while you review. Its dialog keeps a running count of how many findings you have added and skipped.
   </Step>
-  <Step title="Choose whether to include Best Practice findings">
-    axe returns both WCAG violations and Best Practice recommendations. Best Practice findings are shown alongside violations but are left unchecked by default, tick the ones you want to include, or leave them unchecked to import only the WCAG-mapped failures.
+  <Step title="Add or skip each finding">
+    For each finding, choose **Add to project** or **Skip**. **Previous** takes you back one finding.
+
+    A finding you add is saved straight away. It becomes an issue under the WCAG criterion it maps to, with the axe rule and affected element filled in and a screenshot of the element attached. A finding you skip is not written to your project.
   </Step>
-  <Step title="Add the selected findings to your test">
-    Confirm your selection to import the findings. Each one is automatically added as an issue under the correct WCAG criterion on the item you are testing, with the axe rule and affected element pre-filled.
+  <Step title="Choose a criterion for best-practice findings">
+    axe returns best-practice findings as well as WCAG violations. A best-practice rule has no WCAG criterion mapped to it, so before you can add one you pick a criterion in the **Success criterion (required)** field. Tick **Mark criterion as failing** if the finding should also set that criterion to failing. Skip the finding if you only want the WCAG-mapped failures.
+  </Step>
+  <Step title="Finish or end the review">
+    On the last finding the buttons read **Add and finish** and **Skip and finish**. To stop early, choose **End review**, or press Escape, and confirm. Ending the review closes the scanned tab and returns you to Labrador. Findings you already added are kept.
+
+    Labrador then confirms how many issues were added. If the scan found no failing elements, it says **No WCAG violations were found**.
   </Step>
 </Steps>
+
+### Scanning the same page again
+
+You can run the scan on a page more than once, for example after a fix. A finding that is already in your project is labelled **Already in project** in the review panel, so you do not log it twice. New findings are added alongside the issues you already have. Nothing is replaced.
+
+### If a scan does not start or fails
+
+- **Page URL required**: the item has no URL. Add one, then run the scan again.
+- **Automated scan failed**: Labrador names the reason. The scan needs an HTML web page, so PDFs, images, downloads, and other documents cannot be scanned. The browser also blocks extensions on some pages, in which case try a regular `http://` or `https://` page. If the page did not finish loading in time, check that the URL is reachable and that you are signed in to that site if it needs it.
+- If the message says the extension could not be reached, check that it is installed, enabled, and allowed on the site, then refresh the page and try again.
 
 <Tip>
   Automated scanning catches roughly 30 to 50 percent of accessibility issues on a typical page. Use the axe scan as a fast first pass, then work through the remaining criteria manually and use remediation recommendations to help draft fixes for anything the scan surfaces.
 </Tip>
+
+## Page checks in the side panel
+
+Click the Labrador icon in your browser toolbar to open a side panel called **Page checks**. It runs quick visual checks on whichever page is open in that tab, which is useful while you test criteria by hand.
+
+The checks are:
+
+- Text spacing
+- Force focus
+- Headings
+- Lists
+- Landmarks
+- Target size
+- Tables
+- Reflow
+- Colour contrast
+
+To use them:
+
+1. Open the page you want to check in the tab.
+2. Turn on a check. What it finds is outlined on the page. One check runs at a time, so turning one on switches the others off.
+3. Select a finding in the list to jump to it on the page.
+4. Turn the check off to clear its outlines.
+
+Page capture and automated scans still start from your audit in Labrador, not from the side panel. The panel's **Open Labrador** link takes you back there.
 
 ## Generating a remediation recommendation
 
@@ -131,12 +178,12 @@ Claude Opus 5.5 is capable of producing high-quality, technically accurate remed
 Before using the Chrome extension and remediation recommendations, confirm that all of the following conditions are met:
 
 <CardGroup cols={2}>
-  <Card title="Google Chrome" icon="chrome">
-    The Labrador extension is only available for Google Chrome. It is not currently available for other Chromium-based browsers or Firefox.
+  <Card title="Chrome or Edge" icon="chrome">
+    The extension needs a Chromium browser, so audit in Chrome or Edge. It does not run in Firefox or Safari.
   </Card>
 
   <Card title="Extension Installed" icon="puzzle-piece">
-    The Labrador Accessibility Assistant extension must be installed and active in Chrome before you click **Get Recommendations (beta)**.
+    The Labrador Accessibility Assistant extension must be installed and active in Chrome or Edge before you click **Get Recommendations (beta)**.
   </Card>
 
   <Card title="Valid URL on the Page/Component/User Journey" icon="link">

@@ -4,22 +4,32 @@ sidebarTitle: "HTML reports"
 description: "Generate polished, interactive HTML accessibility audit reports with embedded screenshots, clickable WCAG links, and executive summaries for clients."
 ---
 
-The HTML export produces a self-contained, interactive report that your clients and stakeholders can open in any modern browser, no account, no login, and no special software required. Every finding, screenshot, and video you captured during the audit is embedded directly in the file, so nothing breaks when you share it by email or file transfer. The report is professionally styled and ready to send the moment it downloads.
+The HTML export produces an interactive report that your clients and stakeholders can open in any modern browser, no account, no login, and no special software required. Findings, and most screenshots and videos, are embedded directly in the file, so you can share it by email or file transfer. Very large media files are linked instead of embedded; see [Large screenshots and videos](#large-screenshots-and-videos) below.
 
 ## What's included in an HTML report
 
 An HTML report contains everything your client needs to understand the audit findings and hand remediation work to their development team.
 
-<Accordion title="Executive Summary">
-  The report opens with an executive summary that includes the auditor's name, the WCAG version tested against, the exact date and time the report was generated, and the overall conformance status. This section gives stakeholders a high-level view before they read the detailed findings.
+<Accordion title="Testing information and overview">
+  The report opens with **Testing information**, which always shows the WCAG version tested against and the auditor's name, followed by an **Overview** of the results. The audit version and the date the report was generated appear in the header. These sections give stakeholders a high-level view before they read the detailed findings.
 </Accordion>
 
-<Accordion title="Complete Findings List">
-  All findings are organised by page, component, or user journey, then by WCAG criterion. Each entry shows the criterion number and name, the test status (Pass, Fail, or N/A), the severity level, and the current remediation status. Failed criteria include your issue description, the remediation guidance you wrote, and any attached screenshots or videos.
+<Accordion title="Issues">
+  The **Issues** section lists every logged issue with its WCAG criterion, severity, and remediation status, along with your issue description, the remediation guidance you wrote, and any attached screenshots or videos.
+
+  Every issue heading begins with that issue's reference, for example **LAB-39**, the same identifier the issue carries in your CSV exports. Quote the reference when you discuss an issue with a developer and it points at that issue and no other.
 </Accordion>
 
-<Accordion title="Embedded Screenshots and Videos">
-  Every screenshot and video attached to an issue is embedded directly in the HTML file, not linked from an external location. Recipients see the evidence immediately, even without an internet connection, and there are no broken media links.
+<Accordion title="User journeys">
+  If the project has user journeys, the report includes a **User journeys** section.
+</Accordion>
+
+<Accordion title="Pages and components">
+  The **Pages & components** section shows conformance and failing criteria for each page. Expand a page to review every criterion evaluated on it.
+</Accordion>
+
+<Accordion title="Screenshots and videos">
+  Screenshots and videos attached to an issue are embedded directly in the HTML file, so recipients see the evidence without an internet connection. Very large files are the exception: see [Large screenshots and videos](#large-screenshots-and-videos).
 </Accordion>
 
 <Accordion title="Clickable WCAG Criterion Links">
@@ -34,17 +44,19 @@ An HTML report contains everything your client needs to understand the audit fin
   Where you added remediation help to an issue, including any AI-generated recommendations you reviewed and kept, that guidance appears in full alongside the issue description. Developers can read the fix recommendation directly from the report without opening Labrador.
 </Accordion>
 
-<Accordion title="Interactive Page and Component Navigation">
-  The report includes a navigation sidebar that lets readers jump between pages and components without scrolling through the entire document. Each section is clearly labelled with the page or component name you assigned in the project.
+<Accordion title="Section navigation">
+  An **On this page** list of links lets readers jump between the sections of the report without scrolling through the entire document.
 </Accordion>
 
 ## Interactive features in the report
 
 Labrador HTML reports are not static documents. They include interactive controls that help readers focus on what matters to them.
 
-- **Show Failures Only toggle**, hides all passed and N/A criteria so developers can see only the issues that need attention, without scrolling through everything that is already conformant.
-- **Expand All / Collapse All**, expands or collapses all criterion accordion sections at once, useful when reviewing a long audit or printing a summary.
-- **Page and component filter**, click any item in the navigation sidebar to jump directly to that section of the report and filter the criteria list to that page or component only.
+- **Severity filter**, buttons above the issues list show how many issues there are at each severity. Select one to show only those issues, or **All** to show everything.
+- **Sort by page**, groups the issues list by page.
+- **Expandable page details**, each page in **Pages & components** expands to show every criterion evaluated on it.
+- **Print / Save PDF**, opens your browser's print dialog, where you can print the report or save it as a PDF.
+- **Download HTML**, saves the report as a `.html` file.
 
 ## Generating an HTML report
 
@@ -58,17 +70,26 @@ Labrador HTML reports are not static documents. They include interactive control
   <Step title="Select HTML">
     Choose **HTML** from the dropdown menu.
   </Step>
-  <Step title="Download the report">
-    The report is generated immediately and saved as a `.html` file to your default downloads folder.
+  <Step title="Review the report">
+    The report opens in a new browser tab. Read it through before sending.
   </Step>
-  <Step title="Open and share the report">
-    Open the file in any modern browser, Chrome, Firefox, Safari, or Edge, to review it before sending. Share it with clients by attaching the `.html` file to an email or uploading it to a shared drive.
+  <Step title="Download and share the report">
+    Select **Download HTML** at the top of the report to save it as a `.html` file. Share it with clients by attaching the file to an email or uploading it to a shared drive. It opens in any modern browser: Chrome, Firefox, Safari, or Edge.
   </Step>
 </Steps>
 
 <Tip>
-  HTML reports are the recommended format for client delivery. They are professional and self-contained, require no special software to open, and give your clients an interactive experience rather than a static document. When in doubt, use HTML.
+  HTML reports are the recommended format for client delivery. They require no special software to open and give your clients an interactive experience rather than a static document. When in doubt, use HTML.
 </Tip>
+
+## Large screenshots and videos
+
+To keep the report a manageable size, Labrador embeds a screenshot or video only when the file is 1.5 MB or smaller, and stops embedding once the embedded media in one report adds up to 80 MB. Anything over those limits is loaded from Labrador storage instead.
+
+When a report contains linked media, it says so in a note. Two things follow:
+
+- **Linked media needs an internet connection.** Embedded media still works offline.
+- **The links expire after one year.** If a client needs the evidence for longer, export the report again to get fresh links.
 
 ## Enterprise branding
 

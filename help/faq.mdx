@@ -14,7 +14,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
   </Accordion>
 
   <Accordion title="Do I need to install anything to use Labrador?">
-    No. Labrador runs entirely in your browser at [testwithlabrador.com](https://www.testwithlabrador.com), there is no software to install or configure. The one optional install is the [Labrador Chrome extension](/integrations/chrome-extension), which you only need for two features: running axe automated scans and generating remediation recommendations from a live page. The extension is available for Google Chrome only.
+    No. Labrador runs entirely in your browser at [testwithlabrador.com](https://www.testwithlabrador.com), there is no software to install or configure. The one optional install is the [Labrador Chrome extension](/integrations/chrome-extension), which you only need for two features: running axe automated scans and generating remediation recommendations from a live page. The extension needs a Chromium browser, so install it in Chrome or Edge. In Firefox, Safari, or another non-Chromium browser, Labrador shows **Needs Chrome or Edge** where the install link would be.
   </Accordion>
 
   <Accordion title="What WCAG versions does Labrador support?">
@@ -54,7 +54,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
   </Accordion>
 
   <Accordion title="What happens when I reach my project capacity?">
-    When you reach your plan's project limit, Labrador will not let you create additional projects until you free up a slot or upgrade your plan. To free a slot, delete an existing project from your Projects dashboard. Deleting a project frees the slot immediately, no audit data on other projects, team memberships, or billing is affected. Note that capacity limits apply to projects only: there is no limit on the number of pages, components, and user journeys you can add within a single project.
+    When you reach your plan's project limit, Labrador will not let you create additional projects. What to do next depends on your plan. On the Free plan, delete your existing project from the Projects dashboard to free your one slot, or upgrade. On Core and Plus, the limit counts projects created in the current calendar month, so deleting a project does not free anything; the count resets at the start of the next month, or you can upgrade for more capacity. Deleting a project does not affect audit data on other projects, team memberships, or billing. Note that capacity limits apply to projects only: there is no limit on the number of pages, components, and user journeys you can add within a single project.
   </Accordion>
 
   <Accordion title="What is the difference between pages, components, and user journeys?">
@@ -62,7 +62,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
   </Accordion>
 
   <Accordion title="Does my work save automatically?">
-    Yes. Criterion statuses and issues auto-save as you work, there is no save button to remember. If you close the browser mid-way through filling in an issue, your work is preserved.
+    Mostly. Criterion statuses save as you set them, and a new issue auto-saves as a draft while you fill it in, so closing the browser mid-way does not lose it. The exception is editing an issue you have already submitted: those changes are kept only when you click **Save**, and Labrador asks before discarding them.
   </Accordion>
 
   <Accordion title="How do I retest after a developer has made fixes?">
@@ -86,7 +86,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
   </Accordion>
 
   <Accordion title="Why isn't the axe scan or recommendation working?">
-    Check four things: you are using Google Chrome (the extension does not run in other browsers), the Labrador extension is installed and active, the page, component, or user journey you are testing has a valid **URL** set in your project, and, for remediation recommendations, you have written an issue description first. The URL is the most common culprit, without it the extension cannot navigate to the right page. The page must also be one you can load in your own browser session, including completing any sign-in it requires.
+    Check four things: you are using Chrome or Edge (the extension does not run in Firefox, Safari, or other non-Chromium browsers, and asking for a recommendation there shows **Chrome or Edge required**), the Labrador extension is installed and active, the page, component, or user journey you are testing has a valid **URL** set in your project, and, for remediation recommendations, you have written an issue description first. The URL is the most common culprit, without it the extension cannot navigate to the right page. The page must also be one you can load in your own browser session, including completing any sign-in it requires.
   </Accordion>
 </AccordionGroup>
 
@@ -101,7 +101,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
     - **CSV**, a flat export of all logged issues for flexible use in spreadsheets or other tools.
     - **Jira-ready CSV**, a CSV formatted for direct import into Jira, available on all plans including Free.
 
-    HTML, VPAT (where applicable), and CSV exports are available on all plans. The HTML report is fully self-contained: your client opens the file in any modern browser with no Labrador account, no login, and all screenshots and videos embedded. Custom report branding (your logo and identity) is available on the Enterprise plan.
+    HTML, VPAT (where applicable), and CSV exports are available on all plans. Your client opens the HTML report in any modern browser with no Labrador account and no login. Screenshots and videos are embedded in the file, except very large ones, which are linked and need an internet connection. Custom report branding (your logo and identity) is available on the Enterprise plan.
   </Accordion>
 
   <Accordion title="Is there a PDF export?">
@@ -175,7 +175,7 @@ Here are answers to the most common questions about Labrador. If you don't find 
   </Accordion>
 
   <Accordion title="Is single sign-on (SSO) available?">
-    SSO and tailored security support are part of the Enterprise plan offering, but SAML-based SSO is not yet generally available. Enterprise customers who require SSO should [contact Labrador](mailto:security@testwithlabrador.com) to discuss timeline and requirements. Labrador's [Trust & Security](/account/trust-and-security) page keeps an honest list of what is and is not built yet.
+    Not yet. SAML-based SSO is not available on any plan, including Enterprise. If your organisation requires SSO, [contact Labrador](mailto:security@testwithlabrador.com) to discuss timeline and requirements. Labrador's [Trust & Security](/account/trust-and-security) page keeps an honest list of what is and is not built yet.
   </Accordion>
 </AccordionGroup>
 
