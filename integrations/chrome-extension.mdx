@@ -1,19 +1,21 @@
 ---
-title: "Labrador Chrome extension: axe scans and AI accessibility remediation"
+title: "Labrador Chrome extension: axe scans and remediation recommendations"
 sidebarTitle: "Chrome extension"
-description: "Capture live page HTML with the Labrador Chrome extension and generate AI-powered accessibility remediation guidance for your issues using Claude Opus 5.5."
+description: "Capture live page HTML with the Labrador Chrome extension and generate accessibility remediation guidance for your issues using Claude Opus 5.5."
 ---
 
 The Labrador Chrome extension bridges the gap between your audit in Labrador and the live page you are testing. It supports three workflows:
 
 - **axe automated scanning**, run an axe scan against the page you are testing and let Labrador map each finding to the correct WCAG criterion as an issue.
-- **AI remediation guidance**, click a specific element on the page to capture its HTML and generate developer-ready fix suggestions from Claude Opus 5.5.
+- **Remediation recommendations**, click a specific element on the page to capture its HTML and generate developer-ready fix suggestions from Claude Opus 5.5, an AI model from Anthropic.
 - **Page checks**, a side panel of quick visual checks you can run on any page you have open. See [Page checks in the side panel](#page-checks-in-the-side-panel).
 
-Both workflows depend on the URL set on the Page, Component, or User Journey you are testing. Set a valid URL on every item in your project wherever you can, the extension uses it to open the exact page for scans and captures, and other features like AI remediation depend on it too.
+Scans and recommendations both depend on the URL set on the Page, Component, or User Journey you are testing. Set a valid URL on every item in your project wherever you can, the extension uses it to open the exact page for scans and captures, and other features like remediation recommendations depend on it too.
+
+The extension runs in Chromium browsers, so do your auditing in Chrome or Edge. In Firefox, Safari, or another non-Chromium browser, Labrador shows a **Needs Chrome or Edge** note where the install link would be, and asking for a recommendation shows **Chrome or Edge required**.
 
 <Note>
-  The AI remediation feature is currently in **beta**. Before using the extension on a page, component, or user journey, make sure a valid URL is set on that item in your Labrador project.
+  The remediation recommendations feature is currently in **beta**. Before using the extension on a page, component, or user journey, make sure a valid URL is set on that item in your Labrador project.
 </Note>
 
 ## Installing the extension
@@ -79,7 +81,7 @@ You can run the scan on a page more than once, for example after a fix. A findin
 - If the message says the extension could not be reached, check that it is installed, enabled, and allowed on the site, then refresh the page and try again.
 
 <Tip>
-  Automated scanning catches roughly 30 to 50 percent of accessibility issues on a typical page. Use the axe scan as a fast first pass, then work through the remaining criteria manually and use AI Remediation Recommendations to help draft fixes for anything the scan surfaces.
+  Automated scanning catches roughly 30 to 50 percent of accessibility issues on a typical page. Use the axe scan as a fast first pass, then work through the remaining criteria manually and use remediation recommendations to help draft fixes for anything the scan surfaces.
 </Tip>
 
 ## Page checks in the side panel
@@ -109,14 +111,14 @@ Page capture and automated scans still start from your audit in Labrador, not fr
 
 ## Generating a remediation recommendation
 
-Follow these steps each time you want to generate AI-assisted guidance for a specific issue.
+Follow these steps each time you want to generate remediation guidance for a specific issue.
 
 <Steps>
   <Step title="Create an issue with a clear description">
-    In your Labrador project, open the failing criterion on the relevant page or component. Under **Add New Issue**, write a detailed description of the accessibility problem, be specific about what is wrong and who is affected. The quality of your description directly influences the quality of the AI output.
+    In your Labrador project, open the failing criterion on the relevant page or component. Under **Add New Issue**, write a detailed description of the accessibility problem, be specific about what is wrong and who is affected. The quality of your description directly influences the quality of the recommendation.
   </Step>
-  <Step title="Click Generate Recommendation">
-    Below the **Remediation Help** field, click **Generate Recommendation**. Labrador will prepare to capture HTML from the live page.
+  <Step title="Click Get Recommendations (beta)">
+    Below the **Remediation Help** field, click **Get Recommendations (beta)**. Labrador will prepare to capture HTML from the live page.
   </Step>
   <Step title="Navigate to the target page">
     A prompt will direct you to navigate to the page being tested. The extension uses the URL you set on the Page/Component in Labrador to guide you to the correct location.
@@ -131,17 +133,17 @@ Follow these steps each time you want to generate AI-assisted guidance for a spe
     Labrador processes your issue description, the captured HTML, and the WCAG criterion to generate a suggested fix. The recommendation appears under **Remediation Help** in the issue form within a few seconds.
   </Step>
   <Step title="Review and edit before using in your report">
-    Read the AI-generated guidance carefully. Edit, expand, or correct it as needed before saving the issue or including the recommendation in an exported report.
+    Read the generated guidance carefully. Edit, expand, or correct it as needed before saving the issue or including the recommendation in an exported report.
   </Step>
 </Steps>
 
-## What the AI generates
+## What a recommendation includes
 
 The recommendation Claude Opus 5.5 produces is designed to give developers the context they need to fix the issue without requiring additional back-and-forth.
 
 <CardGroup cols={2}>
   <Card title="Root Cause Identification" icon="magnifying-glass">
-    The AI analyses the captured HTML and identifies the specific part of the code responsible for the accessibility failure, such as a missing label, incorrect ARIA role, or skipped heading level.
+    The model analyses the captured HTML and identifies the specific part of the code responsible for the accessibility failure, such as a missing label, incorrect ARIA role, or skipped heading level.
   </Card>
 
   <Card title="Code-Level Fix Suggestions" icon="code">
@@ -149,7 +151,7 @@ The recommendation Claude Opus 5.5 produces is designed to give developers the c
   </Card>
 
   <Card title="WCAG Context" icon="book-open">
-    The AI explains why the suggested change addresses the specific WCAG criterion that failed, giving developers the reasoning they need to understand the requirement and apply it consistently elsewhere in the codebase.
+    The recommendation explains why the suggested change addresses the specific WCAG criterion that failed, giving developers the reasoning they need to understand the requirement and apply it consistently elsewhere in the codebase.
   </Card>
 
   <Card title="Scoped to Your Element" icon="crosshairs">
@@ -158,12 +160,12 @@ The recommendation Claude Opus 5.5 produces is designed to give developers the c
 </CardGroup>
 
 <Tip>
-  A clear, specific issue description consistently produces better AI recommendations. Before clicking **Generate Recommendation**, describe what the problem is, where it occurs on the page, and which group of users is affected, for example: "The search button has no accessible name. Screen reader users cannot determine its purpose when navigating by button." The more context you provide, the more targeted the output will be.
+  A clear, specific issue description consistently produces better recommendations. Before clicking **Get Recommendations (beta)**, describe what the problem is, where it occurs on the page, and which group of users is affected, for example: "The search button has no accessible name. Screen reader users cannot determine its purpose when navigating by button." The more context you provide, the more targeted the output will be.
 </Tip>
 
-## Reviewing AI output
+## Reviewing recommendations
 
-Always review AI-generated recommendations before sharing them with developers or including them in exported reports.
+Always review generated recommendations before sharing them with developers or including them in exported reports.
 
 Claude Opus 5.5 is capable of producing high-quality, technically accurate remediation guidance in most cases, but it can occasionally misidentify the root cause, suggest a fix that does not account for your specific codebase structure, or produce guidance that needs adaptation to fit your project's conventions. You are responsible for the accuracy of the remediation guidance that appears in your reports.
 
@@ -173,15 +175,15 @@ Claude Opus 5.5 is capable of producing high-quality, technically accurate remed
 
 ## Requirements
 
-Before using the Chrome extension and AI remediation feature, confirm that all of the following conditions are met:
+Before using the Chrome extension and remediation recommendations, confirm that all of the following conditions are met:
 
 <CardGroup cols={2}>
-  <Card title="Google Chrome" icon="chrome">
-    The Labrador extension is only available for Google Chrome. It is not currently available for other Chromium-based browsers or Firefox.
+  <Card title="Chrome or Edge" icon="chrome">
+    The extension needs a Chromium browser, so audit in Chrome or Edge. It does not run in Firefox or Safari.
   </Card>
 
   <Card title="Extension Installed" icon="puzzle-piece">
-    The Labrador AI Accessibility Assistant extension must be installed and active in Chrome before you click Generate Recommendation.
+    The Labrador Accessibility Assistant extension must be installed and active in Chrome or Edge before you click **Get Recommendations (beta)**.
   </Card>
 
   <Card title="Valid URL on the Page/Component/User Journey" icon="link">
@@ -189,7 +191,7 @@ Before using the Chrome extension and AI remediation feature, confirm that all o
   </Card>
 
   <Card title="Filled-In Issue Description" icon="pen-to-square">
-    You must write an issue description before generating a recommendation. The AI uses your description as context for the guidance it produces.
+    You must write an issue description before generating a recommendation. The model uses your description as context for the guidance it produces.
   </Card>
 </CardGroup>
 
