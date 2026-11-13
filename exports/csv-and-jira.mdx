@@ -25,8 +25,13 @@ The standard CSV export produces a flat file containing every issue logged acros
 | Remediation Help | The fix recommendation written during the audit |
 | User Journeys | The user journeys the issue belongs to |
 | Media URLs | Links to the screenshots and videos attached to the issue |
+| Finding type | Conformance issue, or Best-practice recommendation |
 
 If your project has custom fields, each one gets its own column between **User Journeys** and **Media URLs**.
+
+<Note>
+  [Best-practice recommendations](/projects/logging-issues#best-practice-recommendations) are included, listed after the conformance issues. A recommendation's title reads `Best-practice recommendation` and its number instead of naming a criterion. Recommendations are numbered 1, 2, 3 in the order you logged them, counting recommendations only, so the numbers match your HTML and Word reports.
+</Note>
 
 **To export a standard CSV:**
 
@@ -49,7 +54,9 @@ The Jira CSV export covers the same issues as the standard CSV, packed into the 
 | Column | Description |
 | --- | --- |
 | Summary | The issue title: the page name and WCAG criterion, with an issue number when a criterion has more than one issue on that page |
-| Description | Everything else about the issue, formatted so Jira displays it with bold labels and line breaks: page or component, WCAG criterion, severity, description, additional notes, remediation help, custom fields, and links to attachments |
+| Description | Everything else about the issue, formatted so Jira displays it with bold labels and line breaks: page or component, finding type, WCAG criterion, severity, description, additional notes, remediation help, custom fields, and links to attachments |
+
+Best-practice recommendations are included, listed after the conformance issues. Their summary names the recommendation instead of a criterion, and their description shows any related criterion in place of the WCAG criterion.
 
 <Note>
   Severity appears as text inside the description. The file has no priority column, so imported tickets get your Jira project's default priority. If you want severity to set Jira priority automatically, use the [live Jira integration](/integrations/jira).
