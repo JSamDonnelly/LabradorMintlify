@@ -50,13 +50,17 @@ A few points that catch people out:
     Pick **View Only**, **Developer**, or **Edit**. If you are inviting someone as Edit, their account must already exist and already be on a paid plan.
   </Step>
   <Step title="Send the invitation">
-    Click **Add Teammate**. Labrador emails the invitation to that address and confirms with **Teammate invited**. The person shows as pending in the dialog until they accept.
+    Click **Add Teammate**. Labrador emails the invitation to that address and confirms with **Teammate invited**. The person shows as pending in the dialog until they accept, and holds no access to the project while the invitation is pending.
   </Step>
 </Steps>
 
 ## Accepting an invitation
 
-Every collaborator must be signed in to accept an invitation. What that looks like depends on whether they already have a Labrador account:
+An invitation can only be accepted while signed in as the account that holds the invited email address. Capitalisation is ignored, so `Sam@example.com` and `sam@example.com` count as the same address. Any other account is refused, so forwarding the link to a colleague does not pass the invitation on, and opening it while signed in to a different Labrador account will not work either. Sign out and sign back in as the invited address, or ask the project owner to send a fresh invitation to the address you want to use.
+
+This applies to subscription seat invitations as well as project invitations.
+
+Beyond that, what acceptance looks like depends on whether the invited person already has a Labrador account:
 
 - **They already have an account.** They follow the link in the email, sign in, and land on the project.
 - **They do not have an account.** The invitation page offers both **Sign in** and **Create an account**. They can create a free account right there, and Labrador returns them to the invitation once they finish.
@@ -65,9 +69,9 @@ This is the answer to the most common question we hear: **yes, a developer with 
 
 ## Changing a role or removing a collaborator
 
-The project owner and any Admin can change a collaborator's role or remove them from the project through the Teammates panel. The same paid-account rule applies when promoting someone to Edit or Admin: the invited person's own account must be on a paid plan at the moment you make the change.
+The project owner and any Admin can change an active teammate's role, or remove them from the project, in the **Manage Project Teammates** dialog. A role change is made on the teammate's row, and all four roles are available there: **View Only**, **Developer**, **Edit**, and **Admin**. The same paid-account rule applies when promoting someone to Edit or Admin: that person's own account must be on a paid plan at the moment you make the change.
 
-Removing a collaborator revokes their access immediately, but their contributions stay intact. Issues they logged, comments they left, and criterion results they recorded remain in the project exactly as they were.
+Removal asks you to confirm first, and the confirmation explains what it does. The person loses access to the project immediately, but their contributions stay intact. Issues they logged, comments they left, and criterion results they recorded remain in the project exactly as they were.
 
 <Warning>
   Removing a collaborator cannot be undone from within the project. To restore their access, send a new invitation and reassign their role.
